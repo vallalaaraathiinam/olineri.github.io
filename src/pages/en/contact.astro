@@ -2,41 +2,62 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout lang="en" title="Contact Us">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold text-amber-900 mb-8 border-b pb-2 text-center">Get in Touch</h2>
-
-    <div class="grid md:grid-cols-2 gap-12 mt-10">
-      <div class="space-y-4">
-        <h3 class="text-xl font-bold text-amber-800 uppercase tracking-wider">Trichy Sabhai</h3>
-        <p class="text-gray-700 leading-relaxed">
-          123, Olineri Street,<br />
-          Near Main Temple,<br />
-          Trichy, Tamil Nadu - 620001
-        </p>
-        <div class="pt-4 space-y-2 text-sm">
-          <p><strong>Phone:</strong> <a href="tel:+919876543210" class="text-blue-600 hover:underline">+91 98765 43210</a></p>
-          <p><strong>Email:</strong> info@olineri.org</p>
-        </div>
-      </div>
-
-      <div class="space-y-4">
-        <h3 class="text-xl font-bold text-amber-800 uppercase tracking-wider">Chennai Sabhai</h3>
-        <p class="text-gray-700 leading-relaxed">
-          45, Vallalaar Avenue,<br />
-          T. Nagar,<br />
-          Chennai, Tamil Nadu - 600017
-        </p>
-        <div class="pt-4 space-y-2 text-sm">
-          <p><strong>Phone:</strong> <a href="tel:+919876543211" class="text-blue-600 hover:underline">+91 98765 43211</a></p>
-          <p><strong>Email:</strong> chennai@olineri.org</p>
-        </div>
-      </div>
+<BaseLayout title="Contact Us" lang="en">
+  <div class="max-w-6xl mx-auto py-12 px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-[#8B4513] mb-4">Get in Touch</h2>
+      <p class="text-[#B8860B] italic text-lg">"Service to living beings is the path to Divine Grace."</p>
+      <div class="h-1 w-24 bg-[#FFD700] mx-auto mt-6"></div>
     </div>
 
-    <div class="mt-20 p-8 bg-amber-50 rounded-xl border border-amber-100 text-center">
-      <h3 class="text-lg font-bold text-amber-900 mb-2">Visit Our Sabhai</h3>
-      <p class="text-gray-600">Our halls are open for meditation and spiritual discourse daily from 6:00 AM to 8:00 PM. All are welcome regardless of caste or creed.</p>
+    <div class="grid md:grid-cols-2 gap-12">
+      
+      <div class="bg-white p-8 rounded-2xl border border-[#FFD700]/30 shadow-lg hover:shadow-xl transition-shadow">
+        <h3 class="text-2xl font-bold text-[#8B4513] mb-6 flex items-center gap-3">
+          <span class="text-3xl">🏛️</span>Olineri Peedam
+        </h3>
+        <div class="space-y-4 text-gray-700">
+          <p class="flex items-start gap-3">
+            <strong class="text-[#B8860B]">Address:</strong> 
+            <span>Ambalavaanar Kudil,<br>No.10/11, New Street, Vinayagapuram, Ambattur OT, Chennai - 600053<br/> Tamil Nadu</span>
+          </p>
+          <p class="flex items-center gap-3">
+            <strong class="text-[#B8860B]">Phone:</strong> 
+            <a href="tel:+919600034710" class="hover:text-[#D4AF37]">+91 96000 34710</a>
+          </p>
+        </div>
+
+        <div class="mt-8 rounded-xl overflow-hidden h-64 border border-gray-100">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d485.69137252877937!2d80.15099816019828!3d13.128871895075422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5263042a76416d%3A0xabc40e2f85891864!2sOlineri%20Peedam!5e0!3m2!1sen!2sin!4v1777216498763!5m2!1sen!2sin" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded-2xl border border-[#FFD700]/30 shadow-lg hover:shadow-xl transition-shadow">
+        <h3 class="text-2xl font-bold text-[#8B4513] mb-6 flex items-center gap-3">
+          <span class="text-3xl">🏛️</span>Olineri Peedam, Trichy
+        </h3>
+        <div class="space-y-4 text-gray-700">
+          <p class="flex items-start gap-3">
+            <strong class="text-[#B8860B]">Address:</strong> 
+            <span>5, Chola Avenue,<br>Kallanai Road, Thiruverumbur<br/>Trichy - 620013<br/> Tamil Nadu</span>
+          </p>
+          <p class="flex items-center gap-3">
+            <strong class="text-[#B8860B]">Phone:</strong> 
+            <a href="tel:+918220931928" class="hover:text-[#D4AF37]">+91 82209 31928</a>
+          </p>
+        </div>
+        
+        <div class="mt-8 rounded-xl overflow-hidden h-64 border border-gray-100">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.189087489129!2d78.76966361416419!3d10.7968253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf373379bdac5%3A0x19e4ff4579927bd6!2sManitham%20Homeo%20Healing%20Centre!5e0!3m2!1sen!2sin!4v1777217098188!5m2!1sen!2sin" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      
     </div>
   </div>
 </BaseLayout>
