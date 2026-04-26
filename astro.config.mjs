@@ -6,3 +6,4 @@ export default defineConfig({
   base: '/', // This must match your repo name exactly
   integrations: [tailwind()]
 });
+// Force rebuild for custom domain v2
