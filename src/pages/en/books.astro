@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { books } from '../../data/books.js';
+---
+
+<BaseLayout lang="en" title="Books">
+  <h2 class="text-3xl font-bold text-amber-900 mb-8 border-b pb-2">Our Publications</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {books.map((book) => (
+      <div class="border border-amber-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+        <div class="h-64 w-full bg-gray-50 flex items-center justify-center p-4 border-b border-amber-50">
+          <img 
+            src={book.image} 
+            alt={book.titleEn} 
+            class="h-full w-auto object-contain shadow-md hover:scale-105 transition-transform duration-300" 
+          />
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg text-amber-900">{book.titleEn}</h3>
+          <p class="text-sm text-gray-600 mt-2 line-clamp-2">{book.descEn}</p>
+          <div class="mt-4 flex justify-between items-center">
+            <span class="text-xl font-bold text-green-700">MRP: {book.price}</span>
+            <button class="bg-amber-600 text-white px-4 py-2 rounded text-sm hover:bg-amber-700">
+              Order Now
+            </button>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</BaseLayout>

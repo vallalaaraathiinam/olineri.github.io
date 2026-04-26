@@ -1,0 +1,83 @@
+---
+const { lang, title } = Astro.props;
+const isTamil = lang === 'ta';
+
+// 1. Get the current URL path
+const { pathname } = Astro.url;
+
+// 2. Logic to calculate the "Opposite" page link
+// This replaces /en/ with /ta/ or vice versa, keeping the rest of the URL
+const toggleLink = isTamil 
+  ? pathname.replace('/ta/', '/en/') 
+  : pathname.replace('/en/', '/ta/');
+
+// Links based on your FR
+const menuLinks = [
+  { en: 'Home', ta: 'முகப்பு', url: `/${lang}/` },
+  { en: 'About us', ta: 'எங்களைப் பற்றி', url: `/${lang}/about` },
+  { en: 'Books', ta: 'புத்தகங்கள்', url: `/${lang}/books` },
+  { en: 'Services', ta: 'சேவைகள்', url: `/${lang}/services` },
+  { en: 'Learn', ta: 'கற்க', url: `/${lang}/learn` },
+  { en: 'Contact', ta: 'தொடர்பு', url: `/${lang}/contact` },
+  { en: 'Gallery', ta: 'புகைப்படங்கள்', url: `/${lang}/gallery` },
+  { en: 'Articles', ta: 'கட்டுரைகள்', url: `/${lang}/articles` },
+];
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} | Vallalaar Aathi Inam</title>
+    <style is:global>
+      @import url('https://fonts.googleapis.com/css2?family=Arima:wght@400;700&display=swap');
+      body { font-family: 'Arima', sans-serif; }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    
+    <header class="border-b border-amber-100">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <img src="/images/vallalaar.jpg" alt="Vallalaar" class="h-16 w-16 md:h-20 md:w-20 object-contain shadow-sm rounded" />
+        <img src="/images/emblem.png" alt="Organisation Emblem" class="h-20 w-20 md:h-28 md:w-28 object-contain" />
+        <img src="/images/founder.jpg" alt="Founder" class="h-16 w-16 md:h-20 md:w-20 object-contain shadow-sm rounded" />
+      </div>
+
+      <div class="text-center px-4 mb-4">
+        <h1 class="text-2xl md:text-3xl font-bold text-amber-900 uppercase tracking-wide">
+          Vallalaar Aathi Inam
+        </h1>
+        <p class="text-amber-700 italic text-sm md:text-base mt-1">
+          {isTamil ? "ஒளிநெறி - மரணமில்லா பெருவாழ்வு" : "The Path of Light - Immortal Great Life"}
+        </p>
+      </div>
+
+      <nav class="bg-amber-50 border-t border-amber-200">
+        <div class="max-w-6xl mx-auto px-2">
+          <div class="flex flex-wrap justify-center gap-1 md:gap-4 py-2">
+            {menuLinks.map(link => (
+              <a href={link.url} class="px-3 py-1 text-xs md:text-sm font-semibold hover:bg-amber-100 rounded transition-colors text-amber-900">
+                {isTamil ? link.ta : link.en}
+              </a>
+            ))}
+            <a href={toggleLink} class="px-3 py-1 text-xs md:text-sm font-bold text-blue-700 border-l border-amber-300 ml-2">
+              {isTamil ? 'ENGLISH' : 'தமிழ்'}
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-10">
+      <slot />
+    </main>
+
+    <footer class="bg-gray-100 border-t border-amber-200 mt-20 py-10">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <img src="/images/emblem.png" alt="Logo" class="h-10 mx-auto opacity-40 grayscale mb-4" />
+        <p class="text-sm text-gray-600">© 2026 Vallalaar Aathi Inam</p>
+        <p class="text-xs text-gray-500 mt-2">Trichy & Chennai Sabhai</p>
+      </div>
+    </footer>
+  </body>
+</html>

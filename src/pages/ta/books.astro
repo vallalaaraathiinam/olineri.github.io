@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { books } from '../../data/books.js';
+---
+
+<BaseLayout lang="ta" title="புத்தகங்கள்">
+  <h2 class="text-3xl font-bold text-amber-900 mb-8 border-b pb-2">எமது வெளியீடுகள்</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {books.map((book) => (
+      <div class="border border-amber-100 rounded-lg overflow-hidden shadow-sm bg-white">
+        <div class="h-64 w-full bg-gray-50 flex items-center justify-center p-4 border-b border-amber-50">
+          <img 
+            src={book.image} 
+            alt={book.titleTa} 
+            class="h-full w-auto object-contain shadow-md hover:scale-105 transition-transform duration-300" 
+          />
+        </div>
+        <div class="p-4 text-right">
+          <h3 class="font-bold text-lg text-amber-900">{book.titleTa}</h3>
+          <p class="text-sm text-gray-600 mt-2">{book.descTa}</p>
+          <div class="mt-4 flex justify-between items-center flex-row-reverse">
+            <span class="text-xl font-bold text-green-700">விலை: {book.price}</span>
+            <button class="bg-amber-600 text-white px-4 py-2 rounded text-sm font-bold">
+              வாங்க
+            </button>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</BaseLayout>
