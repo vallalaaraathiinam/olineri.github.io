@@ -29,40 +29,58 @@ const menuLinks = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title} | Vallalaar Aathi Inam</title>
-    <style is:global>
-      @import url('https://fonts.googleapis.com/css2?family=Arima:wght@400;700&display=swap');
-      body { font-family: 'Arima', sans-serif; }
-    </style>
+      <style is:global>
+        /* Existing body styles... */
+        body { 
+          background-color: #FFFDF0; 
+          color: #3E2F22;
+          font-family: 'Arima', sans-serif;
+        }
+
+        /* The Header Glow Effect */
+        .header-radiance {
+          background: linear-gradient(180deg, #FFF9C4 0%, #FFFDF0 100%);
+          border-bottom: 2px solid #FFD700;
+        }
+
+        /* ... other styles ... */
+      </style>
   </head>
   <body class="bg-white text-gray-900">
     
-    <header class="border-b border-amber-100">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <img src="/images/vallalaar.jpg" alt="Vallalaar" class="h-16 w-16 md:h-20 md:w-20 object-contain shadow-sm rounded" />
-        <img src="/images/emblem.png" alt="Organisation Emblem" class="h-20 w-20 md:h-28 md:w-28 object-contain" />
-        <img src="/images/founder.jpg" alt="Founder" class="h-16 w-16 md:h-20 md:w-20 object-contain shadow-sm rounded" />
+    <header class="header-radiance w-full sticky top-0 z-50 shadow-sm">
+      <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col items-center text-center">
+        
+        <div class="w-full flex justify-between items-center mb-8">
+          <img src="/images/vallalaar.jpg" alt="Vallalaar" class="h-16 w-16 md:h-32 md:w-32 object-contain drop-shadow-md" />
+          <img src="/images/emblem.png" alt="Emblem" class="h-16 w-16 md:h-32 md:w-32 object-contain drop-shadow-lg" />
+          <img src="/images/founder.jpg" alt="Founder" class="h-16 w-16 md:h-32 md:w-32 object-contain drop-shadow-md" />
+        </div>
+
+        <div class="space-y-2">
+          <h1 class="text-3xl md:text-5xl font-bold text-[#8B4513] uppercase tracking-tight" style="font-family: 'Playfair Display', serif;">
+            {isTamil ? "வள்ளலார் ஆதி இனம்" : "Vallalaar Aathi Inam"}
+          </h1>
+          <p class="text-[#B8860B] italic text-base md:text-xl font-medium">
+            {isTamil ? "எதுவும் என்னால் இல்லை, எதுவும் எனது இல்லை" : "Nothing is because of me, Nothing belongs to me"}
+          </p>
+        </div>
       </div>
 
-      <div class="text-center px-4 mb-4">
-        <h1 class="text-2xl md:text-3xl font-bold text-amber-900 uppercase tracking-wide">
-          {isTamil ? "வள்ளலார் ஆதி இனம்" : "Vallalaar Aathi Inam"}
-        </h1>
-        <p class="text-amber-700 italic text-sm md:text-base mt-1">
-          {isTamil ? "எதுவும் என்னால் இல்லை, எதுவும் எனது இல்லை" : "Nothing is because of me, Nothing belongs to me"}
-        </p>
-      </div>
-
-      <nav class="bg-amber-50 border-t border-amber-200">
-        <div class="max-w-6xl mx-auto px-2">
-          <div class="flex flex-wrap justify-center gap-1 md:gap-4 py-2">
+      <nav class="bg-[#FFEB3B]/10 border-t border-[#FFD700]/40">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+          <div class="flex flex-wrap justify-start md:justify-center items-center gap-4 md:gap-8">
             {menuLinks.map(link => (
-              <a href={link.url} class="px-3 py-1 text-xs md:text-sm font-semibold hover:bg-amber-100 rounded transition-colors text-amber-900">
+              <a href={link.url} class="text-[#8B4513] font-bold text-sm md:text-base hover:text-[#B8860B] transition-colors whitespace-nowrap">
                 {isTamil ? link.ta : link.en}
               </a>
             ))}
-            <a href={toggleLink} class="px-3 py-1 text-xs md:text-sm font-bold text-blue-700 border-l border-amber-300 ml-2">
-              {isTamil ? 'ENGLISH' : 'தமிழ்'}
-            </a>
+            
+            <div class="border-l border-[#FFD700] pl-4 ml-2">
+              <a href={toggleLink} class="bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-black hover:bg-[#B8860B] transition-all shadow-md">
+                {isTamil ? 'ENGLISH' : 'தமிழ்'}
+              </a>
+            </div>
           </div>
         </div>
       </nav>
