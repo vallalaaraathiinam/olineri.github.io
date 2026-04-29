@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { books } from '../../data/books.js';
 ---
@@ -9,11 +10,22 @@ import { books } from '../../data/books.js';
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {books.map((book) => (
       <div class="border border-amber-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
-        <div class="h-64 w-full bg-gray-50 flex items-center justify-center p-4 border-b border-amber-50">
+        <!--<div class="h-64 w-full bg-gray-50 flex items-center justify-center p-4 border-b border-amber-50">
           <img 
             src={book.image} 
             alt={book.titleEn} 
             class="h-full w-auto object-contain shadow-md hover:scale-105 transition-transform duration-300" 
+          />
+        </div>-->
+        <div class="h-64 w-full bg-gray-50 flex items-center justify-center p-4 border-b border-amber-50">
+          <Image 
+            src={book.image} 
+            alt={book.titleEn} 
+            width={300} 
+            height={400}
+            format="webp"
+            quality="mid"
+            class="h-full w-auto object-contain shadow-md hover:scale-110 transition-transform duration-300" 
           />
         </div>
         <div class="p-4">
@@ -22,7 +34,7 @@ import { books } from '../../data/books.js';
           <div class="mt-4 flex justify-between items-center">
             <span class="text-xl font-bold text-green-700">MRP: {book.price}</span>
             <a 
-              href={`https://wa.me/919600034710?text=Vanakkam. I would like to order the book: ${book.titleEn}`}
+              href={`https://wa.me/918610692350?text=Vanakkam. I would like to order the book: ${book.titleEn}`}
               target="_blank"
               rel="noopener noreferrer"
               class="flex items-center gap-2 bg-[#25D366] text-white px-2 py-1 rounded text-sm font-bold hover:bg-[#128C7E] transition-all shadow-sm"
