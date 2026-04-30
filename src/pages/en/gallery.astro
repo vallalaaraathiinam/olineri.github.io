@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+// Temporary image array - replace with your actual file names
+const images = [
+  { url: '/images/gallery1.jpg', alt: 'Trichy Sabhai' },
+  { url: '/images/gallery2.jpg', alt: 'Meditation Hall' },
+  { url: '/images/gallery3.jpg', alt: 'Annadhanam Service' },
+  { url: '/images/gallery4.jpg', alt: 'Spiritual Discourse' },
+];
+---
+<BaseLayout lang="en" title="Gallery">
+  <h2 class="text-3xl font-bold text-amber-900 mb-8 border-b pb-2">Photo Gallery</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {images.map(img => (
+      <div class="aspect-square overflow-hidden rounded-lg bg-gray-100 border border-amber-100 hover:shadow-lg transition-shadow">
+        <img src={img.url} alt={img.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+    ))}
+  </div>
+</BaseLayout>

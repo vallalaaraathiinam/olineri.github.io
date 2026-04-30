@@ -1,0 +1,89 @@
+/* Import Sacred Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --saffron: #FF9933;
+  --maroon: #800000;
+  --cream: #FFFCF5;
+  --text-dark: #2D3748;
+}
+
+/* Global Reset & Base Styles */
+body {
+  background-color: var(--cream);
+  font-family: 'Lora', serif;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Beautiful Tamil Typography */
+[lang="ta"] {
+  font-family: 'Mukta Malar', sans-serif;
+  line-height: 1.8;
+}
+
+/* Sacred Headings */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--maroon);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Navigation Styling */
+header {
+  background: white;
+  border-bottom: 4px solid var(--saffron);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--maroon);
+}
+
+.logo-saffron {
+  color: var(--saffron);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  margin-left: 1.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--saffron);
+}
+
+/* The Language Toggle Button */
+.lang-btn {
+  background: var(--maroon);
+  color: white !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.lang-btn:hover {
+  transform: scale(1.05);
+  background: #a00000;
+}
+
+/* Layout Container */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
