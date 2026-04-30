@@ -5,19 +5,100 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <BaseLayout title="பயில்க | ஒளிநெறி" lang="ta">
   <section class="max-w-4xl mx-auto px-6 py-16">
     <h1 class="text-4xl font-bold text-[#800000] mb-8">ஞானப் பயிற்சி</h1>
+    
     <div class="prose prose-lg text-gray-700">
-      <p class="mb-6 font-tamil">
+      <p class="mb-10 font-tamil">
         வள்ளலார் காட்டிய சுத்த சன்மார்க்க நெறிகளையும், திருவருட்பாவின் சாரத்தையும் இங்கே ஆழமாகப் பயிலலாம்.
       </p>
-      
-      <div class="grid md:grid-cols-2 gap-8 mt-12">
-        <div class="p-8 bg-white border-t-4 border-[#FF9933] shadow-sm rounded-b-lg">
-          <h2 class="text-2xl font-bold text-[#800000] mb-3">ஜீவகாருண்யம்</h2>
-          <p>ஆன்ம நேய ஒருமைப்பாட்டின் முதல் படியான உயிரிரக்கத்தைப் பற்றி அறிதல்.</p>
+
+      <!-- Combined Training and Q&A Section -->
+      <div class="bg-amber-50 p-8 rounded-lg border border-amber-200 mb-12 space-y-10">
+        
+        <!-- Part 1: Training List -->
+        <div>
+          <h2 class="text-2xl font-bold text-[#800000] mb-6">வள்ளலார் ஆதினத்தில் வழங்கப்படும் பயிற்சிகள்:</h2>
+          <ul class="list-decimal list-inside space-y-3 text-lg font-medium text-gray-800">
+            <li>தீபத்தில் தெய்வ பாவனை பயிற்சி</li>
+            <li>சார்பொழுக்கப் பயிற்சி</li>
+            <li>ஐந்தொழுக்கப்பயிற்சி</li>
+            <li>இறைமை உறவு பயிற்சி</li>
+            <li>திருவடி ஞானம் மற்றும் திருவடி தீட்சை</li>
+          </ul>
         </div>
-        <div class="p-8 bg-white border-t-4 border-[#FF9933] shadow-sm rounded-b-lg">
-          <h2 class="text-2xl font-bold text-[#800000] mb-3">அருட்பெருஞ்ஜோதி</h2>
-          <p>இறைவனை ஒளி வடிவில் காணும் ஞான மார்க்கத்தைப் பயிலுதல்.</p>
+
+        <hr class="border-amber-200" />
+
+        <!-- Part 2: Video Q&A -->
+        <div class="space-y-12">
+          
+          <!-- Q&A 1 -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-[#800000] flex items-start">
+              தீபத்தில் தெய்வ பாவனை  - ஓர் அறிமுகம்
+            </h3>
+            <div class="aspect-video">
+              <iframe 
+                class="w-full h-full rounded shadow-sm border border-gray-200"
+                src="https://www.youtube.com/embed/Wnx4BfcM2wg" 
+                title="தீபத்தில் தெய்வ பாவனை - ஓர் அறிமுகம்"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Q&A 2 -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-[#800000] flex items-start">
+              தீபத்தில் தெய்வ பாவனை பயிற்சி எவ்வாறு செய்வது?
+            </h3>
+            <div class="aspect-video">
+              <iframe 
+                class="w-full h-full rounded shadow-sm border border-gray-200"
+                src="https://www.youtube.com/embed/iNfQkijvv0M" 
+                title="தீபத்தில் தெய்வ பாவனை எவ்வாறு செய்வது?"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Q&A 3 -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-[#800000] flex items-start">
+              சார்பொழுக்கப் பயிற்சி என்றால் என்ன?
+            </h3>
+            <div class="aspect-video">
+              <iframe 
+                class="w-full h-full rounded shadow-sm border border-gray-200"
+                src="https://www.youtube.com/embed/pP_AsgnzDHU" 
+                title="சார்பொழுக்கப் பயிற்சி"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Q&A 4 -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-[#800000] flex items-start">
+              ஐந்தொழுக்கப் பயிற்சி என்றால் என்ன?
+            </h3>
+            <div class="aspect-video">
+              <iframe 
+                class="w-full h-full rounded shadow-sm border border-gray-200"
+                src="https://www.youtube.com/embed/jDvDeDt_4DY" 
+                title="ஐந்தொழுக்கப்பயிற்சி"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

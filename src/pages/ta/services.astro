@@ -10,21 +10,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </header>
 
     <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-amber-50 p-8 rounded-2xl border border-amber-100 text-right">
-        <h3 class="text-2xl font-bold text-amber-800 mb-4">திருச்சி சபை 📍</h3>
+      <div class="bg-amber-50 p-8 rounded-2xl border border-amber-100 text-left">
+        <h3 class="text-2xl font-bold text-amber-800 mb-4">📍 திருச்சி சபை</h3>
         <ul class="space-y-4 text-gray-700">
-          <li><strong>அன்னதானம்:</strong> ஏழைகளுக்கும் ஆன்மீக அன்பர்களுக்கும் தொடர்ச்சியான உணவு வழங்கல்.</li>
-          <li><strong>மாதாந்திர கூட்டங்கள்:</strong> விசேஷ தினங்களில் நடைபெறும் ஆன்மீகச் சங்கமம்.</li>
-          <li><strong>தியான வகுப்புகள்:</strong> அமைதியான சூழலில் ஒளிநெறி தியானப் பயிற்சிகள்.</li>
+          <li class="flex gap-3">
+            <span class="text-amber-500">✦</span>
+            <div><strong>அன்னதானம்:</strong> ஏழைகளுக்கும் ஆன்மீக அன்பர்களுக்கும் தொடர்ச்சியான உணவு வழங்கல்</div>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-amber-500">✦</span>
+            <div><strong>தினசரி சத்சங்கம்:</strong> தினந்தோறும் அதிகாலை சத்சங்கம் மற்றும் தீபப் பயிற்சி. இரவு நேரங்களில் உபதேசங்களைக் கேட்டல்.</div>
+          </li>
         </ul>
       </div>
 
-      <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 text-right">
-        <h3 class="text-2xl font-bold text-blue-800 mb-4">சென்னை சபை 📍</h3>
+      <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 text-left">
+        <h3 class="text-2xl font-bold text-blue-800 mb-4">📍 சென்னை சபை</h3>
         <ul class="space-y-4 text-gray-700">
-          <li><strong>வாராந்திர வகுப்புகள்:</strong> வள்ளலார் கொள்கைகள் மற்றும் ஒளிநெறி பற்றிய விரிவான விளக்கங்கள்.</li>
-          <li><strong>புத்தக வெளியீடு:</strong> எமது 13 முக்கிய வெளியீடுகளின் விநியோகம்.</li>
-          <li><strong>ஆன்மீக ஆலோசனை:</strong> புதியவர்களுக்கு வழிகாட்டும் தனிப்பட்ட அமர்வுகள்.</li>
+          <li class="flex gap-3">
+            <span class="text-blue-500">✦</span>
+            <div><strong>வாராந்திர வகுப்புகள்:</strong> வள்ளலார் கொள்கைகள் மற்றும் ஒளிநெறி பற்றிய விரிவான விளக்கங்கள்.</div>
+          </li>
+          <!--<li class="flex gap-3">
+            <span class="text-blue-500">✦</span>
+            <div><strong>புத்தக வெளியீடு:</strong> எமது 13 முக்கிய வெளியீடுகளின் விநியோகம்.</div>
+          </li>-->
+          <li class="flex gap-3">
+            <span class="text-blue-500">✦</span>
+            <div><strong>ஆன்மீக ஆலோசனை:</strong> புதியவர்களுக்கு வழிகாட்டும் தனிப்பட்ட அமர்வுகள்.</div>
+          </li>
         </ul>
       </div>
     </div>
