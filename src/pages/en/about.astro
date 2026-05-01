@@ -3,12 +3,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout lang="en" title="About Us">
-  <div class="prose prose-amber max-w-none space-y-10">
-    <h2 class="text-3xl font-bold text-amber-900 border-b-2 border-amber-200 pb-2">About Vallalaar Aathi Inam</h2>
+  <div class="max-w-6xl mx-auto space-y-12 py-10">
+    <!-- Main Title -->
+    <h2 class="text-4xl font-bold text-amber-900 border-b-4 border-amber-200 pb-4 px-4 md:px-0">
+      About Vallalar Adhiyinam
+    </h2>
     
-    <section>
-      <h3 class="text-xl font-semibold text-amber-800">Traditional Lineage of Gurus (Guru Parampara)</h3>
-      <ol class="list-decimal list-inside leading-relaxed text-gray-700 space-y-2 mt-4">
+    <!-- Section 1: Guru Parampara (White Background) -->
+    <section class="bg-white p-6 md:p-10 rounded-3xl border border-amber-100 shadow-sm">
+      <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
+        <h3 class="text-2xl font-bold text-amber-900 mb-1">
+          Traditional Lineage of Gurus (Guru Parampara)
+        </h3>
+        <p class="text-lg font-medium text-amber-800 italic">Sacred Chain of Divine Wisdom</p>
+      </div>
+      
+      <ol class="list-decimal list-inside leading-relaxed text-gray-700 space-y-3 mt-4">
         <li>I surrender at the divine feet of the Almighty Supreme Being, the Lord of Infinite Grace (Arutperunjothi)!</li>
         <li>I surrender at the divine feet of the Primordial (Adhi) Maha Yogi, who manifested as the first and foremost field of divine movement!</li>
         <li>I surrender at the divine feet of the Primordial (Adhi) Guru Nandiyam Peruman of the Sacred Kailash Lineage.</li>
@@ -21,101 +31,108 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <li>I surrender at the divine feet of Balayananthar Swamigal.</li>
         <li>I surrender at the divine feet of Jaya Veera Aathi Nayak Swamigal.</li>
         <li>I surrender at the divine feet of Jyoti Ramasamy Desikar Swamigal.</li>
-        <li>With mind, speech, and body, we worship the traditional Gurus who appeared within the divine heart of Sri Sivagurunatha Desikar to dispel the darkness of our ignorance. We also worship the divine feet of the Thiruvarutprakasa Vallal Peruman, who descended from the lineage of Thirugnanasambandar and provided sublime teachings so that all souls in this world may attain the Path of Light (Olineri).</li>
+        <li class="pt-4 border-t border-amber-50">
+          With mind, speech, and body, we worship the traditional Gurus who appeared within the divine heart of <b>Shri Sivagurunatha Desikar</b> to dispel the darkness of our ignorance. We also worship the divine feet of the Thiruvarutprakasa Vallal Peruman, who descended from the lineage of Thirugnanasambandar and provided sublime teachings so that all souls in this world may attain the Path of Light (Olineri).
+        </li>
       </ol>
     </section>
 
-    <!-- Founder Section -->
-    <section class="bg-amber-50 p-6 md:p-10 rounded-2xl border border-amber-100 shadow-sm">
-      <div class="flex flex-col md:flex-row gap-10 items-start">
+    <!-- Section 2: Founder Section (Amber Background with Reflow) -->
+    <section class="bg-amber-50 p-6 md:p-10 rounded-3xl border border-amber-200 shadow-md overflow-hidden">
+      <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
+        <h3 class="text-2xl font-bold text-amber-900 mb-1">
+          Ancient Gurukula Tradition’s Wisdom Preceptor
+        </h3>
+        <p class="text-lg font-medium text-amber-800 italic">Shri Sivagurunatha Desikar</p>
+      </div>
+
+      <!-- Image Floated Left -->
+      <div class="float-none md:float-left w-full md:w-1/3 md:mr-10 mb-6 text-center">
+        <img 
+          src="/images/header/founder.jpg" 
+          alt="Shri Sivagurunatha Desikar" 
+          class="w-full h-auto aspect-[2/3] object-cover rounded-2xl shadow-xl border-4 border-white"
+        />
+      </div>
+
+      <!-- Text Content Wrapping Around Image -->
+      <div class="text-gray-700 leading-relaxed space-y-4">
+        <p>
+          From a very young age, our Guru, <b>Shri Sivagurunatha Desikar</b>, accepted Vallal Peruman as his mental preceptor. Connecting with the Divine through intuition, he has been sharing profound universal truths with the world.
+        </p>
+        <p>
+          Through the ancient Gurukula tradition, he reveals the deep mysteries of human functioning, the purpose of human life, and the secrets of birth and death. His teachings encompass the path to Deathless Great Life (Maranamilla Peruvazhvu), the ultimate truths about the Being (Jivan), the Soul (Atman), the Almighty, and the Universe, as well as the rare secrets of their interconnectedness.
+        </p>
+        <p>
+          Operating as a divine field where the Almighty manifests through intuitive mastery, he provides these universal truths to the world through the organization <b>Vallalar Adhiyinam</b>. For those who have attained spiritual maturity, he also grants <b>Thiruvadi Gnanam</b> and <b>Thiruvadi Deeksha</b> (Sacred Initiation).
+        </p>
         
-        <!-- Portrait Founder Photo -->
-        <div class="w-full md:w-1/3 flex-shrink-0">
-          <img 
-            src="/images/header/founder.jpg" 
-            alt="Shri Sivagurunatha Desikar" 
-            class="w-full h-auto aspect-[2/3] object-cover rounded-xl shadow-lg border-4 border-white"
-          />
-        </div>
-
-        <!-- Founder Intro & Teachings -->
-        <div class="md:w-2/3 space-y-6">
-          <div>
-            <h3 class="text-2xl font-bold text-amber-900 mb-2">
-              Ancient Gurukula Tradition’s Wisdom Preceptor
-            </h3>
-            <p class="text-lg font-medium text-amber-800 italic">Shri Sivagurunatha Desikar</p>
-          </div>
-
-          <div class="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              From a very young age, our Guru, <b>Shri Sivagurunatha Desikar</b>, accepted Vallal Peruman as his mental preceptor. Connecting with the Divine through intuition, he has been sharing profound universal truths with the world.
-            </p>
-            
-            <p>
-              Through the ancient Gurukula tradition, he reveals the deep mysteries of human functioning, the purpose of human life, and the secrets of birth and death. His teachings encompass the path to Deathless Great Life (Maranamilla Peruvazhvu), the ultimate truths about the Being (Jivan), the Soul (Atman), the Almighty, and the Universe, as well as the rare secrets of their interconnectedness.
-            </p>
-
-            <p>
-              Operating as a divine field where the Almighty manifests through intuitive mastery, he provides these universal truths to the world through the organization <b>Vallalar Aadhiyinam</b>. For those who have attained spiritual maturity, he also grants <b>Thiruvadi Gnanam</b> and <b>Thiruvadi Deeksha</b> (Sacred Initiation).
-            </p>
-
-            <div class="bg-white/60 p-4 rounded-lg border-l-4 border-[#FF9933]">
-              <p class="font-semibold text-amber-900">Come!</p>
-              <p>
-                By the Grace of the Guru and the Supreme Infinite Grace, let us dispel the darkness of ignorance and realize the supreme wisdom known as <b>Olineri</b> (The Path of Light).
-              </p>
-            </div>
-          </div>
+        <div class="bg-white/80 p-6 rounded-xl border-l-4 border-[#FF9933] shadow-sm clear-none">
+          <p class="font-bold text-amber-900 text-xl mb-1">Come!</p>
+          <p>
+            By the Grace of the Guru and the Supreme Infinite Grace, let us dispel the darkness of ignorance and realize the supreme wisdom known as <b>Olineri</b> (The Path of Light).
+          </p>
         </div>
       </div>
-    </section>
-  <!--
-    <section>
-      <h3 class="text-xl font-semibold text-amber-800">Vallalaar Aathi Inam</h3>
-      <p class="leading-relaxed text-gray-700">
-        The Aadhi Maha Yogi, the Supreme Guru of the ancient Gurukula tradition, sowed the secrets of Universal Supreme Truths in five places.
-      </p>
-      <ol class="list-decimal list-inside leading-relaxed text-gray-700 space-y-2 mt-4">
-          <li>He concealed them within divine forms of temple and in the related ritualistic worship practices.</li>
-          <li>He sowed them within language—seeding intellectual explanations in Tamil and vibrational/movement explanations in Sanskrit.</li>
-          <li>He embedded these Supreme Truths within the way of life (culture) that humans ought to lead.</li>
-          <li>He reveals these truths by manifesting as the Initiating Guru (Upadesa Guru) in ancient Gurukula classes.</li>
-          <li>For those who have attained maturity in their inward journey, He continues these teachings in the form of intuition.</li>
-      </ol>
-      <p class="leading-relaxed text-gray-700">
-        Vallalaar Aathi Inam is the organization dedicated to revealing these rare teachings to humanity, which were attained by striving through these five paths established by the Aadhi Maha Yogi.
-      </p>
-    </section>
+      <div class="clear-both"></div>
     </section>
 
-    <section>
-      <h3 class="text-xl font-semibold text-amber-800">What is Olineri?</h3>
-      <p class="leading-relaxed text-gray-700">
-        In the name of devotion, crowds have surged in temples today. Similarly, in the name of wisdom, ashrams are overflowing with people. Yet, human society is losing its humanity and living without clarity. Despite accepting and gaining understanding through teachings, books, spiritual masters, discourses, and meditation techniques, humanity suffers, unable to practice them and live a fulfilling life. <b>Oli-Neri</b> is the way of life that prompts an individual to investigate the root cause within themselves, transforming a human into a great being and turning them into a divine field where the Almighty manifests.
-      </p>
-    </section>
-  
-    <section>
-      <h3 class="text-xl font-semibold text-amber-800">3. Our Founder</h3>
-      <p class="leading-relaxed text-gray-700">
-        The organization was founded by a visionary dedicated to the principles of Suddha Sanmargam. Through years of meditation and study, our founder established these halls to provide a space for seekers to learn the practical aspects of achieving the purpose of birth.
-      </p>
-    </section>
+    <!-- Section 3: Emblem Section (White Background) -->
+    <section class="bg-white p-6 md:p-10 rounded-3xl border border-amber-100 shadow-sm overflow-hidden">
+      <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
+        <h3 class="text-2xl font-bold text-amber-900 mb-1">
+          Significance of the Divine Emblem
+        </h3>
+        <p class="text-lg font-medium text-amber-800 italic">The Symbolism of the Path of Light</p>
+      </div>
 
-    <section>
-      <h3 class="text-xl font-semibold text-amber-800">4. Chennai & Trichy Sabhai</h3>
-      <p class="leading-relaxed text-gray-700">
-        We maintain two primary spiritual halls: the Chennai Sabhai, which serves as a hub for urban practitioners, and the Trichy Sabhai, which is deeply rooted in traditional service and meditation practices.
-      </p>
-    </section>
+      <!-- Image Floated Right -->
+      <div class="float-none md:float-right w-full md:w-1/2 lg:w-2/5 md:ml-10 mb-6 text-center">
+        <img 
+          src="/images/header/emblem.png" 
+          alt="The Emblem of Vallalar Adhiyinam" 
+          class="w-full h-auto object-contain rounded-2xl p-4 bg-amber-50/30 border border-amber-100 shadow-inner"
+        />
+      </div>
 
-    <section>
-      <h3 class="text-xl font-semibold text-amber-800">5. Services Done</h3>
-      <p class="leading-relaxed text-gray-700">
-        Each Sabhai undertakes unique services. While Chennai focuses on weekly teachings and discourse, Trichy is renowned for its dedicated food donation (Annadhanam) and organizing large-scale spiritual gatherings.
-      </p>
+      <div class="text-gray-700 leading-relaxed space-y-4">
+        <p>
+          The form of <b>"Dakshinamurthy"</b> (the South-facing God) is a symbolic representation that points to the inherent nature of a Wisdom Preceptor (Guru). Among the extensive teachings conveyed by that form, the symbol of the primordial core is the <b>"Chinmudra."</b>
+        </p>
+        
+        <p>
+          <b>Chinmudra:</b> The policy emblem of the Olineri Peedam is the "Chinmudra." "Chin" refers to the Great Light (<i>Arutperunjothi</i>), representing Supreme Intelligence as the source of all. "Mudra" signifies a sign or identity, also representing the removal of concealments.
+        </p>
+
+        <p>
+          <b>Light within you, Realize to see True:</b> The phrase "The Light Within" indicates that this divine nature resides as the primordial stimulus within us. The purpose of human existence is to grasp this stimulus through intuition and attain clarity, expressed as "Realize to see True."
+        </p>
+
+        <p>
+          <b>Compassion, Humility, Sharing:</b> Every natural movement has three centers: stimulus, action, and relation. In matured human functioning, these are Divine Grace, Soulful movement, and Interdependence, represented by the values of <b>Compassion, Humility, and Sharing</b>.
+        </p>
+
+        <p>
+          <b>Thiruvatchi:</b> The flaming circle surrounding the Chinmudra is the <b>Thiruvatchi</b> (Holy Sight). It represents the eye-light of supreme purity and is a symbol of the traditional <i>Thiruvadi Gnanam</i> (Sacred Wisdom).
+        </p>
+
+        <p>
+          <b>The Seven Flames:</b> The Seven Flames represent seven distinct levels of wave-state movements. There are seven such flames situated within the circular Thiruvatchi. This grand universal movement is fundamentally wave-like in nature. In this wave-state, Light (Intelligence) serves as the stimulus, while Sound (Movement) serves as the functional action. The combination of these two elements constitutes the universal wave-state movement, which spans seven levels—from the most infinitesimal subtlety to the state of gross matter.
+        </p>
+
+        <p>
+          <b>The Sun:</b> We live with this Earth as our center, while the Earth revolves with the Sun as its center. It is because of the Sun's rays that all living beings in the world exist. Our ancestors have practiced this Sun worship for a long period. That is the "Gayatri Mantra" (I worship the Grand Effulgence that provides Light to the sunlight). This very sunlight is nothing bu the Infinite Grace Light (Arutperunjothi) brought into functional movement.
+        </p>
+
+        <p>
+          <b>Om:</b> <b>Om</b> is the combined movement of three sounds: "A", "U", and "M". These three sounds represent the wave-state vibrations of the primordial movements of the universe. The stimulus-state center sound is "A", the functional-state center sound is "U", and the relational-state center sound is "M"
+        </p>
+
+        <p>
+          <b>Olineri Peedam:</b> Olineri Peedam is the foundation established to bring the Olineri (Path of Light), traditionally followed by our ancestors, to the awareness of the entire world.
+        </p>
+      </div>
+      <div class="clear-both"></div>
     </section>
-  -->
   </div>
 </BaseLayout>
