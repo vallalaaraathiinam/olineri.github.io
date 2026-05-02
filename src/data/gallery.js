@@ -1,5 +1,27 @@
 export const galleryData = [
     {
+      eventNameEn: "Chennai Sabhai",
+      eventNameTa: "சென்னை சபை",
+      images: [
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-54-22.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-54-21.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-54-23.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-54-24 3.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-54-20.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-54-24.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-54-25 2.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-54-25.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-54-26 2.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-59-19.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-59-20 2.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-20-59-20.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-21-00-13.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-21-00-14 2.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-21-00-14.jpg', altEn: '', altTa: '' },
+        { url: '/images/gallery/Chennai/PHOTO-2026-05-01-21-02-26 3.jpg', altEn: '', altTa: '' },
+      ]
+    },
+    {
       eventNameEn: "Trichy Sabhai",
       eventNameTa: "திருச்சி சபை",
       images: [
@@ -11,7 +33,7 @@ export const galleryData = [
     },
     {
       eventNameEn: "At Vadalur",
-      eventNameTa: "வடலுரில்",
+      eventNameTa: "வடலூரில்",
       images: [
         { url: '/images/gallery/At_Vadalur/PHOTO-2026-04-29-21-44-51.jpg', altEn: '', altTa: '' },
         { url: '/images/gallery/At_Vadalur/PHOTO-2026-04-29-21-44-52 2.jpg', altEn: '', altTa: '' },
