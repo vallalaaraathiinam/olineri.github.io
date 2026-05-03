@@ -7,18 +7,18 @@ const isTamil = pathname.startsWith('/ta/');
 
 // Set dynamic content based on language
 const lang = isTamil ? "ta" : "en";
-const title = isTamil ? "பக்கம் காணப்படவில்லை" : "Page not found";
-const message = isTamil 
-  ? "நீங்கள் தேடும் பக்கம் இங்கு இல்லை." 
-  : "The page you're looking for doesn't exist.";
+const title = isTamil ? "404 - பக்கம் காணப்படவில்லை" : "404 - Page not found";
 const buttonText = isTamil ? "முகப்பு பக்கத்திற்குச் செல்ல" : "Go home";
 const homeLink = isTamil ? "/ta/" : "/en/";
+const message = isTamil ? "நீங்கள் தேடும் பக்கம் இங்கு இல்லை." : "The page you're looking for doesn't exist.";
+/*
 const descriptionText = isTamil 
   ? "நீங்கள் தேடும் பக்கம் காணப்படவில்லை. தயவுசெய்து ஒளிநெறி பீடத்தின் முகப்புப் பக்கத்திற்குத் திரும்புங்கள்." 
   : "The page you are looking for was not found. Please return to the Olineri Peedam home page.";
+*/
 ---
 
-<BaseLayout lang={lang} title={title} description={descriptionText}>
+<BaseLayout lang={lang} title={title} pageType="404">
   <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
     <h2 class="text-4xl font-bold text-amber-900">{title}</h2>
     

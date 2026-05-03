@@ -1,21 +1,31 @@
 ---
 import { Image } from 'astro:assets';
-import { SITE_CONFIG } from '../constants/seo';
+import { SITE_CONFIG, SEO_DATA } from '../constants/seo';
 
 const { 
   lang, 
   title,
-  description = lang === 'ta' 
-    ? "ஒளிநெறி பீடம் - வள்ளலார் ஆதியினம்" 
-    : "Olineri Peedam - Official website of Vallalar Adhiyinam",
-    pageType = 'index'
-  } = Astro.props;
+  pageType
+} = Astro.props;
+
+const { pathname } = Astro.url;
+
+// Get the page key (e.g., 'about', 'contact', or 'index' if empty)
+const pathSegments = pathname.split('/').filter(Boolean);
+
+let pageKey = pageType || (pathSegments.length <= 1 ? 'index' : pathSegments[1]);
+if (title.includes('404') || title.toLowerCase().includes('not found')) {
+  pageKey = '404';
+}
+
+// Fetch description from seo.js based on lang and detected pageKey
+// Fallback to 'index' if the specific page key isn't found in SEO_DATA
+const description = SEO_DATA[lang]?.[pageKey] || SEO_DATA[lang]?.index;
 
 const isTamil = lang === 'ta';
 const webTitle = isTamil ? "வள்ளலார் ஆதியினம்" : "Vallalar Adhiyinam"
 
 // Get and normalize the current URL path
-const { pathname } = Astro.url;
 const normalizedPathname = pathname.replace(/\/$/, ""); // Removes trailing slash for comparison
 
 //Logic to calculate the "Opposite" page link
