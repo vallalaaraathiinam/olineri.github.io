@@ -36,8 +36,8 @@
 }
 @font-face {
   font-family: 'Lora';
-  src: url('/fonts/lora-v37-latin-700.woff2') format('woff2');
-  font-weight: 700;
+  src: url('/fonts/lora-v37-latin-600.woff2') format('woff2');
+  font-weight: 600;
   font-display: swap;
 }
 
