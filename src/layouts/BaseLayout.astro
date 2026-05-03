@@ -1,8 +1,18 @@
 ---
 import { Image } from 'astro:assets';
+import { SITE_CONFIG } from '../constants/seo';
 
-const { lang, title } = Astro.props;
+const { 
+  lang, 
+  title,
+  description = lang === 'ta' 
+    ? "ஒளிநெறி பீடம் - வள்ளலார் ஆதியினம்" 
+    : "Olineri Peedam - Official website of Vallalar Adhiyinam",
+    pageType = 'index'
+  } = Astro.props;
+
 const isTamil = lang === 'ta';
+const webTitle = isTamil ? "வள்ளலார் ஆதியினம்" : "Vallalar Adhiyinam"
 
 // Get and normalize the current URL path
 const { pathname } = Astro.url;
@@ -23,15 +33,58 @@ const menuLinks = [
   { en: 'Contact', ta: 'தொடர்பு', url: `/${lang}/contact` },
   { en: 'Gallery', ta: 'புகைப்படங்கள்', url: `/${lang}/gallery` },
 ];
+
+// Construct URLs
+const canonicalURL = new URL(Astro.url.pathname, SITE_CONFIG.baseUrl);
+const englishURL = new URL(Astro.url.pathname.replace('/ta/', '/en/'), SITE_CONFIG.baseUrl);
+const tamilURL = new URL(Astro.url.pathname.replace('/en/', '/ta/'), SITE_CONFIG.baseUrl);
+
+// Structured Data (JSON-LD)
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vallalar Adhiyinam - Olineri Peedam",
+  "url": SITE_CONFIG.baseUrl,
+  "logo": `${SITE_CONFIG.baseUrl}/images/favicon.png`,
+  "sameAs": [
+    "https://x.com/olineri_peedam",
+    "https://www.youtube.com/@vallalaradhiyinam3286"
+  ]
+};
+
 ---
 
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>{title} | Vallalar Adhiyinam</title>
+
+    <!-- Canonical & Hreflang (Prevents Duplicate Content Penalty) -->
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={englishURL} />
+    <link rel="alternate" hreflang="ta" href={tamilURL} />
+    <link rel="alternate" hreflang="x-default" href={englishURL} />
+    
+    <!-- 2. Open Graph (WhatsApp, Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | ${webTitle}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={SITE_CONFIG.ogImage} />
+    
+    <!-- 3. Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | ${webTitle}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={SITE_CONFIG.ogImage} />
+    
+    <!-- 4. Structured Data (Schema.org) -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+    <title>{title} | {webTitle}</title>
       <style is:global>
         body { 
           background-color: #FFFDF0; 
@@ -127,7 +180,7 @@ const menuLinks = [
       <div class="max-w-6xl mx-auto px-6 text-center">
         <img src="/images/header/emblem.png" alt="Logo" class="h-10 mx-auto opacity-40 grayscale mb-4" />
         <p class="text-sm text-gray-600">
-          {isTamil ? "© 2026 வள்ளலார் ஆதியினம்" : "© 2026 Vallalar Aadhiyinam"}
+          {isTamil ? "© 2026 வள்ளலார் ஆதியினம்" : "© 2026 Vallalar Adhiyinam"}
         </p>
         <p class="text-xs text-gray-500 mt-2">
           {isTamil ? "உன்னுள் ஒளி, உணர்ந்து தெளி" : "Light within you, Realize to see True"}
