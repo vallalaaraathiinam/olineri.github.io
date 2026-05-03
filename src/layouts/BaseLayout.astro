@@ -117,6 +117,14 @@ const schemaData = {
   </head>
   <body class="bg-white text-gray-900">
     
+    <!-- Skip link: invisible until focused by keyboard Tab key -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:bg-[#8B4513] focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg"
+    >
+      {isTamil ? 'உள்ளடக்கத்திற்கு செல்' : 'Skip to content'}
+    </a>
+
     <header class="header-radiance w-full sticky top-0 z-50 shadow-sm">
       <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col items-center text-center">
         <div class="w-full flex justify-between items-center mb-4 md:mb-8">
@@ -155,7 +163,10 @@ const schemaData = {
         </div>
       </div>
 
-      <nav class="bg-[#FFEB3B]/10 border-t border-[#FFD700]/40">
+      <nav 
+        aria-label={isTamil ? 'பிரதான வழிசெலுத்தல்' : 'Main navigation'}
+        class="bg-[#FFEB3B]/10 border-t border-[#FFD700]/40"
+      >
         <div class="max-w-6xl mx-auto px-4 py-3">
           <div class="flex flex-wrap justify-start md:justify-center items-center gap-4 md:gap-8">
             {menuLinks.map(link => {
@@ -165,6 +176,7 @@ const schemaData = {
               return (
                 <a 
                   href={link.url} 
+                  aria-current={isActive ? 'page' : undefined}
                   class={`text-[#8B4513] font-bold text-sm md:text-base hover:text-[#B8860B] transition-colors whitespace-nowrap ${isActive ? 'nav-link-active' : ''}`}
                 >
                   {isTamil ? link.ta : link.en}
@@ -173,7 +185,11 @@ const schemaData = {
             })}
             
             <div class="border-l border-[#FFD700] pl-4 ml-2">
-              <a href={toggleLink} class="bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-black hover:bg-[#B8860B] transition-all shadow-md">
+              <a 
+                href={toggleLink} 
+                lang={isTamil ? 'en' : 'ta'}
+                class="bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-black hover:bg-[#B8860B] transition-all shadow-md"
+              >
                 {isTamil ? 'ENGLISH' : 'தமிழ்'}
               </a>
             </div>
@@ -182,7 +198,7 @@ const schemaData = {
       </nav>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-10">
+    <main id="main-content" class="max-w-4xl mx-auto px-6 py-10">
       <slot />
     </main>
 
