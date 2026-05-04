@@ -1,5 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Reusable Location Icon
+const LocationIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+</svg>`;
 ---
 
 <BaseLayout lang="en" title="Services">
@@ -12,7 +18,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="grid md:grid-cols-2 gap-8">
       <div class="bg-amber-50 p-8 rounded-2xl border border-amber-100 shadow-sm">
         <h3 class="text-2xl font-bold text-amber-800 mb-4 flex items-center gap-2">
-          📍 Trichy Sabhai
+          <span class="inline-flex items-center flex-shrink-0" set:html={LocationIcon} /> Trichy Sabhai
         </h3>
         <ul class="space-y-4 text-gray-700">
           <li class="flex gap-3">
@@ -28,7 +34,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 shadow-sm">
         <h3 class="text-2xl font-bold text-blue-800 mb-4 flex items-center gap-2">
-          📍 Chennai Sabhai
+          <span class="inline-flex items-center flex-shrink-0" set:html={LocationIcon} /> Chennai Sabhai
         </h3>
         <ul class="space-y-4 text-gray-700">
           <li class="flex gap-3">

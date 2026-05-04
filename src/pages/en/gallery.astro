@@ -1,6 +1,7 @@
 
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import { galleryData } from '../../data/gallery.js';
 ---
 
@@ -23,11 +24,13 @@ import { galleryData } from '../../data/gallery.js';
           {event.images.map((img) => (
             <div class="group aspect-square overflow-hidden rounded-xl bg-gray-100 border border-amber-100 shadow-sm hover:shadow-xl transition-all duration-300">
               <a href={img.url} target="_blank" rel="noopener noreferrer" class="block w-full h-full">
-                <img 
+                <Image 
                   src={img.url} 
                   alt={img.altEn} 
+                  width={400} 
+                  height={400}
+                  format="webp"
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
                 />
               </a>
             </div>

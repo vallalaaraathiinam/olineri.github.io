@@ -1,5 +1,13 @@
 // src/constants/seo.js
 
+export const SITE_CONFIG = {
+  siteName: "Vallalar Adhiyinam - Olineri Peedam",
+  baseUrl: "https://olineri.org",
+  ogImage: "https://olineri.org/images/og-main.png",
+  twitterHandle: "@olineri_peedam"
+};
+
+// meta description content
 export const SEO_DATA = {
     en: {
       index: "Welcome to Olineri Peedam, the official spiritual center of Vallalar Adhiyinam following the Path of Light.",
@@ -25,10 +33,11 @@ export const SEO_DATA = {
     }
   };
 
-  export const SITE_CONFIG = {
-    siteName: "Vallalar Adhiyinam - Olineri Peedam",
-    baseUrl: "https://olineri.org",
-    ogImage: "https://olineri.org/images/og-main.png",
-    twitterHandle: "@olineri_peedam"
+  // Dedicated constant to store contact
+  export const CONTACT_DETAILS = {
+    whatsapp_order: {
+      number: "918610692350", // International format without '+'
+      textPrefixEn: "I would like to order the book: ",
+      textPrefixTa: "இந்த புத்தகத்தை வாங்க விரும்பிகிறேன்: "
+    },
   };
-

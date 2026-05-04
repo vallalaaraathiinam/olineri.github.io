@@ -2,6 +2,10 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { books } from '../../data/books.js';
+import { CONTACT_DETAILS } from '../../constants/seo';
+
+const { whatsapp_order } = CONTACT_DETAILS;
+const messagePrefix = whatsapp_order.textPrefixEn;
 ---
 
 <BaseLayout lang="en" title="Books">
@@ -34,7 +38,7 @@ import { books } from '../../data/books.js';
           <div class="mt-4 flex justify-between items-center">
             <span class="text-xl font-bold text-green-700">MRP: {book.price}</span>
             <a 
-              href={`https://wa.me/918610692350?text=Vanakkam. I would like to order the book: ${book.titleEn}`}
+              href={`https://wa.me/${whatsapp_order.number}?text=${encodeURIComponent(messagePrefix + book.titleEn)}`}
               target="_blank"
               rel="noopener noreferrer"
               class="flex items-center gap-2 bg-[#25D366] text-white px-2 py-1 rounded text-sm font-bold hover:bg-[#128C7E] transition-all shadow-sm"
