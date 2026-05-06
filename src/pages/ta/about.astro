@@ -1,16 +1,40 @@
 ---
+/**
+ * src/pages/ta/about.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * About page — Tamil version.
+ *
+ * Three sections displayed in order:
+ *   1. Guru Parampara   — The sacred lineage of 12 Gurus
+ *   2. Founder          — Biography of Shri Sivagurunatha Desikar
+ *                         Founder image floats left on desktop, stacks on mobile
+ *   3. Emblem           — Spiritual significance of the Chinmudra emblem
+ *                         Emblem image floats right on desktop, stacks on mobile
+ *
+ * Layout pattern: float-none md:float-left/right
+ *   Used instead of CSS grid to allow text to wrap around the image
+ *   on larger screens. clear-both after each section resets the float.
+ *
+ * English equivalent: src/pages/en/about.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
+import { Image }  from 'astro:assets';
 ---
 
 <BaseLayout lang="ta" title="எங்களைப் பற்றி">
   <div class="max-w-6xl mx-auto space-y-12 py-10 font-tamil">
-    <!-- Main Title -->
+    
     <h2 class="text-4xl font-bold text-amber-900 border-b-4 border-amber-200 pb-4 px-4 md:px-0">
       வள்ளலார் ஆதியினம் பற்றி
     </h2>
     
-    <!-- Section 1: Guru Parampara (White Background) -->
+    <!-- ── Section 1: Guru Parampara ────────────────────────────────────────
+         Ordered list of 12 Gurus in the sacred lineage.
+         The final <li> (item 13) uses a top border to visually separate
+         the closing salutation from the individual Guru names.
+    ─────────────────────────────────────────────────────────────────────── -->
     <section class="bg-white p-6 md:p-10 rounded-3xl border border-amber-100 shadow-sm">
       <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
         <h3 class="text-2xl font-bold text-amber-900 mb-1">
@@ -32,13 +56,17 @@ import { Image } from 'astro:assets';
         <li>தவத்திரு பாலையானந்தர் சுவாமிகள் திருவடிகளே சரணம்</li>
         <li>தவத்திரு ஜெய வீர ஆதி நாயக் சுவாமிகள் திருவடிகளே சரணம்</li>
         <li>தவத்திரு ஜோதி ராமசாமி தேசிகர் சுவாமிகள் திருவடிகளே சரணம்</li>
+        <!-- Closing salutation — separated visually from the individual names above -->
         <li class="pt-4 border-t border-amber-50">
           தவத்திரு <b>ஸ்ரீ சிவகுருநாத தேசிகர்</b> அவர்களின் திரு உள்ளத்தில் எழுந்தருளி எங்களின் அறியாமை இருளைப் போக்கிய மரபு வழி குருமார்களையும், திருஞானசம்பந்தர் மரபில் உதித்து உலகு உயிர் திரளெல்லாம் ஒளிநெறி பெற்றிட உயரிய போதனைகள் தந்த திருவருட்பிரகாச வள்ளல் பெருமான் திருவடிகளையும், மனம் மொழி மெய்களால் வணங்குகின்றோம்.
         </li>
       </ol>
     </section>
 
-    <!-- Section 2: Founder Section (Amber Background with Reflow) -->
+    <!-- ── Section 2: Founder biography ─────────────────────────────────────
+         Image floats left on md+ screens, stacks above text on mobile.
+         clear-both at the end ensures the next section starts fresh.
+    ─────────────────────────────────────────────────────────────────────── -->
     <section class="bg-amber-50 p-6 md:p-10 rounded-3xl border border-amber-200 shadow-md overflow-hidden font-tamil">
       <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
         <h3 class="text-2xl font-bold text-amber-900 mb-1">
@@ -47,10 +75,10 @@ import { Image } from 'astro:assets';
         <p class="text-lg font-medium text-amber-800 italic">ஸ்ரீ சிவகுருநாத தேசிகர்</p>
       </div>
 
-      <!-- Image Floated Left -->
+      <!-- Founder portrait — floats left on desktop, full-width on mobile -->
       <div class="float-none md:float-left w-full md:w-1/3 md:mr-10 mb-6 text-center">
-        <Image 
-          src="/images/header/founder.jpg" 
+        <Image
+          src="/images/header/founder.jpg"
           alt="ஸ்ரீ சிவகுருநாத தேசிகர்" 
           width={400}
           height={600}
@@ -59,7 +87,7 @@ import { Image } from 'astro:assets';
         />
       </div>
 
-      <!-- Text Content Wrapping Around Image -->
+      <!-- Biography text wraps around the floated image on desktop -->
       <div class="text-gray-700 leading-relaxed space-y-4">
         <p>
           எங்கள் குருநாதர் <b>ஸ்ரீ சிவகுருநாத தேசிகர்</b> அவர்கள் மிக சிறு வயது முதலே வள்ளல் பெருமானை மானசீக குருவாக ஏற்று, உள்ளுணர்வு வழியாக இறைவனோடு தொடர்பு கொண்டு பல்வேறு பிரபஞ்ச பேருண்மைகளை வழங்கி வருகிறார்.
@@ -78,10 +106,14 @@ import { Image } from 'astro:assets';
           </p>
         </div>
       </div>
+      <!-- Reset float so Section 3 starts on a new line -->
       <div class="clear-both"></div>
     </section>
 
-    <!-- Section 3: Emblem Section (White Background with Reflow Placeholder) -->
+    <!-- ── Section 3: Emblem significance ───────────────────────────────────
+         Emblem image floats right on desktop.
+         Each paragraph explains one symbolic element of the emblem.
+    ─────────────────────────────────────────────────────────────────────── -->
     <section class="bg-white p-6 md:p-10 rounded-3xl border border-amber-100 shadow-sm overflow-hidden">
       <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
         <h3 class="text-2xl font-bold text-amber-900 mb-1">
@@ -90,7 +122,7 @@ import { Image } from 'astro:assets';
         <p class="text-lg font-medium text-amber-800 italic">ஒளிநெறி பயணத்தின் அடையாளம்</p>
       </div>
 
-      <!-- Image Floated Right -->
+      <!-- Emblem image — floats right on desktop, full-width on mobile -->
       <div class="float-none md:float-right w-full md:w-1/2 lg:w-2/5 md:ml-10 mb-6 text-center">
         <Image 
           src="/images/header/emblem.png" 
@@ -102,6 +134,7 @@ import { Image } from 'astro:assets';
         />
       </div>
 
+      <!-- Emblem explanations — one paragraph per symbol element -->
       <div class="text-gray-700 leading-relaxed space-y-4">
         <p>
           ஒரு ஞானாசிரியரின்‌ (குரு) இயல்புகள்‌ எப்படி இருக்கும்‌ என்பதை சுட்டிக்‌ காட்டும்‌ குறியீட்டு வடிவம்‌ தான்‌ “தென்முக கடவுள்” (தக்‌ஷணாமூர்த்தி) வடிவம்‌. அந்த வடிவமும்‌, அமைப்பும்‌ போதிக்கும்‌ போதனைகள்‌ விரிவானவை. இவைகளில்‌ ஆதிமூல முக்கிய போதனையின்‌ குறியீடு தான்‌ “சின்முத்திரை”.
@@ -131,7 +164,10 @@ import { Image } from 'astro:assets';
           <b>ஒளிநெறி பீடம்‌:</b> நம்‌ முன்னோர்கள்‌ மரபு வழியாக பின்பற்றி வந்த ஒளிநெறி மார்க்கத்தை உலகம்‌ உணரும்‌ வகையில்‌ கொண்டு செல்லும்‌ பீடம்‌ “ஒளிநெறி பீடம்‌”.
         </p>
       </div>
+
+      <!-- Reset float -->
       <div class="clear-both"></div>
     </section>
+
   </div>
 </BaseLayout>

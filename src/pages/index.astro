@@ -1,4 +1,23 @@
 ---
-// src/pages/index.astro
+/**
+ * src/pages/index.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Root entry point — redirects all visitors to the English home page.
+ *
+ * Why a redirect instead of content here?
+ *   The site supports two languages (/en/ and /ta/). The root path (/)
+ *   has no content of its own — it simply routes to the default locale.
+ *   A 301 (permanent) redirect tells search engines and browsers that
+ *   /en/ is the canonical home page, which also helps with SEO.
+ *
+ * Future improvement:
+ *   Browser language detection (Accept-Language header) could route
+ *   Tamil-speaking users directly to /ta/. This requires server-side
+ *   rendering (Astro SSR) which is not enabled on this static site.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+ 
+// 301 = permanent redirect — cached by browsers and search engines.
+// Change to 302 only if the redirect is temporary.
 return Astro.redirect('/en/', 301);
 ---

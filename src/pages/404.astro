@@ -1,34 +1,58 @@
 ---
+/**
+ * src/pages/404.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Custom 404 "Page not found" error page.
+ *
+ * GitHub Pages serves this file automatically whenever a URL cannot be
+ * resolved to a file in the dist/ folder.
+ *
+ * Why bilingual?
+ *   The site supports /en/ and /ta/ routes. If a Tamil user has a broken
+ *   bookmark (e.g. /ta/old-page), they should see the error in Tamil.
+ *   We detect the language from the URL pathname (/ta/ prefix).
+ *
+ * pageType="404" is passed explicitly to BaseLayout because the URL
+ * at the time of a 404 may not contain a recognisable page segment,
+ * so the automatic pageKey detection in BaseLayout would fall through
+ * to the 'index' description. The explicit prop ensures the correct
+ * "page not found" meta description is used.
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Detect if the current URL starts with /ta
 const { pathname } = Astro.url;
-const isTamil = pathname.startsWith('/ta/');
 
-// Set dynamic content based on language
-const lang = isTamil ? "ta" : "en";
-const title = isTamil ? "404 - பக்கம் காணப்படவில்லை" : "404 - Page not found";
-const buttonText = isTamil ? "முகப்பு பக்கத்திற்குச் செல்ல" : "Go home";
-const homeLink = isTamil ? "/ta/" : "/en/";
-const message = isTamil ? "நீங்கள் தேடும் பக்கம் இங்கு இல்லை." : "The page you're looking for doesn't exist.";
-/*
-const descriptionText = isTamil 
-  ? "நீங்கள் தேடும் பக்கம் காணப்படவில்லை. தயவுசெய்து ஒளிநெறி பீடத்தின் முகப்புப் பக்கத்திற்குத் திரும்புங்கள்." 
-  : "The page you are looking for was not found. Please return to the Olineri Peedam home page.";
-*/
+// Detect language from the URL prefix
+const isTamil = pathname.startsWith('/ta/');
+const lang    = isTamil ? 'ta' : 'en';
+
+// Bilingual page content
+const title      = isTamil ? '404 - பக்கம் காணப்படவில்லை' : '404 - Page not found';
+const message    = isTamil ? 'நீங்கள் தேடும் பக்கம் இங்கு இல்லை.'  : "The page you're looking for doesn't exist.";
+const buttonText = isTamil ? 'முகப்பு பக்கத்திற்குச் செல்ல'          : 'Go home';
+const homeLink   = isTamil ? '/ta/'                                   : '/en/';
 ---
 
+<!--
+  pageType="404" ensures BaseLayout uses the correct SEO description
+  from SEO_DATA['en']['404'] or SEO_DATA['ta']['404'] in seo.js.
+-->
 <BaseLayout lang={lang} title={title} pageType="404">
   <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+
     <h2 class="text-4xl font-bold text-amber-900">{title}</h2>
-    
-    <!-- ADDED: mb-10 for significant spacing below the message -->
+
     <p class="mt-6 mb-10 text-xl text-gray-600">{message}</p>
-    <a 
-        href={homeLink} 
-        class="bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-black hover:bg-[#B8860B] transition-all shadow-md"
+
+    <!-- Return to home page button — matches the language toggle pill style -->
+    <a
+      href={homeLink}
+      class="bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-black hover:bg-[#B8860B] transition-all shadow-md"
     >
-        {buttonText}
+      {buttonText}
     </a>
+
   </div>
 </BaseLayout>

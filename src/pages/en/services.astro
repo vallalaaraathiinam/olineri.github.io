@@ -1,56 +1,91 @@
 ---
+/**
+ * src/pages/en/services.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Services and activities page — English version.
+ *
+ * Shows two Sabhai (chapter) cards side by side:
+ *   - Trichy Sabhai  — amber colour scheme
+ *   - Chennai Sabhai — blue colour scheme
+ *
+ * LocationIcon:
+ *   Defined as a raw SVG string in the frontmatter and injected via
+ *   set:html to avoid repeating the SVG markup twice. This is the
+ *   recommended Astro pattern for reusable inline SVG icons.
+ *   aria-hidden is set on the parent <span> in the template.
+ * 
+ * Tamil equivalent: src/pages/ta/services.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-// Reusable Location Icon
-const LocationIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-</svg>`;
+// Reusable location pin icon — injected via set:html in the template below
+const LocationIcon = `
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+`;
 ---
 
 <BaseLayout lang="en" title="Services">
   <div class="space-y-12">
+
+    <!-- Page header -->
     <header class="text-center">
       <h2 class="text-3xl font-bold text-amber-900">Our Services & Activities</h2>
       <p class="text-gray-600 mt-2">Dedicated to spiritual growth and community welfare.</p>
     </header>
 
+    <!-- Two-column grid — stacks to single column on mobile -->
     <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- ── Trichy Sabhai card ─────────────────────────────────────────────
+           Amber colour scheme to visually distinguish from Chennai card.
+           ✦ bullet used instead of default list markers for aesthetic match
+           with the brand style.
+      ─────────────────────────────────────────────────────────────────────── -->
       <div class="bg-amber-50 p-8 rounded-2xl border border-amber-100 shadow-sm">
         <h3 class="text-2xl font-bold text-amber-800 mb-4 flex items-center gap-2">
-          <span class="inline-flex items-center flex-shrink-0" set:html={LocationIcon} /> Trichy Sabhai
+          <!-- aria-hidden on the icon span — the heading text provides the label -->
+          <span class="inline-flex items-center flex-shrink-0" set:html={LocationIcon} aria-hidden="true" />
+          Trichy Sabhai
         </h3>
         <ul class="space-y-4 text-gray-700">
           <li class="flex gap-3">
-            <span class="text-amber-500">✦</span>
+            <span class="text-amber-500" aria-hidden="true">✦</span>
             <div><strong>Food Donation:</strong> Regular food donation services for the needy and spiritual seekers.</div>
           </li>
           <li class="flex gap-3">
-            <span class="text-amber-500">✦</span>
-            <div><strong>Daily Satsang:</strong> Daily Early Morning Satsang and Training on Lamp Meditation. Listening to Discourses at night</div>
+            <span class="text-amber-500" aria-hidden="true">✦</span>
+            <div><strong>Daily Satsang:</strong> Daily Early Morning Satsang and Training on Lamp Meditation. Listening to Discourses at night.</div>
           </li>
         </ul>
       </div>
 
+      <!-- ── Chennai Sabhai card ────────────────────────────────────────────
+           Blue colour scheme differentiates this card from Trichy.
+           Book Distribution is commented out until the service resumes.
+      ─────────────────────────────────────────────────────────────────────── -->
       <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 shadow-sm">
         <h3 class="text-2xl font-bold text-blue-800 mb-4 flex items-center gap-2">
-          <span class="inline-flex items-center flex-shrink-0" set:html={LocationIcon} /> Chennai Sabhai
+          <span class="inline-flex items-center flex-shrink-0" set:html={LocationIcon} aria-hidden="true" />
+          Chennai Sabhai
         </h3>
         <ul class="space-y-4 text-gray-700">
           <li class="flex gap-3">
-            <span class="text-blue-500">✦</span>
+            <span class="text-blue-500" aria-hidden="true">✦</span>
             <div><strong>Weekly Classes:</strong> In-depth discourses on Vallalaar's teachings and Olineri.</div>
           </li>
-          <!--<li class="flex gap-3">
-            <span class="text-blue-500">✦</span>
-            <div><strong>Book Distribution:</strong> Access to our library of 13 primary publications.</div>
-          </li>-->
+
           <li class="flex gap-3">
-            <span class="text-blue-500">✦</span>
+            <span class="text-blue-500" aria-hidden="true">✦</span>
             <div><strong>Spiritual Guidance:</strong> One-on-one sessions for those beginning the path.</div>
           </li>
         </ul>
       </div>
+
     </div>
   </div>
 </BaseLayout>

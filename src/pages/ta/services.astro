@@ -1,56 +1,89 @@
 ---
+/**
+ * src/pages/ta/services.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Services and activities page — Tamil version.
+ *
+ * Shows two Sabhai (chapter) cards side by side:
+ *   - Trichy Sabhai  — amber colour scheme
+ *   - Chennai Sabhai — blue colour scheme
+ *
+ * LocationIcon:
+ *   Defined as a raw SVG string in the frontmatter and injected via
+ *   set:html to avoid repeating the SVG markup twice. This is the
+ *   recommended Astro pattern for reusable inline SVG icons.
+ *   aria-hidden is set on the parent <span> in the template.
+ * 
+ * English equivalent: src/pages/en/services.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-// Reusable Location Icon
-const LocationIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-</svg>`;
+// Reusable location pin icon — same SVG as en/services.astro
+const LocationIcon = `
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+`;
 ---
 
 <BaseLayout lang="ta" title="சேவைகள்">
   <div class="space-y-12">
+
+    <!-- Page header -->
     <header class="text-center">
       <h2 class="text-3xl font-bold text-amber-900">எமது சேவைகள் மற்றும் பணிகள்</h2>
       <p class="text-gray-600 mt-2">ஆன்மீக வளர்ச்சி மற்றும் சமூக நலனுக்காக அர்ப்பணிக்கப்பட்டது.</p>
     </header>
 
+    <!-- Two-column grid — stacks to single column on mobile -->
     <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- ── Trichy Sabhai card ─────────────────────────────────────────────
+           Amber colour scheme to visually distinguish from Chennai card.
+           ✦ bullet used instead of default list markers for aesthetic match
+           with the brand style.
+      ─────────────────────────────────────────────────────────────────────── -->
       <div class="bg-amber-50 p-8 rounded-2xl border border-amber-100 text-left">
-        <h3 class="text-2xl font-bold text-amber-800 mb-4" gap-3>
-          <span class="inline-flex items-center flex-shrink-0 translate-y-[4px]" set:html={LocationIcon} /> திருச்சி சபை
+        <h3 class="text-2xl font-bold text-amber-800 mb-4 gap-3">
+          <!-- aria-hidden on the icon span — the heading text provides the label -->
+          <span class="inline-flex items-center flex-shrink-0 translate-y-[4px]" set:html={LocationIcon} aria-hidden="true" /> திருச்சி சபை
         </h3>
         <ul class="space-y-4 text-gray-700">
           <li class="flex gap-3">
-            <span class="text-amber-500">✦</span>
+            <span class="text-amber-500 aria-hidden="true">✦</span>
             <div><strong>அன்னதானம்:</strong> ஏழைகளுக்கும் ஆன்மீக அன்பர்களுக்கும் தொடர்ச்சியான உணவு வழங்கல்</div>
           </li>
           <li class="flex gap-3">
-            <span class="text-amber-500">✦</span>
+            <span class="text-amber-500 aria-hidden="true">✦</span>
             <div><strong>தினசரி சத்சங்கம்:</strong> தினந்தோறும் அதிகாலை சத்சங்கம் மற்றும் தீபப் பயிற்சி. இரவு நேரங்களில் உபதேசங்களைக் கேட்டல்.</div>
           </li>
         </ul>
       </div>
 
+      <!-- ── Chennai Sabhai card ────────────────────────────────────────────
+           Blue colour scheme differentiates this card from Trichy.
+           Book Distribution is commented out until the service resumes.
+      ─────────────────────────────────────────────────────────────────────── -->
       <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 text-left">
         <h3 class="text-2xl font-bold text-blue-800 mb-4" gap-3>
-          <span class="inline-flex items-center flex-shrink-0 translate-y-[4px]" set:html={LocationIcon} /> சென்னை சபை
+          <span class="inline-flex items-center flex-shrink-0 translate-y-[4px]" set:html={LocationIcon} aria-hidden="true" /> சென்னை சபை
         </h3>
         <ul class="space-y-4 text-gray-700">
           <li class="flex gap-3">
-            <span class="text-blue-500">✦</span>
+            <span class="text-blue-500 aria-hidden="true">✦</span>
             <div><strong>வாராந்திர வகுப்புகள்:</strong> வள்ளலார் கொள்கைகள் மற்றும் ஒளிநெறி பற்றிய விரிவான விளக்கங்கள்.</div>
           </li>
-          <!--<li class="flex gap-3">
-            <span class="text-blue-500">✦</span>
-            <div><strong>புத்தக வெளியீடு:</strong> எமது 13 முக்கிய வெளியீடுகளின் விநியோகம்.</div>
-          </li>-->
+
           <li class="flex gap-3">
-            <span class="text-blue-500">✦</span>
+            <span class="text-blue-500" aria-hidden="true">✦</span>
             <div><strong>ஆன்மீக ஆலோசனை:</strong> புதியவர்களுக்கு வழிகாட்டும் தனிப்பட்ட அமர்வுகள்.</div>
           </li>
         </ul>
       </div>
+
     </div>
   </div>
 </BaseLayout>

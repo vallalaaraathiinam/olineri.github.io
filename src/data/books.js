@@ -1,3 +1,30 @@
+/**
+ * src/data/books.js
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Master data file for all books published by Vallalar Adhiyinam.
+ *
+ * Why a data file?
+ *   Separating data from presentation means:
+ *   - Adding or updating a book requires changing only this file
+ *   - The books.astro template stays clean with no hardcoded content
+ *   - Both EN and TA pages share the same data source
+ *
+ * Each book object contains:
+ *   id       - Unique numeric identifier (used as React-style key in templates)
+ *   titleEn  - Book title in English
+ *   titleTa  - Book title in Tamil
+ *   price    - MRP in Indian Rupees (₹)
+ *   image    - Path relative to /public (e.g. /images/books/filename.jpg)
+ *   descEn   - Short description in English (shown under the title on the card)
+ *   descTa   - Short description in Tamil
+ *
+ * To add a new book:
+ *   1. Add the cover image to public/images/books/
+ *   2. Append a new object below with the next sequential id
+ *   3. Both /en/books and /ta/books will automatically display it
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
 export const books = [
     {
       id: 1,

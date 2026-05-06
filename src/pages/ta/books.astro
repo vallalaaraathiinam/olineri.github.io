@@ -1,35 +1,73 @@
 ---
-import { Image } from 'astro:assets';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { books } from '../../data/books.js';
+/**
+ * src/pages/ta/books.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Books listing page — Tamil version.
+ *
+ * Displays a responsive grid of book cards, each showing:
+ *   - Optimised book cover image (WebP via Astro Image component)
+ *   - Book title and short description
+ *   - MRP price
+ *   - WhatsApp "Buy" button with pre-filled message
+ *
+ * Data source:  src/data/books.js
+ * Contact info: src/constants/seo.js → CONTACT_DETAILS
+ *
+ * WhatsApp link format:
+ *   https://wa.me/{number}?text={urlEncodedMessage}
+ *   The message pre-fills the chat with the book title so the
+ *   buyer doesn't have to type it manually.
+ *
+ * English equivalent: src/pages/en/books.astro
+ *   (identical structure, uses titleEn / descEn / textPrefixEn)
+ *  ─────────────────────────────────────────────────────────────────────────────
+ */
+
+import { Image }           from 'astro:assets';
+import BaseLayout          from '../../layouts/BaseLayout.astro';
+import { books }           from '../../data/books.js';
 import { CONTACT_DETAILS } from '../../constants/seo';
 
+// Destructure WhatsApp order config for cleaner template references
 const { whatsapp_order } = CONTACT_DETAILS;
 const messagePrefix = whatsapp_order.textPrefixTa;
 ---
 
-<BaseLayout lang="ta" title="புத்தகங்கள்">
+<BaseLayout lang="ta" title="Books">
+
   <h2 class="text-3xl font-bold text-amber-900 mb-8 border-b pb-2">எமது வெளியீடுகள்</h2>
-  
+
+  <!-- Responsive grid: 1 col on mobile, 2 on tablet, 3 on desktop -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
     {books.map((book) => (
-      <div class="border border-amber-100 rounded-lg overflow-hidden shadow-sm bg-white">
+      <div class="border border-amber-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow bg-white">
+
+        <!-- Book cover image — uses Astro Image for WebP conversion and optimisation -->
         <div class="h-64 w-full bg-gray-50 flex items-center justify-center p-4 border-b border-amber-50">
-          <Image 
-            src={book.image} 
-            alt={book.titleTa} 
-            width={300} 
+          <Image
+            src={book.image}
+            alt={book.titleTa}
+            width={300}
             height={400}
             format="webp"
             quality="mid"
-            class="h-full w-auto object-contain shadow-md hover:scale-110 transition-transform duration-300" 
+            class="h-full w-auto object-contain shadow-md hover:scale-110 transition-transform duration-300"
           />
         </div>
+
+        <!-- Book details -->
         <div class="p-4 text-right">
           <h3 class="font-bold text-lg text-amber-900">{book.titleTa}</h3>
           <p class="text-sm text-gray-600 mt-2">{book.descTa}</p>
           <div class="mt-4 flex justify-between items-center ">
             <span class="text-xl font-bold text-green-700">விலை: {book.price}</span>
+            <!--
+              WhatsApp buy link
+              Opens WhatsApp with a pre-filled message containing the book title.
+              rel="noopener noreferrer" prevents the new tab from accessing
+              the opener window (security best practice for target="_blank").
+            -->
             <a 
               href={`https://wa.me/${whatsapp_order.number}?text=${encodeURIComponent(messagePrefix + book.titleTa)}`}
               target="_blank"
@@ -37,13 +75,17 @@ const messagePrefix = whatsapp_order.textPrefixTa;
               class="flex items-center gap-2 bg-[#25D366] text-white px-2 py-1 rounded text-sm font-bold hover:bg-[#128C7E] transition-all shadow-sm"
             >
               வாங்க 
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <!-- WhatsApp logo SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.548 0 10.061-4.512 10.063-10.062 0-2.69-1.048-5.216-2.947-7.117s-4.426-2.943-7.117-2.943c-5.548 0-10.061 4.515-10.064 10.063 0 2.081.547 4.113 1.585 5.893l-1.045 3.822 3.925-1.029zm11.367-7.635c-.327-.164-1.938-.957-2.239-1.067-.301-.11-.52-.164-.739.164-.218.327-.847 1.067-1.039 1.285-.192.218-.383.245-.71.081s-1.382-.509-2.633-1.625c-.973-.867-1.63-1.94-1.821-2.267-.191-.327-.02-.504.143-.666.147-.146.327-.382.49-.573.163-.191.218-.327.327-.545.11-.218.054-.409-.027-.573-.082-.164-.739-1.774-1.011-2.43-.265-.636-.53-.549-.728-.559-.189-.009-.406-.01-.624-.01-.218 0-.573.082-.874.409-.301.327-1.147 1.118-1.147 2.727 0 1.609 1.174 3.164 1.338 3.382.164.218 2.312 3.53 5.598 4.949.781.338 1.391.539 1.866.69.785.249 1.499.214 2.063.129.629-.095 1.938-.791 2.211-1.555.272-.764.272-1.418.191-1.555-.082-.136-.301-.218-.628-.382z"/>
               </svg>
             </a>
           </div>
         </div>
+
       </div>
     ))}
+
   </div>
+
 </BaseLayout>

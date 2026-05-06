@@ -1,16 +1,40 @@
 ---
+/**
+ * src/pages/en/about.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * About page — English version.
+ *
+ * Three sections displayed in order:
+ *   1. Guru Parampara   — The sacred lineage of 12 Gurus
+ *   2. Founder          — Biography of Shri Sivagurunatha Desikar
+ *                         Founder image floats left on desktop, stacks on mobile
+ *   3. Emblem           — Spiritual significance of the Chinmudra emblem
+ *                         Emblem image floats right on desktop, stacks on mobile
+ *
+ * Layout pattern: float-none md:float-left/right
+ *   Used instead of CSS grid to allow text to wrap around the image
+ *   on larger screens. clear-both after each section resets the float.
+ *
+ * Tamil equivalent: src/pages/ta/about.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
+import { Image }  from 'astro:assets';
 ---
 
 <BaseLayout lang="en" title="About Us">
   <div class="max-w-6xl mx-auto space-y-12 py-10">
-    <!-- Main Title -->
+
     <h2 class="text-4xl font-bold text-amber-900 border-b-4 border-amber-200 pb-4 px-4 md:px-0">
       About Vallalar Adhiyinam
     </h2>
-    
-    <!-- Section 1: Guru Parampara (White Background) -->
+
+    <!-- ── Section 1: Guru Parampara ────────────────────────────────────────
+         Ordered list of 12 Gurus in the sacred lineage.
+         The final <li> (item 13) uses a top border to visually separate
+         the closing salutation from the individual Guru names.
+    ─────────────────────────────────────────────────────────────────────── -->
     <section class="bg-white p-6 md:p-10 rounded-3xl border border-amber-100 shadow-sm">
       <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
         <h3 class="text-2xl font-bold text-amber-900 mb-1">
@@ -18,7 +42,7 @@ import { Image } from 'astro:assets';
         </h3>
         <p class="text-lg font-medium text-amber-800 italic">Sacred Chain of Divine Wisdom</p>
       </div>
-      
+
       <ol class="list-decimal list-inside leading-relaxed text-gray-700 space-y-3 mt-4">
         <li>I surrender at the divine feet of the Almighty Supreme Being, the Lord of Infinite Grace (Arutperunjothi)!</li>
         <li>I surrender at the divine feet of the Primordial (Adhi) Maha Yogi, who manifested as the first and foremost field of divine movement!</li>
@@ -32,26 +56,34 @@ import { Image } from 'astro:assets';
         <li>I surrender at the divine feet of Balayananthar Swamigal.</li>
         <li>I surrender at the divine feet of Jaya Veera Aathi Nayak Swamigal.</li>
         <li>I surrender at the divine feet of Jyoti Ramasamy Desikar Swamigal.</li>
+        <!-- Closing salutation — separated visually from the individual names above -->
         <li class="pt-4 border-t border-amber-50">
-          With mind, speech, and body, we worship the traditional Gurus who appeared within the divine heart of <b>Shri Sivagurunatha Desikar</b> to dispel the darkness of our ignorance. We also worship the divine feet of the Thiruvarutprakasa Vallal Peruman, who descended from the lineage of Thirugnanasambandar and provided sublime teachings so that all souls in this world may attain the Path of Light (Olineri).
+          With mind, speech, and body, we worship the traditional Gurus who appeared within the divine
+          heart of <b>Shri Sivagurunatha Desikar</b> to dispel the darkness of our ignorance. We also
+          worship the divine feet of the Thiruvarutprakasa Vallal Peruman, who descended from the lineage
+          of Thirugnanasambandar and provided sublime teachings so that all souls in this world may
+          attain the Path of Light (Olineri).
         </li>
       </ol>
     </section>
 
-    <!-- Section 2: Founder Section (Amber Background with Reflow) -->
+    <!-- ── Section 2: Founder biography ─────────────────────────────────────
+         Image floats left on md+ screens, stacks above text on mobile.
+         clear-both at the end ensures the next section starts fresh.
+    ─────────────────────────────────────────────────────────────────────── -->
     <section class="bg-amber-50 p-6 md:p-10 rounded-3xl border border-amber-200 shadow-md overflow-hidden">
       <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
         <h3 class="text-2xl font-bold text-amber-900 mb-1">
-          Ancient Gurukula Tradition’s Wisdom Preceptor
+          Ancient Gurukula Tradition's Wisdom Preceptor
         </h3>
         <p class="text-lg font-medium text-amber-800 italic">Shri Sivagurunatha Desikar</p>
       </div>
 
-      <!-- Image Floated Left -->
+      <!-- Founder portrait — floats left on desktop, full-width on mobile -->
       <div class="float-none md:float-left w-full md:w-1/3 md:mr-10 mb-6 text-center">
-        <Image 
-          src="/images/header/founder.jpg" 
-          alt="Shri Sivagurunatha Desikar" 
+        <Image
+          src="/images/header/founder.jpg"
+          alt="Shri Sivagurunatha Desikar — Founder of Vallalar Adhiyinam"
           width={400}
           height={600}
           format="webp"
@@ -59,29 +91,44 @@ import { Image } from 'astro:assets';
         />
       </div>
 
-      <!-- Text Content Wrapping Around Image -->
+      <!-- Biography text wraps around the floated image on desktop -->
       <div class="text-gray-700 leading-relaxed space-y-4">
         <p>
-          From a very young age, our Guru, <b>Shri Sivagurunatha Desikar</b>, accepted Vallal Peruman as his mental preceptor. Connecting with the Divine through intuition, he has been sharing profound universal truths with the world.
+          From a very young age, our Guru, <b>Shri Sivagurunatha Desikar</b>, accepted Vallal Peruman
+          as his mental preceptor. Connecting with the Divine through intuition, he has been sharing
+          profound universal truths with the world.
         </p>
         <p>
-          Through the ancient Gurukula tradition, he reveals the deep mysteries of human functioning, the purpose of human life, and the secrets of birth and death. His teachings encompass the path to Deathless Great Life (Maranamilla Peruvazhvu), the ultimate truths about the Being (Jivan), the Soul (Atman), the Almighty, and the Universe, as well as the rare secrets of their interconnectedness.
+          Through the ancient Gurukula tradition, he reveals the deep mysteries of human functioning,
+          the purpose of human life, and the secrets of birth and death. His teachings encompass the
+          path to Deathless Great Life (Maranamilla Peruvazhvu), the ultimate truths about the Being
+          (Jivan), the Soul (Atman), the Almighty, and the Universe, as well as the rare secrets of
+          their interconnectedness.
         </p>
         <p>
-          Operating as a divine field where the Almighty manifests through intuitive mastery, he provides these universal truths to the world through the organization <b>Vallalar Adhiyinam</b>. For those who have attained spiritual maturity, he also grants <b>Thiruvadi Gnanam</b> and <b>Thiruvadi Deeksha</b> (Sacred Initiation).
+          Operating as a divine field where the Almighty manifests through intuitive mastery, he provides
+          these universal truths to the world through the organization <b>Vallalar Adhiyinam</b>. For
+          those who have attained spiritual maturity, he also grants <b>Thiruvadi Gnanam</b> and
+          <b>Thiruvadi Deeksha</b> (Sacred Initiation).
         </p>
-        
-        <div class="bg-white/80 p-6 rounded-xl border-l-4 border-[#FF9933] shadow-sm clear-none">
+
+        <!-- Pull-quote style callout box -->
+        <div class="bg-white/80 p-6 rounded-xl border-l-4 border-[#FF9933] shadow-sm">
           <p class="font-bold text-amber-900 text-xl mb-1">Come!</p>
           <p>
-            By the Grace of the Guru and the Supreme Infinite Grace, let us dispel the darkness of ignorance and realize the supreme wisdom known as <b>Olineri</b> (The Path of Light).
+            By the Grace of the Guru and the Supreme Infinite Grace, let us dispel the darkness of
+            ignorance and realize the supreme wisdom known as <b>Olineri</b> (The Path of Light).
           </p>
         </div>
       </div>
+      <!-- Reset float so Section 3 starts on a new line -->
       <div class="clear-both"></div>
     </section>
 
-    <!-- Section 3: Emblem Section (White Background) -->
+    <!-- ── Section 3: Emblem significance ───────────────────────────────────
+         Emblem image floats right on desktop.
+         Each paragraph explains one symbolic element of the emblem.
+    ─────────────────────────────────────────────────────────────────────── -->
     <section class="bg-white p-6 md:p-10 rounded-3xl border border-amber-100 shadow-sm overflow-hidden">
       <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
         <h3 class="text-2xl font-bold text-amber-900 mb-1">
@@ -90,7 +137,7 @@ import { Image } from 'astro:assets';
         <p class="text-lg font-medium text-amber-800 italic">The Symbolism of the Path of Light</p>
       </div>
 
-      <!-- Image Floated Right -->
+      <!-- Emblem image — floats right on desktop, full-width on mobile -->
       <div class="float-none md:float-right w-full md:w-1/2 lg:w-2/5 md:ml-10 mb-6 text-center">
         <Image 
           src="/images/header/emblem.png" 
@@ -102,29 +149,40 @@ import { Image } from 'astro:assets';
         />
       </div>
 
+      <!-- Emblem explanations — one paragraph per symbol element -->
       <div class="text-gray-700 leading-relaxed space-y-4">
         <p>
-          The form of <b>"Dakshinamurthy"</b> (the South-facing God) is a symbolic representation that points to the inherent nature of a Wisdom Preceptor (Guru). Among the extensive teachings conveyed by that form, the symbol of the primordial core is the <b>"Chinmudra."</b>
+          The form of <b>"Dakshinamurthy"</b> (the South-facing God) is a symbolic representation that
+          points to the inherent nature of a Wisdom Preceptor (Guru). Among the extensive teachings
+          conveyed by that form, the symbol of the primordial core is the <b>"Chinmudra."</b>
         </p>
         
         <p>
-          <b>Chinmudra:</b> The policy emblem of the Olineri Peedam is the "Chinmudra." "Chin" refers to the Great Light (<i>Arutperunjothi</i>), representing Supreme Intelligence as the source of all. "Mudra" signifies a sign or identity, also representing the removal of concealments.
+          <b>Chinmudra:</b> The policy emblem of the Olineri Peedam is the "Chinmudra." "Chin" refers
+          to the Great Light (<i>Arutperunjothi</i>), representing Supreme Intelligence as the source
+          of all. "Mudra" signifies a sign or identity, also representing the removal of concealments.
         </p>
 
         <p>
-          <b>Light within you, Realize to see True:</b> The phrase "The Light Within" indicates that this divine nature resides as the primordial stimulus within us. The purpose of human existence is to grasp this stimulus through intuition and attain clarity, expressed as "Realize to see True."
+          <b>Light within you, Realize to see True:</b> The phrase "The Light Within" indicates that
+          this divine nature resides as the primordial stimulus within us. The purpose of human existence
+          is to grasp this stimulus through intuition and attain clarity, expressed as "Realize to see True."
         </p>
 
         <p>
-          <b>Compassion, Humility, Sharing:</b> Every natural movement has three centers: stimulus, action, and relation. In matured human functioning, these are Divine Grace, Soulful movement, and Interdependence, represented by the values of <b>Compassion, Humility, and Sharing</b>.
+          <b>Compassion, Humility, Sharing:</b> Every natural movement has three centers: stimulus,
+          action, and relation. In matured human functioning, these are Divine Grace, Soulful movement,
+          and Interdependence, represented by the values of <b>Compassion, Humility, and Sharing</b>.
         </p>
 
         <p>
-          <b>Thiruvatchi:</b> The flaming circle surrounding the Chinmudra is the <b>Thiruvatchi</b> (Holy Sight). It represents the eye-light of supreme purity and is a symbol of the traditional <i>Thiruvadi Gnanam</i> (Sacred Wisdom).
+          <b>Thiruvatchi:</b> The flaming circle surrounding the Chinmudra is the <b>Thiruvatchi</b>
+          (Holy Sight). It represents the eye-light of supreme purity and is a symbol of the traditional
+          <i>Thiruvadi Gnanam</i> (Sacred Wisdom).
         </p>
 
         <p>
-          <b>The Seven Flames:</b> The Seven Flames represent seven distinct levels of wave-state movements. There are seven such flames situated within the circular Thiruvatchi. This grand universal movement is fundamentally wave-like in nature. In this wave-state, Light (Intelligence) serves as the stimulus, while Sound (Movement) serves as the functional action. The combination of these two elements constitutes the universal wave-state movement, which spans seven levels—from the most infinitesimal subtlety to the state of gross matter.
+          <b>The Seven Flames:</b> The Seven Flames situated within the circular Thiruvatchi, represent seven distinct levels of wave-state movements. This grand universal movement is fundamentally wave-like in nature. In this wave-state, Light (Intelligence) serves as the stimulus, while Sound (Movement) serves as the functional action. The combination of these two elements constitutes the universal wave-state movement, which spans seven levels—from the most infinitesimal subtlety to the state of gross matter.
         </p>
 
         <p>
@@ -136,10 +194,14 @@ import { Image } from 'astro:assets';
         </p>
 
         <p>
-          <b>Olineri Peedam:</b> Olineri Peedam is the foundation established to bring the Olineri (Path of Light), traditionally followed by our ancestors, to the awareness of the entire world.
+          <b>Olineri Peedam:</b> Olineri Peedam is the foundation established to bring the Olineri
+          (Path of Light), traditionally followed by our ancestors, to the awareness of the entire world.
         </p>
       </div>
+
+      <!-- Reset float -->
       <div class="clear-both"></div>
     </section>
+
   </div>
 </BaseLayout>

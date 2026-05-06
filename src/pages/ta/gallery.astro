@@ -1,32 +1,63 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Image } from 'astro:assets';
-import { galleryData } from '../../data/gallery.js';
+/**
+ * src/pages/ta/gallery.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Photo gallery page — Tamil version.
+ *
+ * Displays photos grouped by event, sourced from src/data/gallery.js.
+ * Each event gets its own section with a heading and a responsive image grid.
+ *
+ * Performance notes:
+ *   - Astro Image component converts all images to WebP at build time
+ *   - Images open full-size in a new tab when clicked (lightbox-style)
+ *   - rel="noopener noreferrer" on target="_blank" links is a security best
+ *     practice to prevent the opened tab accessing the opener window
+ *
+ * To add new events or photos, update src/data/gallery.js only.
+ * This page template does not need to change.
+ *
+ * English equivalent: src/pages/en/gallery.astro
+ *   (identical structure, uses eventNameTa and altTa)
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+import BaseLayout       from '../../layouts/BaseLayout.astro';
+import { Image }        from 'astro:assets';
+import { galleryData }  from '../../data/gallery.js';
 ---
 
 <BaseLayout lang="ta" title="புகைப்பட தொகுப்பு">
   <div class="max-w-6xl mx-auto px-6 py-12">
+
     <h1 class="text-4xl font-bold text-amber-900 mb-12 border-b-2 border-amber-200 pb-4">
       புகைப்பட தொகுப்பு
     </h1>
 
     {galleryData.map((event) => (
+      <!-- Each event renders as an independent section -->
       <section class="mb-16">
-        <!-- Event Name Header -->
+
+        <!-- Event name with a saffron accent bar -->
         <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
-          <span class="w-2 h-8 bg-[#FF9933] mr-3 rounded-full"></span>
+          <span class="w-2 h-8 bg-[#FF9933] mr-3 rounded-full" aria-hidden="true"></span>
           {event.eventNameTa}
         </h2>
 
-        <!-- Image Grid for this specific event -->
+        <!-- Responsive image grid: 1→2→3→4 columns by breakpoint -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
           {event.images.map((img) => (
             <div class="group aspect-square overflow-hidden rounded-xl bg-gray-100 border border-amber-100 shadow-sm hover:shadow-xl transition-all duration-300">
+              <!--
+                Clicking the image opens it full-size in a new browser tab.
+                This provides a simple lightbox-like experience without
+                requiring a JavaScript library.
+              -->
               <a href={img.url} target="_blank" rel="noopener noreferrer" class="block w-full h-full">
-                <Image 
-                  src={img.url} 
-                  alt={img.altTa} 
-                  width={400} 
+                <Image
+                  src={img.url}
+                  alt={img.altTa}
+                  width={400}
                   height={400}
                   format="webp"
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -34,8 +65,10 @@ import { galleryData } from '../../data/gallery.js';
               </a>
             </div>
           ))}
+
         </div>
       </section>
     ))}
+
   </div>
 </BaseLayout>

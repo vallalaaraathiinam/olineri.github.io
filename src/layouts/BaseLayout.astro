@@ -23,19 +23,21 @@ if (title.includes('404') || title.toLowerCase().includes('not found')) {
 const description = SEO_DATA[lang]?.[pageKey] || SEO_DATA[lang]?.index;
 
 const isTamil = lang === 'ta';
-const webTitle = isTamil ? "வள்ளலார் ஆதியினம்" : "Vallalar Adhiyinam"
+const headerTitle = isTamil ? "வள்ளலார் ஆதியினம்" : "Vallalar Adhiyinam"
+const headerTagLine = isTamil ? "எதுவும் என்னால் இல்லை, எதுவும் எனது இல்லை, எல்லாமும் எல்லோருக்கும்" : "Nothing is because of me, Nothing belongs to me, Everything is for everyone"
 
 // Get and normalize the current URL path
 const normalizedPathname = pathname.replace(/\/$/, ""); // Removes trailing slash for comparison
 
 //Logic to calculate the "Opposite" page link
+const pathWithSlash = pathname.endsWith("/") ? pathname : `${pathname}/`;
 const toggleLink = isTamil 
-  ? pathname.replace('/ta/', '/en/') 
-  : pathname.replace('/en/', '/ta/');
+  ? pathWithSlash.replace('/ta/', '/en/') 
+  : pathWithSlash.replace('/en/', '/ta/');
 
 // Links based on your FR
 const menuLinks = [
-  { en: 'Home', ta: 'முகப்பு', url: `/${lang}` }, // Removed trailing slash for normalization
+  { en: 'Home', ta: 'முகப்பு', url: `/${lang}` },
   { en: 'About us', ta: 'எங்களைப் பற்றி', url: `/${lang}/about` },
   { en: 'Books', ta: 'புத்தகங்கள்', url: `/${lang}/books` },
   { en: 'Services', ta: 'சேவைகள்', url: `/${lang}/services` },
@@ -46,8 +48,8 @@ const menuLinks = [
 
 // Construct URLs
 const canonicalURL = new URL(Astro.url.pathname, SITE_CONFIG.baseUrl);
-const englishURL = new URL(Astro.url.pathname.replace('/ta/', '/en/'), SITE_CONFIG.baseUrl);
-const tamilURL = new URL(Astro.url.pathname.replace('/en/', '/ta/'), SITE_CONFIG.baseUrl);
+const englishURL = new URL(pathWithSlash.replace('/ta/', '/en/'), SITE_CONFIG.baseUrl);
+const tamilURL = new URL(pathWithSlash.replace('/en/', '/ta/'), SITE_CONFIG.baseUrl);
 
 // Structured Data (JSON-LD)
 const schemaData = {
@@ -86,23 +88,24 @@ const schemaData = {
     <link rel="alternate" hreflang="ta" href={tamilURL} />
     <link rel="alternate" hreflang="x-default" href={englishURL} />
     
-    <!-- 2. Open Graph (WhatsApp, Facebook) -->
+    <!-- Open Graph (WhatsApp, Facebook) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={`${title} | ${webTitle}`} />
+    <meta property="og:title" content={`${title} | ${headerTitle}`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={SITE_CONFIG.ogImage} />
     
-    <!-- 3. Twitter Cards -->
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | ${webTitle}`} />
+    <meta name="twitter:title" content={`${title} | ${headerTitle}`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={SITE_CONFIG.ogImage} />
     
-    <!-- 4. Structured Data (Schema.org) -->
+    <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
 
-    <title>{title} | {webTitle}</title>
+    <title>{title} | {headerTitle}</title>
+
       <style is:global>
         body { 
           background-color: #FFFDF0; 
@@ -115,14 +118,57 @@ const schemaData = {
           border-bottom: 2px solid #FFD700;
         }
 
-        /* Active Link Underline Effect */
+        /* Active Link Underline Effect — desktop nav */
         .nav-link-active {
           color: #B8860B !important;
           border-bottom: 3px solid #8B4513;
           padding-bottom: 2px;
         }
+
+        /* ── Hamburger button lines ──────────────────────── */
+      .hamburger-line {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: #8B4513;
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        transform-origin: center;
+      }
+
+      /* Animates to × when menu is open */
+      #mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      #mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      #mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* ── Mobile drawer slide-down animation ─────────── */
+      #mobile-drawer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      #mobile-drawer.drawer-open {
+        max-height: 480px; /* tall enough for 7 links */
+      }
+
+      /* Active link style inside the drawer */
+      .drawer-link-active {
+        background-color: rgba(255, 215, 0, 0.15);
+        color: #B8860B !important;
+        border-left: 3px solid #8B4513;
+        padding-left: 21px; /* 24px - 3px border = same visual indent */
+      }
       </style>
   </head>
+
   <body class="bg-white text-gray-900">
     
     <!-- Skip link: invisible until focused by keyboard Tab key -->
@@ -134,76 +180,194 @@ const schemaData = {
     </a>
 
     <header class="header-radiance w-full sticky top-0 z-50 shadow-sm">
-      <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col items-center text-center">
-        <div class="w-full flex justify-between items-center mb-4 md:mb-8">
-          <Image 
-            src="/images/header/vallalaar_face_shoulder.jpg" 
-            alt="Vallalaar" 
-            width={128} 
-            height={128}
-            format="webp"
-            class="h-16 w-16 md:h-32 md:w-32 object-contain drop-shadow-md" 
-          />
-          <Image 
-            src="/images/header/emblem.png" 
-            alt="Emblem" 
-            width={128} 
-            height={128}
-            format="webp"
-            class="h-16 w-16 md:h-32 md:w-32 object-contain drop-shadow-lg" 
-          />
-          <Image 
-            src="/images/header/founder.jpg" 
-            alt="Founder" 
-            width={128} 
-            height={128}
-            format="webp"
-            class="h-16 w-16 md:h-32 md:w-32 object-contain drop-shadow-md" 
-          />
-        </div>
-        <div class="space-y-2">
-          <h1 class="text-3xl md:text-5xl font-bold text-[#8B4513] uppercase tracking-tight" style="font-family: 'Playfair Display', serif;">
-            {isTamil ? "வள்ளலார் ஆதியினம்" : "Vallalar Adhiyinam"}
-          </h1>
-          <p class="text-[#B8860B] italic text-base md:text-xl font-medium">
-            {isTamil ? "எதுவும் என்னால் இல்லை, எதுவும் எனது இல்லை, எல்லாமும் எல்லோருக்கும்" : "Nothing is because of me, Nothing belongs to me, Everything is for everyone"}
-          </p>
-        </div>
-      </div>
 
-      <nav 
-        aria-label={isTamil ? 'பிரதான வழிசெலுத்தல்' : 'Main navigation'}
-        class="bg-[#FFEB3B]/10 border-t border-[#FFD700]/40"
-      >
-        <div class="max-w-6xl mx-auto px-4 py-3">
-          <div class="flex flex-wrap justify-start md:justify-center items-center gap-4 md:gap-8">
-            {menuLinks.map(link => {
-              // Check if normalized link URL matches normalized pathname
-              const isActive = normalizedPathname === link.url || (link.url === `/${lang}` && normalizedPathname === "");
-              
-              return (
-                <a 
-                  href={link.url} 
-                  aria-current={isActive ? 'page' : undefined}
-                  class={`text-[#8B4513] font-bold text-sm md:text-base hover:text-[#B8860B] transition-colors whitespace-nowrap ${isActive ? 'nav-link-active' : ''}`}
-                >
-                  {isTamil ? link.ta : link.en}
-                </a>
-              );
-            })}
-            
-            <div class="border-l border-[#FFD700] pl-4 ml-2">
-              <a 
-                href={toggleLink} 
-                lang={isTamil ? 'en' : 'ta'}
-                class="bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-black hover:bg-[#B8860B] transition-all shadow-md"
-              >
-                {isTamil ? 'ENGLISH' : 'தமிழ்'}
-              </a>
-            </div>
+      <!-- ═══════════════════════════════════════════════
+           DESKTOP HEADER — md and above (768px+)
+           Identical to your original — nothing changed
+      ═══════════════════════════════════════════════ -->
+      <div class="hidden md:block">
+        <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col items-center text-center">
+          <div class="w-full flex justify-between items-center mb-8">
+            <Image 
+              src="/images/header/vallalaar_face_shoulder.jpg" 
+              alt="Vallalaar" 
+              width={128} 
+              height={128}
+              format="webp"
+              class="h-32 w-32 object-contain drop-shadow-md" 
+            />
+            <Image 
+              src="/images/header/emblem.png" 
+              alt="Emblem" 
+              width={128} 
+              height={128}
+              format="webp"
+              class="h-32 w-32 object-contain drop-shadow-lg" 
+            />
+            <Image 
+              src="/images/header/founder.jpg" 
+              alt="Founder" 
+              width={128} 
+              height={128}
+              format="webp"
+              class="h-32 w-32 object-contain drop-shadow-md" 
+            />
+          </div>
+          <div class="space-y-2">
+            <h1 class="text-5xl font-bold text-[#8B4513] uppercase tracking-tight" style="font-family: 'Playfair Display', serif;">
+              {headerTitle}
+            </h1>
+            <p class="text-[#B8860B] italic text-xl font-medium">
+              {headerTagLine}
+            </p>
           </div>
         </div>
-      </nav>
+
+        <!-- Desktop nav strip -->
+        <nav 
+          aria-label={isTamil ? 'பிரதான வழிசெலுத்தல்' : 'Main navigation'}
+          class="bg-[#FFEB3B]/10 border-t border-[#FFD700]/40"
+        >
+          <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex flex-wrap justify-center items-center gap-8">
+              {menuLinks.map(link => {
+                const isActive = normalizedPathname === link.url || (link.url === `/${lang}` && normalizedPathname === "");
+                return (
+                  <a 
+                    href={link.url} 
+                    aria-current={isActive ? 'page' : undefined}
+                    class={`text-[#8B4513] font-bold text-base hover:text-[#B8860B] transition-colors whitespace-nowrap ${isActive ? 'nav-link-active' : ''}`}
+                  >
+                    {isTamil ? link.ta : link.en}
+                  </a>
+                );
+              })}
+              <div class="border-l border-[#FFD700] pl-4 ml-2">
+                <a 
+                  href={toggleLink} 
+                  lang={isTamil ? 'en' : 'ta'}
+                  class="bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-black hover:bg-[#B8860B] transition-all shadow-md"
+                >
+                  {isTamil ? 'ENGLISH' : 'தமிழ்'}
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════
+           MOBILE HEADER — below md (0–767px)
+           Slim bar: emblem + name + lang pill + hamburger
+           Drawer slides down below the bar when opened
+      ═══════════════════════════════════════════════ -->
+      <div class="md:hidden flex flex-col">
+
+        <!-- Line 1: Emblem, Title, and Founder -->
+        <!-- Slim top bar — ~64px tall, fits one line -->
+        <div class="flex items-center justify-between px-4 py-3 gap-2">
+
+          <!-- Brand: small emblem + org name -->
+          <div class="w-16 flex-shrink-0">
+            <a
+              href={`/${lang}`}
+              class="flex items-center gap-3 min-w-0 flex-1"
+              aria-label={isTamil ? 'முகப்பு' : 'Home'}
+            >
+              <Image
+                src="/images/header/emblem.png"
+                alt="Emblem"
+                width={48}
+                height={48}
+                format="webp"
+                class="h-16 w-16 object-contain drop-shadow-sm"
+                aria-hidden="true"
+              />
+            </a>
+          </div>
+
+          <div class="flex-grow text-center min-w-0">
+            <h1
+              class="text-[#8B4513] font-bold text-xl leading-tight"
+              style="font-family: 'Playfair Display', serif;"
+            >
+              {headerTitle}
+            </h1>
+          </div>
+          
+          <!-- Founder Photo on the far right -->
+          <div class="w-16 flex-shrink-0 flex justify-end">
+            <Image 
+              src="/images/header/founder.jpg" 
+              alt="Founder" 
+              width={48} 
+              height={48}
+              format="webp"
+              class="h-16 w-16 object-contain"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+        <!-- Line 2: Tagline, Language Pill and Hamburger Actions -->
+        <div class="flex items-center justify-between px-4 pb-3 gap-4 border-t border-amber-100/50 pt-2">
+          
+          <!-- Left side: Tagline -->
+          <p class="text-[#B8860B] italic text-[12px] leading-tight flex-1">
+            {headerTagLine}
+          </p>
+          
+          <!-- Actions: Compact Language pill + hamburger -->
+          <div class="flex items-center gap-2 flex-shrink-0">
+            <a
+              href={toggleLink}
+              lang={isTamil ? 'en' : 'ta'}
+              class="bg-[#8B4513] text-white text-xs font-black px-3 py-1.5 rounded-full hover:bg-[#B8860B] transition-all shadow-sm"
+            >
+              {isTamil ? 'EN' : 'த'}
+            </a>
+
+            <button
+              id="mobile-menu-btn"
+              aria-controls="mobile-drawer"
+              aria-expanded="false"
+              aria-label={isTamil ? 'மெனுவைத் திற' : 'Open menu'}
+              class="flex flex-col justify-center items-center gap-[5px] w-10 h-10 rounded-lg border border-[#FFD700]/60 bg-[#FFFDF0] hover:bg-[#FFF9C4] transition-colors flex-shrink-0"
+            >
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide-down nav drawer -->
+        <nav
+          id="mobile-drawer"
+          aria-label={isTamil ? 'பிரதான வழிசெலுத்தல்' : 'Main navigation'}
+          class="border-t border-[#FFD700]/40 bg-[#FFFDF0]"
+        >
+          <ul role="list" class="py-2">
+            {menuLinks.map(link => {
+              const isActive = normalizedPathname === link.url || (link.url === `/${lang}` && normalizedPathname === "");
+              return (
+                <li>
+                  <a
+                    href={link.url}
+                    aria-current={isActive ? 'page' : undefined}
+                    class={`drawer-link flex items-center px-6 py-3.5 text-[#8B4513] font-bold text-base transition-colors hover:bg-[#FFF9C4] ${isActive ? 'drawer-link-active' : ''}`}
+                  >
+                    {isTamil ? link.ta : link.en}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+
+      </div>
+      <!-- end mobile header -->
+
     </header>
 
     <main id="main-content" class="max-w-4xl mx-auto px-6 py-10">
@@ -233,6 +397,10 @@ const schemaData = {
       </svg>
     </button>
 
+    <!-- Scroll to top — external file (Astro hoists, safe with CSP) -->
     <script src="../scripts/scrollToTop.js"></script>
+
+    <!-- Hamburger menu toggle -->
+    <script src="../scripts/hamburgerMenuToggle.js"></script>
   </body>
 </html>
