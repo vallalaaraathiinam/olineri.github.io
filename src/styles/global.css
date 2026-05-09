@@ -1,42 +1,48 @@
 /**
  * src/styles/global.css
  * ─────────────────────────────────────────────────────────────────────────────
- * Global base styles for olineri.org
+ * Central stylesheet for olineri.org
  *
- * This file handles:
- *   1. Self-hosted font declarations (@font-face)
- *   2. CSS custom properties (design tokens)
- *   3. Base element styles (body, headings, links)
- *   4. Tamil-script typography overrides
+ * All component styles live here. BaseLayout.astro imports this file
+ * and contains no <style> block of its own.
+ *
+ * Sections:
+ *   1. Self-hosted font declarations   (@font-face)
+ *   2. Design tokens                   (:root CSS variables)
+ *   3. Base element styles             (body, headings)
+ *   4. Tamil script typography         ([lang="ta"])
+ *   5. Header & navigation             (.header-radiance, .nav-link-active)
+ *   6. Hamburger menu button           (.hamburger-line, open/close animation)
+ *   7. Mobile drawer                   (#mobile-drawer, .drawer-link-active)
+ *   8. Tagline marquee scroll          (.tagline-marquee, @keyframes)
+ *
+ * Why src/styles/ and not public/css/?
+ *   Files in src/ are processed by Vite at build time — minified,
+ *   fingerprinted for cache-busting, and tree-shaken. Files in public/
+ *   are copied verbatim with no optimisation. CSS always belongs in src/.
  *
  * Why self-hosted fonts?
- *   Loading fonts from Google's CDN (fonts.googleapis.com) transmits
- *   visitor IP addresses to Google on every page load. Self-hosting
- *   eliminates this third-party data sharing and also removes the need
- *   for fonts.googleapis.com in the Content Security Policy.
- *   It also removes a render-blocking external request.
+ *   Loading fonts from fonts.googleapis.com sends visitor IP addresses
+ *   to Google on every page load. Self-hosting eliminates that third-party
+ *   data sharing, removes fonts.googleapis.com from the CSP, and removes
+ *   a render-blocking external network request.
  *
  * Font files location: public/fonts/
  *   Playfair Display — headings and organisation name
  *   Mukta Malar      — Tamil script body text
  *   Lora             — English body text (regular, italic, semibold)
- *
- * NOTE: The header, nav, and main layout styles that were previously
- * defined here are now managed by Tailwind classes in BaseLayout.astro
- * and the .header-radiance / .nav-link-active classes in BaseLayout's
- * <style is:global> block. The legacy header/nav/main rules below
- * have been removed to prevent conflicts.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
 
-/* ── Self-hosted Font Declarations ──────────────────────────────────────────
-   font-display: swap — ensures text remains visible during font load
-   (avoids invisible text flash / FOIT). Falls back to system serif/sans
-   until the custom font is available.
-   ─────────────────────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════════
+   1. SELF-HOSTED FONT DECLARATIONS
+   font-display: swap ensures text stays visible while the font loads,
+   avoiding the invisible-text flash (FOIT). The browser renders with the
+   fallback font first, then swaps once the custom font is ready.
+   ══════════════════════════════════════════════════════════════════════════════ */
 
-/* Playfair Display — used for headings, h1, and the organisation name */
+/* Playfair Display — headings, h1, and the organisation name in the header */
 @font-face {
   font-family: 'Playfair Display';
   src: url('/fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
@@ -51,7 +57,7 @@
   font-display: swap;
 }
 
-/* Mukta Malar — Tamil script, used for [lang="ta"] elements */
+/* Mukta Malar — Tamil script rendering for all [lang="ta"] elements */
 @font-face {
   font-family: 'Mukta Malar';
   src: url('/fonts/mukta-malar-v14-latin_tamil-regular.woff2') format('woff2');
@@ -66,7 +72,7 @@
   font-display: swap;
 }
 
-/* Lora — English body text in three weights */
+/* Lora — English body text in three variants */
 @font-face {
   font-family: 'Lora';
   src: url('/fonts/lora-v37-latin-regular.woff2') format('woff2');
@@ -83,8 +89,9 @@
   font-display: swap;
 }
 
-/* NOTE: The font file is 600 weight (semibold), not 700 (bold).
-   The filename lora-v37-latin-600.woff2 matches the actual weight. */
+/* NOTE: This file is 600 weight (semibold), not 700 (bold).
+   The filename lora-v37-latin-600.woff2 correctly reflects the actual weight.
+   Using font-weight: 700 here would cause a mismatch and silent fallback. */
 @font-face {
   font-family: 'Lora';
   src: url('/fonts/lora-v37-latin-600.woff2') format('woff2');
@@ -94,23 +101,29 @@
 }
 
 
-/* ── CSS Custom Properties (Design Tokens) ───────────────────────────────────
-   Defined on :root so they are available globally.
-   These are the brand colours — use these tokens rather than hardcoded
-   hex values when adding new styles.
-   ─────────────────────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════════════════════
+   2. DESIGN TOKENS (CSS Custom Properties)
+   Defined on :root so they are available in every component and page.
+   Always use these tokens instead of hardcoded hex values when adding
+   new styles — this ensures brand colours stay consistent site-wide.
+   ══════════════════════════════════════════════════════════════════════════════ */
 :root {
-  --saffron: #FF9933;
-  --maroon: #800000;
-  --cream: #FFFCF5;
-  --text-dark: #2D3748;
+  --saffron:    #FF9933;  /* Accent — section markers, dividers              */
+  --maroon:     #8B4513;  /* Primary brand — headings, CTAs, nav links       */
+  --gold:       #FFD700;  /* Border accent — header border, nav separator    */
+  --gold-dim:   #B8860B;  /* Hover state for gold elements                   */
+  --cream:      #FFFDF0;  /* Page background                                 */
+  --warm-bg:    #FFF9C4;  /* Header gradient start colour                    */
+  --text-dark:  #3E2F22;  /* Body text colour                                */
 }
 
-/* ── Base Element Styles ─────────────────────────────────────────────────────
-   These apply globally to all pages via Astro's global CSS import.
-   Tailwind's preflight reset is applied first (by @astrojs/tailwind),
-   so margins and padding start at zero before these rules run.
-   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   3. BASE ELEMENT STYLES
+   Tailwind's preflight reset runs first (via @astrojs/tailwind), zeroing
+   all margins and padding. These rules then establish the base typography
+   and background across all pages.
+   ══════════════════════════════════════════════════════════════════════════════ */
 body {
   background-color: var(--cream);
   font-family: 'Lora', serif;
@@ -119,80 +132,159 @@ body {
   line-height: 1.6;
 }
 
-
-/* Headings use Playfair Display for an elegant, editorial feel */
+/* Headings use Playfair Display for an elegant, editorial feel.
+   Pages override these colours with Tailwind utilities where needed. */
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   color: var(--maroon);
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-/* ── Tamil Script Typography ─────────────────────────────────────────────────
-   Applied to any element with lang="ta" (set on <html> for Tamil pages).
-   Mukta Malar provides correct rendering for Tamil Unicode characters.
-   Increased line-height (1.8) improves readability of Tamil script,
-   which has taller glyphs than Latin characters.
-   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   4. TAMIL SCRIPT TYPOGRAPHY
+   Applied to any element or page with lang="ta" (set on <html> in BaseLayout).
+   Mukta Malar renders Tamil Unicode characters correctly.
+   line-height: 1.8 improves readability — Tamil glyphs are taller than Latin
+   characters and need more vertical breathing room between lines.
+   ══════════════════════════════════════════════════════════════════════════════ */
 [lang="ta"] {
   font-family: 'Mukta Malar', sans-serif;
   line-height: 1.8;
 }
 
 
-/* Navigation Styling */
-header {
-  background: white;
-  border-bottom: 4px solid var(--saffron);
-  padding: 1rem 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+/* ══════════════════════════════════════════════════════════════════════════════
+   5. HEADER & NAVIGATION
+   .header-radiance   — warm gradient background for the sticky header
+   .nav-link-active   — visual indicator for the currently active nav link
+                        Applied dynamically in BaseLayout via the isActive check
+                        Uses !important to override Tailwind's hover utilities
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Sticky header background — warm cream-to-gold gradient with gold border */
+.header-radiance {
+  background: linear-gradient(180deg, var(--warm-bg) 0%, var(--cream) 100%);
+  border-bottom: 2px solid var(--gold);
 }
 
-.logo-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--maroon);
+/* Active page link — underline indicator on desktop nav */
+.nav-link-active {
+  color: var(--gold-dim) !important;
+  border-bottom: 3px solid var(--maroon);
+  padding-bottom: 2px;
 }
 
-.logo-saffron {
-  color: var(--saffron);
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   6. HAMBURGER MENU BUTTON
+   Three horizontal lines that animate into an × when the menu opens.
+   Each line is a <span class="hamburger-line"> inside the button.
+   The animation is triggered by aria-expanded="true" on the button,
+   which is set by hamburgerMenuToggle.js when the drawer opens.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Individual hamburger line */
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--maroon);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--text-dark);
-  margin-left: 1.5rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
+/* Line 1: rotates +45° and moves down to form top of × */
+#mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
 }
 
-nav a:hover {
-  color: var(--saffron);
+/* Line 2: fades out and shrinks — middle line disappears in × */
+#mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
 }
 
-/* The Language Toggle Button */
-.lang-btn {
-  background: var(--maroon);
-  color: white !important;
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  transition: transform 0.2s ease;
+/* Line 3: rotates −45° and moves up to form bottom of × */
+#mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
-.lang-btn:hover {
-  transform: scale(1.05);
-  background: #a00000;
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   7. MOBILE DRAWER
+   The slide-down navigation drawer on mobile devices.
+   max-height: 0 with overflow: hidden hides it by default.
+   Adding .drawer-open class sets max-height to a value tall enough for
+   all 7 nav links, triggering the CSS transition animation.
+   cubic-bezier(0.4, 0, 0.2, 1) = Material Design "standard" easing —
+   feels natural and not mechanical.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Closed state — hidden, zero height */
+#mobile-drawer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Layout Container */
-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Open state — toggled by hamburgerMenuToggle.js */
+#mobile-drawer.drawer-open {
+  max-height: 480px; /* Large enough for 7 nav links with padding */
+}
+
+/* Active link style inside the drawer.
+   border-left creates a visible accent bar on the left edge.
+   padding-left compensates for the 3px border so text stays aligned. */
+.drawer-link-active {
+  background-color: rgba(255, 215, 0, 0.15);
+  color: var(--gold-dim) !important;
+  border-left: 3px solid var(--maroon);
+  padding-left: 21px; /* 24px default - 3px border = same visual indent */
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   8. TAGLINE MARQUEE SCROLL
+   The tagline track escapes its padded max-w-6xl parent using the
+   calc(-50vw + 50%) technique — this stretches any centred container
+   child to full viewport width regardless of parent padding.
+   left: 100% starts the text just off the right viewport edge.
+   left: -100% ends it just off the left viewport edge.
+   The parent header has overflow:hidden so nothing bleeds outside the header.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.tagline-track {
+  /* Escape the padded max-w container — stretch to full viewport width */
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+  overflow: hidden;
+  height: 2em;         /* matches one line of the tagline text */
+  position: relative;
+}
+  
+.tagline-track span {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 2em;
+  position: relative;
+}
+
+/* Mobile tagline track — flex-1 between emblem and right controls.
+  overflow:hidden clips the scrolling text to the available space.
+  position:relative is required for the absolute-positioned span. */
+.mobile-tagline-track {
+  overflow: hidden;     /* clips the scrolling text to the available space. */
+  position: relative;
+  height: 1.6em;
+}
+
+.mobile-tagline-track span {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.6em;
+  position: relative;
 }

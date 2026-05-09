@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { SITE_CONFIG, SEO_DATA } from '../constants/seo';
+import '../styles/global.css';
 
 const { 
   lang, 
@@ -106,67 +107,6 @@ const schemaData = {
 
     <title>{title} | {headerTitle}</title>
 
-      <style is:global>
-        body { 
-          background-color: #FFFDF0; 
-          color: #3E2F22;
-          font-family: 'Arima', sans-serif;
-        }
-
-        .header-radiance {
-          background: linear-gradient(180deg, #FFF9C4 0%, #FFFDF0 100%);
-          border-bottom: 2px solid #FFD700;
-        }
-
-        /* Active Link Underline Effect — desktop nav */
-        .nav-link-active {
-          color: #B8860B !important;
-          border-bottom: 3px solid #8B4513;
-          padding-bottom: 2px;
-        }
-
-        /* ── Hamburger button lines ──────────────────────── */
-      .hamburger-line {
-        display: block;
-        width: 20px;
-        height: 2px;
-        background-color: #8B4513;
-        border-radius: 2px;
-        transition: transform 0.25s ease, opacity 0.25s ease;
-        transform-origin: center;
-      }
-
-      /* Animates to × when menu is open */
-      #mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-      #mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
-        opacity: 0;
-        transform: scaleX(0);
-      }
-      #mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-
-      /* ── Mobile drawer slide-down animation ─────────── */
-      #mobile-drawer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      #mobile-drawer.drawer-open {
-        max-height: 480px; /* tall enough for 7 links */
-      }
-
-      /* Active link style inside the drawer */
-      .drawer-link-active {
-        background-color: rgba(255, 215, 0, 0.15);
-        color: #B8860B !important;
-        border-left: 3px solid #8B4513;
-        padding-left: 21px; /* 24px - 3px border = same visual indent */
-      }
-      </style>
   </head>
 
   <body class="bg-white text-gray-900">
@@ -187,14 +127,14 @@ const schemaData = {
       ═══════════════════════════════════════════════ -->
       <div class="hidden md:block">
         <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col items-center text-center">
-          <div class="w-full flex justify-between items-center mb-8">
+          <div class="w-full flex justify-between items-center mb-2">
             <Image 
               src="/images/header/vallalaar_face_shoulder.jpg" 
               alt="Vallalaar" 
               width={128} 
               height={128}
               format="webp"
-              class="h-32 w-32 object-contain drop-shadow-md" 
+              class="h-24 w-24 object-contain drop-shadow-md" 
             />
             <Image 
               src="/images/header/emblem.png" 
@@ -202,7 +142,7 @@ const schemaData = {
               width={128} 
               height={128}
               format="webp"
-              class="h-32 w-32 object-contain drop-shadow-lg" 
+              class="h-24 w-24 object-contain drop-shadow-lg" 
             />
             <Image 
               src="/images/header/founder.jpg" 
@@ -210,16 +150,14 @@ const schemaData = {
               width={128} 
               height={128}
               format="webp"
-              class="h-32 w-32 object-contain drop-shadow-md" 
+              class="h-24 w-24 object-contain drop-shadow-md" 
             />
           </div>
-          <div class="space-y-2">
-            <h1 class="text-5xl font-bold text-[#8B4513] uppercase tracking-tight" style="font-family: 'Playfair Display', serif;">
-              {headerTitle}
-            </h1>
-            <p class="text-[#B8860B] italic text-xl font-medium">
-              {headerTagLine}
-            </p>
+          <h1 class="text-5xl font-bold text-[#8B4513] uppercase tracking-tight" style="font-family: 'Playfair Display', serif;">
+            {headerTitle}
+          </h1>
+          <div class="tagline-track">
+            <span class="text-[#B8860B] italic text-xl font-medium">{headerTagLine}</span>
           </div>
         </div>
 
@@ -310,12 +248,19 @@ const schemaData = {
         </div>
 
         <!-- Line 2: Tagline, Language Pill and Hamburger Actions -->
-        <div class="flex items-center justify-between px-4 pb-3 gap-4 border-t border-amber-100/50 pt-2">
+        <div class="flex items-center justify-between px-4 pb-3 pt-2 gap-4">
           
           <!-- Left side: Tagline -->
-          <p class="text-[#B8860B] italic text-[12px] leading-tight flex-1">
-            {headerTagLine}
-          </p>
+          <div id="mobile-tagline-track" class="mobile-tagline-track flex-1 overflow-hidden"
+            style="position:relative; height:1.6em;">
+            <span class="text-[#B8860B] italic text-[12px]"
+              style="white-space:nowrap; position:absolute; line-height:1.6em;">
+              {headerTagLine}
+            </span>
+          </div>
+          <!--<p class="text-[#B8860B] italic text-[12px] leading-tight flex-1">
+            <span>{headerTagLine}</span>
+          </p>-->
           
           <!-- Actions: Compact Language pill + hamburger -->
           <div class="flex items-center gap-2 flex-shrink-0">
@@ -378,7 +323,7 @@ const schemaData = {
       <div class="max-w-6xl mx-auto px-6 text-center">
         <img src="/images/header/emblem.png" alt="Logo" class="h-10 mx-auto opacity-40 grayscale mb-4" />
         <p class="text-sm text-gray-600">
-          {isTamil ? "© 2026 வள்ளலார் ஆதியினம்" : "© 2026 Vallalar Adhiyinam"}
+          {isTamil ? "© 2026 வள்ளலார் ஆதியினம், பதிவு எண்: 145/2022-IV" : "© 2026 Vallalar Adhiyinam, Regn. No: 145/2022-IV"}
         </p>
         <p class="text-xs text-gray-500 mt-2">
           {isTamil ? "உன்னுள் ஒளி, உணர்ந்து தெளி" : "Light within you, Realize to see True"}
@@ -402,5 +347,8 @@ const schemaData = {
 
     <!-- Hamburger menu toggle -->
     <script src="/scripts/hamburgerMenuToggle.js" defer></script>
+
+    <!-- Marquee for Header Tag Line -->
+    <script src="/scripts/marquee.js" defer></script>
   </body>
 </html>
