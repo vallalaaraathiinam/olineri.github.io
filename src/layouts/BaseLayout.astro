@@ -129,7 +129,7 @@ const schemaData = {
         <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col items-center text-center">
           <div class="w-full flex justify-between items-center mb-2">
             <Image 
-              src="/images/header/vallalaar_face_shoulder.jpg" 
+              src="/images/header/vallalaar_face_shoulder.webp" 
               alt="Vallalaar" 
               width={128} 
               height={128}
@@ -137,7 +137,7 @@ const schemaData = {
               class="h-24 w-24 object-contain drop-shadow-md" 
             />
             <Image 
-              src="/images/header/emblem.png" 
+              src="/images/header/emblem.webp" 
               alt="Emblem" 
               width={128} 
               height={128}
@@ -145,7 +145,7 @@ const schemaData = {
               class="h-24 w-24 object-contain drop-shadow-lg" 
             />
             <Image 
-              src="/images/header/founder.jpg" 
+              src="/images/header/founder.webp" 
               alt="Founder" 
               width={128} 
               height={128}
@@ -166,7 +166,7 @@ const schemaData = {
           aria-label={isTamil ? 'பிரதான வழிசெலுத்தல்' : 'Main navigation'}
           class="bg-[#FFEB3B]/10 border-t border-[#FFD700]/40"
         >
-          <div class="max-w-6xl mx-auto px-4 py-3">
+          <div class="max-w-6xl mx-auto px-4 py-1">
             <div class="flex flex-wrap justify-center items-center gap-8">
               {menuLinks.map(link => {
                 const isActive = normalizedPathname === link.url || (link.url === `/${lang}` && normalizedPathname === "");
@@ -184,7 +184,7 @@ const schemaData = {
                 <a 
                   href={toggleLink} 
                   lang={isTamil ? 'en' : 'ta'}
-                  class="bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-black hover:bg-[#B8860B] transition-all shadow-md"
+                  class="bg-[#8B4513] text-white px-4 py-1 rounded-full text-sm font-black hover:bg-[#B8860B] transition-all shadow-md"
                 >
                   {isTamil ? 'ENGLISH' : 'தமிழ்'}
                 </a>
@@ -321,7 +321,7 @@ const schemaData = {
 
     <footer class="bg-gray-100 border-t border-amber-200 mt-20 py-10">
       <div class="max-w-6xl mx-auto px-6 text-center">
-        <img src="/images/header/emblem.png" alt="Logo" class="h-10 mx-auto opacity-40 grayscale mb-4" />
+        <img src="/images/header/emblem.webp" alt="Logo" class="h-10 mx-auto opacity-40 grayscale mb-4" />
         <p class="text-sm text-gray-600">
           {isTamil ? "© 2026 வள்ளலார் ஆதியினம், பதிவு எண்: 145/2022-IV" : "© 2026 Vallalar Adhiyinam, Regn. No: 145/2022-IV"}
         </p>
