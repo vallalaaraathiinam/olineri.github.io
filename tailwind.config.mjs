@@ -38,5 +38,10 @@ export default {
     extend: {},
   },
 
-  plugins: [],
+  // @tailwindcss/typography provides the 'prose' classes used in essay detail
+  // pages to style Markdown-generated HTML (headings, paragraphs, blockquotes,
+  // images, lists, horizontal rules) with clean, readable typography.
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

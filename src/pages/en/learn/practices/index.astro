@@ -1,0 +1,65 @@
+---
+/**
+ * src/pages/en/learn/practices/index.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Practices listing page — English version.
+ * Lists all practices from src/data/practices.js in reverse chronological order.
+ * Each practice links to its detail page at /en/learn/practices/[slug].
+ * To add a new practice: append an entry to practices.js — no changes needed here.
+ * Tamil equivalent: src/pages/ta/learn/practices/index.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { practicesData } from '../../../../data/practices.js';
+
+const sortedPractices = [...practicesData].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+function formatDate(isoDate) {
+  return new Date(isoDate).toLocaleDateString('en-IN', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+---
+
+<BaseLayout lang="en" title="Practices" pageType="practices">
+  <div class="max-w-3xl mx-auto">
+
+    <h2 class="text-3xl font-bold text-amber-900 mb-2">Practices</h2>
+    <p class="text-gray-500 italic mb-8 text-sm">
+      Step-by-step guides to the spiritual practices taught at Vallalar Adhiyinam.
+    </p>
+
+    <div class="space-y-6">
+      {sortedPractices.map((practice) => (
+        <article class="group border border-amber-100 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <a href={`/en/learn/practices/${practice.slug}`} class="block p-6">
+
+            <p class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-2">
+              {formatDate(practice.date)}
+            </p>
+
+            <h3 class="text-xl font-bold text-[#8B4513] group-hover:text-[#B8860B] transition-colors mb-3 leading-snug">
+              {practice.titleEn}
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed text-sm mb-4">
+              {practice.excerptEn}
+            </p>
+
+            <span class="inline-flex items-center gap-1 text-sm font-bold text-[#8B4513] group-hover:text-[#B8860B] transition-colors">
+              Read practice guide
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+
+          </a>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</BaseLayout>

@@ -1,0 +1,62 @@
+---
+/**
+ * src/pages/en/learn/videos.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Videos page — English version.
+ * Renders all video entries from src/data/videos.js on a single page.
+ * Each video is embedded using youtube-nocookie.com for privacy.
+ * To add a new video: append an entry to videos.js — no changes needed here.
+ * Tamil equivalent: src/pages/ta/learn/videos.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { videosData } from '../../../data/videos.js';
+---
+
+<BaseLayout lang="en" title="Videos" pageType="videos">
+  <div class="max-w-3xl mx-auto">
+
+    <h2 class="text-3xl font-bold text-amber-900 mb-2">Videos</h2>
+    <p class="text-gray-500 italic mb-8 text-sm">
+      Guided teachings and training sessions from Vallalar Adhiyinam.
+    </p>
+
+    <div class="space-y-12">
+      {videosData.map((video) => (
+        <div class="space-y-3">
+
+          <!-- Title -->
+          <h3 class="text-xl font-bold text-[#8B4513]">
+            {video.titleEn}
+          </h3>
+
+          <!-- Description -->
+          {video.descriptionEn && (
+            <p class="text-gray-600 text-sm leading-relaxed">
+              {video.descriptionEn}
+            </p>
+          )}
+
+          <!--
+            aspect-video wrapper maintains 16:9 ratio at all screen sizes.
+            youtube-nocookie.com prevents YouTube setting cookies unless
+            the user actually plays the video (privacy best practice).
+          -->
+          <div class="aspect-video rounded-xl overflow-hidden shadow-md border border-amber-100">
+            <iframe
+              class="w-full h-full"
+              src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}`}
+              title={video.titleEn}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</BaseLayout>

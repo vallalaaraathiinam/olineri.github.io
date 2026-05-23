@@ -1,0 +1,113 @@
+/**
+ * src/data/qna.js
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Master data file for all Q&A entries published by Vallalar Adhiyinam.
+ *
+ * Both /en/learn/qna and /ta/learn/qna read from this single file.
+ * All Q&As are displayed on one page in the order listed here.
+ *
+ * To add a new Q&A:
+ *   1. Append a new object to the array below with the next sequential id
+ *   2. Provide both English and Tamil question and answer
+ *   3. No code changes needed — both pages update automatically on next build
+ *
+ * Formatting the answer:
+ *   Plain text only in this field. Use \n\n for paragraph breaks.
+ *   Numbered lists can be written as:  1. item\n\n2. item
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+export const qnaData = [
+  {
+    id: 1,
+    questionTa: 'ஒளிநெறி என்றால் என்ன?',
+    questionEn: 'What is Olineri?',
+    answerTa: `ஒளிநெறி என்பது "ஒளியின் வழி" என்று பொருள்படும். ஒவ்வொரு மனிதனும் தனக்குள் இருக்கும் இறைமையை உணர்ந்து, மாமனிதனாக மாறுவதற்கான வாழ்வியல் முறையே ஒளிநெறி ஆகும்.
+
+இது ஒரு மதம் அல்ல, ஒரு பிரிவு அல்ல. இது நம் முன்னோர்கள் பின்பற்றிய உலகளாவிய ஆன்மீக வழி. தொன்மை குருகுல மரபு வழியாக இந்த அரிய உண்மைகள் வெளிப்படுத்தப்படுகின்றன.`,
+  answerEn: `Olineri means the "Path of Light." It is a way of life that prompts an individual to investigate the root cause of existence within themselves, transforming a human into a great being and turning them into a divine field where the Almighty manifests.
+
+It is not a religion or a sect. It is the universal path of inner realisation that was followed by our ancestors and revealed through the ancient Gurukula tradition.`,
+  },
+  {
+    id: 2,
+
+    questionTa: 'வள்ளலார் ஆதியினத்தின் இலக்கு என்ன?',
+    questionEn: 'What is the goal of Vallalar Adhiyinam?',
+
+    answerTa: `மனிதன் தன் சுயத்தை (சத் + சித் + ஆனந்தம்) உணர்வதற்கான சன்மார்க்க (நாயக-நாயகி பாவனை) கல்வியை, தொன்மை குருகுல மரபு வழியாக உலகெங்கும் பரப்புவதே எங்களின் இலக்கு.`,
+
+    answerEn: `The goal of Vallalar Adhiyinam is to spread the Sanmarga (Nayaka-Nayaki Bavanai) education across the world through the ancient Gurukula tradition, by which every human being can realise their true self (Sat + Chit + Ananda)`,
+  },
+
+  {
+    id: 3,
+
+    questionTa: 'வள்ளலார் ஆதினத்தின் செயல்பாடு என்ன?',
+    questionEn: 'What is the mission and work of Vallalar Adhiyinam?',
+
+    answerTa: `ஒவ்வொரு மனிதனும் வாழ்க்கை என்னும் அனுபவப் பயணத்தில் தவறுகளை திருத்திக் கொண்டு, துன்ப துயரங்களிலிருந்து விடுபட்டு, நிறைவான வாழ்க்கையை வாழ்வதற்கும்,மனிதன் தனக்குள் இருக்கும் ஆன்ம நேய ஒருமைப்பாட்டு உணர்வின் வழியாக வாழ்வின் ஒவ்வொரு நிகழ்விலும் எல்லா உயிர்களையும் இயக்கிக் கொண்டிருக்கும் அறிவு வடிவான இறைவனை உணர வைப்பதே எங்கள் இறைப்பணி.`,
+
+    answerEn: `Our divine service is to first guide every human being to correct their mistakes along life's journey of experience, free themselves from sorrow and suffering, and live a fulfilled life. Secondly, through the inner awareness of the unity of the soul, to help every human being recognise — in each moment of life — the Divine in the form of pure intelligence that animates all living beings.`,
+  },
+
+  {
+    id: 4,
+
+    questionTa: 'மனிதனிடம் உள்ள மூன்று உடல்கள் யாவை?',
+    questionEn: 'What are the three bodies present in a human being?',
+
+    answerTa: `மனிதனிடம் மூன்று உடல்கள் உள்ளன:
+
+1. பருவுடல்
+
+2. நுண்ணுடல்
+
+3. மூல உடல்`,
+
+    answerEn: `A human being has three bodies:
+
+1. The Gross Body (Paru Udal) — the physical body
+
+2. The Subtle Body (Nun Udal) — the mental and vital body
+
+3. The Soul Body (Moola Udal) — the seed body, the deepest layer of being`,
+  },
+
+  {
+    id: 5,
+
+    questionTa: 'மனிதனின் பருவுடல் என்றால் என்ன?',
+    questionEn: 'What is the Gross body (Paru Udal) of a human being?',
+
+    answerTa: `பார்த்தல், கேட்டல், முகர்தல், சுவைத்தல், உராய்தல் என ஐந்து வகை ஏக்கங்களை (மலத்தை) கண், காது, மூக்கு, நாக்கு, தோல் என்ற கருவிகளின் வழியாக உலகத்தோடு (உயிர் உறவுகள், உடைமை உறவுகள்) தொடர்பு கொண்டு நீக்கிக் கொள்ளும் களமே பருவுடல்.`,
+
+    answerEn: `The gross body is the field through which the five longings (impurities) — seeing, hearing, smelling, tasting, and touching — are expressed and resolved through the instruments of the eyes, ears, nose, tongue, and skin, by engaging with the world through relationships with living beings and with material possessions.`,
+  },
+
+  {
+    id: 6,
+
+    questionTa: 'ஜீவகாருண்யம் என்றால் என்ன?',
+    questionEn: 'What is Jeeva Karunyam (Compassion toward all living beings)?',
+
+    answerTa: `எல்லா உயிர்களும் இன்பமாக வாழ்வதற்கு உதவுவதும், அதன் வளர்ச்சியை தடை செய்யாமல் இருப்பதும் ஜீவகாருண்யமாகும்.`,
+
+    answerEn: `Jeeva Karunyam is the quality of helping all living beings to live joyfully, and of never obstructing their growth and wellbeing. It is both an active compassion — supporting life — and a passive one — refraining from causing harm.`,
+  },
+
+  {
+    id: 7,
+
+    questionTa: 'மனிதனின் இயக்க ஒழுங்கு என்றால் என்ன?',
+    questionEn: 'What is the natural order of conduct (Iyakka Ozhungu) for a human being?',
+
+    answerTa: `மனிதன் செய்யும் அனைத்து செயல்களின் விளைவு இன்பமாக, நிறைவாக இருப்பதற்கு இயற்கை வகுத்த விதிகளே இயக்க ஒழுங்கு.
+
+உதாரணம்: பசித்த பின் உண்பது, இரவில் உறங்குவது.`,
+
+    answerEn: `The natural order of conduct (Iyakka Ozhungu) refers to the laws set by nature so that the results of all actions performed by a human being are joyful and fulfilling.
+
+Examples: eating only when hungry, sleeping at night.`,
+  },
+];

@@ -1,0 +1,71 @@
+---
+/**
+ * src/pages/en/learn/practices/[slug].astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Practice detail page — English version (dynamic route).
+ * One file generates ALL practice detail pages at build time.
+ * URL: /en/learn/practices/[slug]
+ * Tamil equivalent: src/pages/ta/learn/practices/[slug].astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+import { marked } from 'marked';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { practicesData } from '../../../../data/practices.js';
+
+export async function getStaticPaths() {
+  return practicesData.map((practice) => ({
+    params: { slug: practice.slug },
+    props:  { practice },
+  }));
+}
+
+const { practice } = Astro.props;
+const bodyHtml = marked(practice.bodyEn);
+const formattedDate = new Date(practice.date).toLocaleDateString('en-IN', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+---
+
+<BaseLayout lang="en" title={practice.titleEn} pageType="practices">
+  <article class="max-w-2xl mx-auto">
+
+    <a href="/en/learn/practices" class="inline-flex items-center gap-1 text-sm font-bold text-[#8B4513] hover:text-[#B8860B] transition-colors mb-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+      Back to Practices
+    </a>
+
+    <p class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-3">{formattedDate}</p>
+
+    <h1 class="text-3xl md:text-4xl font-bold text-[#8B4513] leading-tight mb-6" style="font-family: 'Playfair Display', serif;">
+      {practice.titleEn}
+    </h1>
+
+    <p class="text-lg text-gray-600 italic leading-relaxed mb-8 pb-8 border-b border-amber-100">
+      {practice.excerptEn}
+    </p>
+
+    <div
+      class="prose prose-lg max-w-none
+             prose-headings:font-bold prose-headings:text-[#8B4513]
+             prose-p:text-gray-700 prose-p:leading-relaxed
+             prose-blockquote:border-l-4 prose-blockquote:border-[#FFD700]
+             prose-blockquote:bg-amber-50 prose-blockquote:px-4 prose-blockquote:py-2
+             prose-blockquote:rounded-r-lg prose-blockquote:not-italic
+             prose-strong:text-[#8B4513]
+             prose-a:text-[#B8860B] prose-a:no-underline hover:prose-a:underline
+             prose-img:rounded-xl prose-img:shadow-md prose-img:mx-auto
+             prose-hr:border-amber-200"
+      set:html={bodyHtml}
+    />
+
+    <div class="mt-12 pt-8 border-t border-amber-100">
+      <a href="/en/learn/practices" class="inline-flex items-center gap-2 bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#B8860B] transition-all shadow-sm">
+        ← Back to all practices
+      </a>
+    </div>
+
+  </article>
+</BaseLayout>

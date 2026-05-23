@@ -36,15 +36,26 @@ const toggleLink = isTamil
   ? pathWithSlash.replace('/ta/', '/en/') 
   : pathWithSlash.replace('/en/', '/ta/');
 
-// Links based on your FR
+// Navigation links.
+// Items with a 'children' array render as a hover dropdown on desktop
+// and as indented sub-items in the mobile drawer.
 const menuLinks = [
-  { en: 'Home', ta: 'முகப்பு', url: `/${lang}` },
+  { en: 'Home',     ta: 'முகப்பு',        url: `/${lang}` },
   { en: 'About us', ta: 'எங்களைப் பற்றி', url: `/${lang}/about` },
-  { en: 'Books', ta: 'புத்தகங்கள்', url: `/${lang}/books` },
-  { en: 'Services', ta: 'சேவைகள்', url: `/${lang}/services` },
-  { en: 'Learn', ta: 'கற்க', url: `/${lang}/learn` },
-  { en: 'Contact', ta: 'தொடர்பு', url: `/${lang}/contact` },
-  { en: 'Gallery', ta: 'புகைப்படங்கள்', url: `/${lang}/gallery` },
+  { en: 'Books',    ta: 'புத்தகங்கள்',     url: `/${lang}/books` },
+  { en: 'Services', ta: 'சேவைகள்',         url: `/${lang}/services` },
+  {
+    // Learn dropdown — 4 sub-pages, no top-level URL
+    en: 'Learn', ta: 'கற்க',
+    children: [
+      { en: 'Q & A',      ta: 'கேள்வி பதில்', url: `/${lang}/learn/qna`       },
+      { en: 'Essays',     ta: 'கட்டுரைகள்',   url: `/${lang}/learn/essays`    },
+      { en: 'Videos',     ta: 'காணொளிகள்',     url: `/${lang}/learn/videos`    },
+      { en: 'Practices',  ta: 'பயிற்சிகள்',    url: `/${lang}/learn/practices` },
+    ],
+  },
+  { en: 'Contact', ta: 'தொடர்பு',         url: `/${lang}/contact` },
+  { en: 'Gallery', ta: 'புகைப்படங்கள்',   url: `/${lang}/gallery` },
 ];
 
 // Construct URLs
@@ -170,6 +181,45 @@ const schemaData = {
             <div class="flex flex-wrap justify-center items-center gap-8">
               {menuLinks.map(link => {
                 const isActive = normalizedPathname === link.url || (link.url === `/${lang}` && normalizedPathname === "");
+
+                // ── Dropdown item (has children) ──────────────────────────
+                if (link.children) {
+                  const isDropdownActive = link.children.some(child => normalizedPathname.startsWith(child.url));
+                  return (
+                    <div class="nav-dropdown-wrapper">
+                      {/* Dropdown trigger button — not a link itself */}
+                      <button
+                        class={`nav-dropdown-trigger text-[#8B4513] font-bold text-base hover:text-[#B8860B] transition-colors whitespace-nowrap flex items-center gap-1 ${isDropdownActive ? 'nav-link-active' : ''}`}
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        {isTamil ? link.ta : link.en}
+                        {/* Chevron icon */}
+                        <svg class="nav-dropdown-chevron w-3.5 h-3.5 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {/* Dropdown panel */}
+                      <div class="nav-dropdown-panel" role="menu">
+                        {link.children.map(child => {
+                          const isChildActive = normalizedPathname === child.url;
+                          return (
+                            <a
+                              href={child.url}
+                              role="menuitem"
+                              aria-current={isChildActive ? 'page' : undefined}
+                              class={`nav-dropdown-item ${isChildActive ? 'nav-dropdown-item-active' : ''}`}
+                            >
+                              {isTamil ? child.ta : child.en}
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+
+                // ── Regular flat link ─────────────────────────────────────
                 return (
                   <a 
                     href={link.url} 
@@ -295,6 +345,38 @@ const schemaData = {
           <ul role="list" class="py-2">
             {menuLinks.map(link => {
               const isActive = normalizedPathname === link.url || (link.url === `/${lang}` && normalizedPathname === "");
+
+              // ── Dropdown: render label + indented children ────────────────
+              if (link.children) {
+                const isDropdownActive = link.children.some(child => normalizedPathname.startsWith(child.url));
+                return (
+                  <li>
+                    {/* Non-clickable section label */}
+                    <span class={`flex items-center px-6 py-3 text-[#8B4513] font-bold text-base ${isDropdownActive ? 'text-[#B8860B]' : ''}`}>
+                      {isTamil ? link.ta : link.en}
+                    </span>
+                    {/* Indented child links */}
+                    <ul role="list">
+                      {link.children.map(child => {
+                        const isChildActive = normalizedPathname === child.url;
+                        return (
+                          <li>
+                            <a
+                              href={child.url}
+                              aria-current={isChildActive ? 'page' : undefined}
+                              class={`drawer-link flex items-center pl-10 pr-6 py-2.5 text-[#8B4513] text-sm font-semibold transition-colors hover:bg-[#FFF9C4] border-l-2 border-[#FFD700]/40 ml-6 ${isChildActive ? 'drawer-link-active' : ''}`}
+                            >
+                              {isTamil ? child.ta : child.en}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                );
+              }
+
+              // ── Regular flat link ─────────────────────────────────────────
               return (
                 <li>
                   <a

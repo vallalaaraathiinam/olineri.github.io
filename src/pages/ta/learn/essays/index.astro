@@ -1,0 +1,60 @@
+---
+/**
+ * src/pages/ta/learn/essays/index.astro
+ * Tamil essays listing page. Uses titleTa and excerptTa from essays.js.
+ * English equivalent: src/pages/en/learn/essays/index.astro
+ */
+
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { essaysData } from '../../../../data/essays.js';
+
+const sortedEssays = [...essaysData].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+function formatDate(isoDate) {
+  return new Date(isoDate).toLocaleDateString('ta-IN', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+---
+
+<BaseLayout lang="ta" title="கட்டுரைகள்" pageType="essays">
+  <div class="max-w-3xl mx-auto">
+
+    <h2 class="text-3xl font-bold text-amber-900 mb-2">கட்டுரைகள்</h2>
+    <p class="text-gray-500 italic mb-8 text-sm">
+      ஒளிநெறி பற்றிய சிந்தனைகள் — வள்ளலார் ஆதியினத்தின் போதனைகளிலிருந்து.
+    </p>
+
+    <div class="space-y-6">
+      {sortedEssays.map((essay) => (
+        <article class="group border border-amber-100 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <a href={`/ta/learn/essays/${essay.slug}`} class="block p-6">
+
+            <p class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-2">
+              {formatDate(essay.date)}
+            </p>
+
+            <h3 class="text-xl font-bold text-[#8B4513] group-hover:text-[#B8860B] transition-colors mb-3 leading-snug">
+              {essay.titleTa}
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed text-sm mb-4">
+              {essay.excerptTa}
+            </p>
+
+            <span class="inline-flex items-center gap-1 text-sm font-bold text-[#8B4513] group-hover:text-[#B8860B] transition-colors">
+              கட்டுரையை வாசிக்க
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+
+          </a>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</BaseLayout>

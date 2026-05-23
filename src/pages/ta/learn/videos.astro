@@ -1,0 +1,50 @@
+---
+/**
+ * src/pages/ta/learn/videos.astro
+ * Tamil videos page. Uses titleTa and descriptionTa fields from videos.js.
+ * English equivalent: src/pages/en/learn/videos.astro
+ */
+
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { videosData } from '../../../data/videos.js';
+---
+
+<BaseLayout lang="ta" title="காணொளிகள்" pageType="videos">
+  <div class="max-w-3xl mx-auto">
+
+    <h2 class="text-3xl font-bold text-amber-900 mb-2">காணொளிகள்</h2>
+    <p class="text-gray-500 italic mb-8 text-sm">
+      வள்ளலார் ஆதியினத்தின் வழிகாட்டும் போதனைகள் மற்றும் பயிற்சி அமர்வுகள்.
+    </p>
+
+    <div class="space-y-12">
+      {videosData.map((video) => (
+        <div class="space-y-3">
+
+          <h3 class="text-xl font-bold text-[#8B4513]">
+            {video.titleTa}
+          </h3>
+
+          {video.descriptionTa && (
+            <p class="text-gray-600 text-sm leading-relaxed">
+              {video.descriptionTa}
+            </p>
+          )}
+
+          <div class="aspect-video rounded-xl overflow-hidden shadow-md border border-amber-100">
+            <iframe
+              class="w-full h-full"
+              src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}`}
+              title={video.titleTa}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</BaseLayout>

@@ -232,7 +232,7 @@ h1, h2, h3 {
 
 /* Open state — toggled by hamburgerMenuToggle.js */
 #mobile-drawer.drawer-open {
-  max-height: 480px; /* Large enough for 7 nav links with padding */
+  max-height: 600px; /* Tall enough for all nav links including Learn sub-items */
 }
 
 /* Active link style inside the drawer.
@@ -287,4 +287,140 @@ h1, h2, h3 {
   white-space: nowrap;
   line-height: 1.6em;
   position: relative;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   9. DESKTOP NAV DROPDOWN
+   Used by the Learn nav item which has four sub-items:
+   Q&A, Essays, Videos, Practices.
+   Pure CSS hover dropdown — no JavaScript required.
+
+   How it works:
+   .nav-dropdown-wrapper     — the relative-positioned container
+   .nav-dropdown-trigger     — the button that shows the label + chevron
+   .nav-dropdown-panel       — the hidden panel that appears on hover/focus
+   .nav-dropdown-item        — individual links inside the panel
+
+   Accessibility:
+   - aria-haspopup="true" on the trigger tells screen readers a popup exists
+   - aria-expanded is toggled by the navDropdown script in BaseLayout
+   - role="menu" and role="menuitem" provide correct semantics
+   - The panel remains visible while focus is inside it (focus-within)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Wrapper — position:relative so the panel positions against it */
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+/* Trigger button — inherits nav link appearance */
+.nav-dropdown-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  /* Chevron rotates 180° when dropdown is open */
+}
+
+.nav-dropdown-trigger[aria-expanded="true"] .nav-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown panel — hidden by default, shown on hover or focus-within */
+.nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 8px);  /* 8px gap below the trigger */
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 160px;
+  background: var(--cream);
+  border: 1.5px solid var(--gold);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+  padding: 4px 0;
+  z-index: 200;
+
+  /* Hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+/* Show on hover over the wrapper */
+.nav-dropdown-wrapper:hover .nav-dropdown-panel,
+/* Show when focus is anywhere inside the wrapper (keyboard navigation) */
+.nav-dropdown-wrapper:focus-within .nav-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Individual dropdown menu item */
+.nav-dropdown-item {
+  display: block;
+  padding: 8px 18px;
+  color: var(--maroon);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(255, 215, 0, 0.15);
+  color: var(--gold-dim);
+}
+
+/* Active state — current page item in the dropdown */
+.nav-dropdown-item-active {
+  color: var(--gold-dim) !important;
+  background: rgba(255, 215, 0, 0.12);
+  border-left: 3px solid var(--maroon);
+  padding-left: 15px; /* 18px - 3px border */
+}
+
+/* Small decorative arrow pointing up at the panel */
+.nav-dropdown-panel::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: var(--cream);
+  border-top: 1.5px solid var(--gold);
+  border-left: 1.5px solid var(--gold);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   10. Q&A ACCORDION
+   The Q&A page uses native HTML <details>/<summary> elements for the
+   expand/collapse behaviour — no JavaScript required.
+
+   .qna-item      — the <details> wrapper (replaces the old <div> wrapper)
+   .qna-chevron   — the SVG chevron inside <summary>, rotates when open
+
+   How it works:
+   - The browser toggles the [open] attribute on <details> when clicked
+   - CSS [open] selector targets the open state to rotate the chevron
+   - list-none on <summary> removes the default browser disclosure triangle
+   - transition-transform on .qna-chevron provides the smooth 180° rotation
+
+   No colours or layout changes from the original design — only the
+   expand/collapse behaviour and chevron rotation are added here.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Remove the default browser triangle marker from <summary> */
+.qna-item summary::-webkit-details-marker { display: none; }
+.qna-item summary::marker              { display: none; }
+
+/* Rotate chevron 180° when the <details> is open */
+.qna-item[open] .qna-chevron {
+  transform: rotate(180deg);
 }

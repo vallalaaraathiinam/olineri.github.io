@@ -1,0 +1,66 @@
+---
+/**
+ * src/pages/en/learn/essays/index.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Essays listing page — English version.
+ * Lists all essays from src/data/essays.js in reverse chronological order.
+ * Each essay links to its detail page at /en/learn/essays/[slug].
+ * To add a new essay: append an entry to essays.js — no changes needed here.
+ * Tamil equivalent: src/pages/ta/learn/essays/index.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { essaysData } from '../../../../data/essays.js';
+
+// Sort newest first by ISO date string
+const sortedEssays = [...essaysData].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+function formatDate(isoDate) {
+  return new Date(isoDate).toLocaleDateString('en-IN', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
+}
+---
+
+<BaseLayout lang="en" title="Essays" pageType="essays">
+  <div class="max-w-3xl mx-auto">
+
+    <h2 class="text-3xl font-bold text-amber-900 mb-2">Essays</h2>
+    <p class="text-gray-500 italic mb-8 text-sm">
+      Reflections on the Path of Light — written from the teachings of Vallalar Adhiyinam.
+    </p>
+
+    <div class="space-y-6">
+      {sortedEssays.map((essay) => (
+        <article class="group border border-amber-100 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <a href={`/en/learn/essays/${essay.slug}`} class="block p-6">
+
+            <p class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-2">
+              {formatDate(essay.date)}
+            </p>
+
+            <h3 class="text-xl font-bold text-[#8B4513] group-hover:text-[#B8860B] transition-colors mb-3 leading-snug">
+              {essay.titleEn}
+            </h3>
+
+            <p class="text-gray-600 leading-relaxed text-sm mb-4">
+              {essay.excerptEn}
+            </p>
+
+            <span class="inline-flex items-center gap-1 text-sm font-bold text-[#8B4513] group-hover:text-[#B8860B] transition-colors">
+              Read essay
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+
+          </a>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</BaseLayout>

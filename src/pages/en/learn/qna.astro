@@ -1,0 +1,75 @@
+---
+/**
+ * src/pages/en/learn/qna.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Q&A page — English version.
+ * Renders all Q&A entries from src/data/qna.js on a single page.
+ * To add a new Q&A: append an entry to qna.js — no changes needed here.
+ * Tamil equivalent: src/pages/ta/learn/qna.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ */
+
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { qnaData } from '../../../data/qna.js';
+---
+
+<BaseLayout lang="en" title="Q & A" pageType="qna">
+  <div class="max-w-3xl mx-auto">
+
+    <h2 class="text-3xl font-bold text-amber-900 mb-2">Questions & Answers</h2>
+    <p class="text-gray-500 italic mb-8 text-sm">
+      Spiritual questions answered from the teachings of Vallalar Adhiyinam.
+    </p>
+
+    <div class="space-y-6">
+      {qnaData.map((item) => (
+        <!--
+          <details> is the native HTML accordion element.
+          No JavaScript needed — open/close is handled by the browser.
+          Accessible by default: keyboard focusable, screen reader announced.
+        -->
+        <details class="qna-item bg-amber-50 border border-amber-100 rounded-xl overflow-hidden shadow-sm group">
+
+          <!-- Question row — clicking anywhere on it toggles the answer -->
+          <summary class="bg-amber-100/60 px-6 py-4 flex gap-3 items-center cursor-pointer list-none">
+            <!-- Q marker -->
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#8B4513] text-white text-sm font-black flex items-center justify-center">
+              Q
+            </span>
+            <!-- Question text -->
+            <p class="text-[#8B4513] font-bold text-lg leading-snug flex-1">
+              {item.questionEn}
+            </p>
+            <!-- Chevron — rotates 180° when details is open via CSS -->
+            <svg
+              class="qna-chevron flex-shrink-0 w-5 h-5 text-[#8B4513] transition-transform duration-300"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+
+          <!-- Answer row — hidden until the question is clicked -->
+          <div class="px-6 py-4 flex gap-3 items-start">
+            <!-- A marker -->
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-[#B8860B] text-white text-sm font-black flex items-center justify-center mt-0.5">
+              A
+            </span>
+            <div class="text-gray-700 leading-relaxed space-y-3">
+              {item.answerEn.trim().split('\n\n').map((para) => (
+                <p>{para.trim()}</p>
+              ))}
+            </div>
+          </div>
+
+        </details>
+      ))}
+    </div>
+
+  </div>
+</BaseLayout>
