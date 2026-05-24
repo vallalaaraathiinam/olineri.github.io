@@ -11,7 +11,7 @@
   "https://olineri.org/en/learn/practices/": "sha256:19e947351201a8dc9bfdd5d6380275195b2a1fa9df8a18a42eb70e78bec65653",
   "https://olineri.org/en/learn/practices/saarbozhukkam/": "sha256:a99ac3022546f54fa2e76d14028e3cbe7f6d3f5029f00604306f9db8212e64b4",
   "https://olineri.org/en/learn/qna/": "sha256:9cabb2cb1e4b404cc6df0efa5b0c7a29305d1043134d967499a8aceca9b485c5",
-  "https://olineri.org/en/learn/videos/": "sha256:f542c31f054788983070fd4b3166963c97af664e3c8bda17da8196650ccf20d4",
+  "https://olineri.org/en/learn/videos/": "sha256:8cab1e03c8014ee097aca83b7ecf973ae7f9cedb392e36bdf9f8e9a0ce68851d",
   "https://olineri.org/en/services/": "sha256:4df51b31464e5fa59a37dc63af952e7563dfa51cee5120852f57ca434814f2f0",
   "https://olineri.org/": "sha256:a9169bea6733ce971833badc942f362e0ac735fb24ff5ae8ffd5d8f8d13b7884",
   "https://olineri.org/ta/about/": "sha256:58f760a79f81887a90e48f1a81a35c85dd6fade6d872f9c6714bfeaa8ec5e718",
@@ -26,6 +26,6 @@
   "https://olineri.org/ta/learn/practices/": "sha256:da603b8454eb4f4fc922865eac8caf15698ae0dff6bc382736b6ac82a3f82f09",
   "https://olineri.org/ta/learn/practices/saarbozhukkam/": "sha256:56e60e7241e21bb73b3fd5e19b3f2673bb49e4eb2159ef7791b1e5bbaee91423",
   "https://olineri.org/ta/learn/qna/": "sha256:af2232d689922ff5be4f64148f1cec5326d19219d7d2a45927f0757d7e4a4a7a",
-  "https://olineri.org/ta/learn/videos/": "sha256:8510084cea305357dcf71c6f1599ddaf8c2753e2fa306fde85114c34678625fe",
+  "https://olineri.org/ta/learn/videos/": "sha256:dbf36a1644aabbd83e63fc208ff8d3c10e0d843f1782b0e37b438a2c39019f30",
   "https://olineri.org/ta/services/": "sha256:ba327ca9c4f1b51d1a4f1e7397b6be3598a7a6597c9b3840118eccb284c7cacf"
 }
