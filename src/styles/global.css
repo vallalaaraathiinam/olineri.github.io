@@ -232,7 +232,7 @@ h1, h2, h3 {
 
 /* Open state — toggled by hamburgerMenuToggle.js */
 #mobile-drawer.drawer-open {
-  max-height: 600px; /* Tall enough for all nav links including Learn sub-items */
+  max-height: 700px; /* Tall enough for all nav links including Learn's 4 sub-items on small screens */
 }
 
 /* Active link style inside the drawer.

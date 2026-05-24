@@ -1,8 +1,14 @@
 ---
 /**
  * src/pages/ta/learn/videos.astro
- * Tamil videos page. Uses titleTa and descriptionTa fields from videos.js.
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Videos page — Tamil version.
+ * Renders all video entries from src/data/videos.js on a single page.
+ * Each video is embedded using youtube-nocookie.com for privacy.
+ * Uses titleTa and descriptionTa fields from videos.js.
+ * To add a new video: append an entry to videos.js — no changes needed here.
  * English equivalent: src/pages/en/learn/videos.astro
+ * ─────────────────────────────────────────────────────────────────────────────
  */
 
 import BaseLayout from '../../../layouts/BaseLayout.astro';
@@ -21,16 +27,23 @@ import { videosData } from '../../../data/videos.js';
       {videosData.map((video) => (
         <div class="space-y-3">
 
+          <!-- Title -->
           <h3 class="text-xl font-bold text-[#8B4513]">
             {video.titleTa}
           </h3>
 
+          <!-- Description -->
           {video.descriptionTa && (
             <p class="text-gray-600 text-sm leading-relaxed">
               {video.descriptionTa}
             </p>
           )}
 
+          <!--
+            aspect-video wrapper maintains 16:9 ratio at all screen sizes.
+            youtube-nocookie.com prevents YouTube setting cookies unless
+            the user actually plays the video (privacy best practice).
+          -->
           <div class="aspect-video rounded-xl overflow-hidden shadow-md border border-amber-100">
             <iframe
               class="w-full h-full"
@@ -41,6 +54,25 @@ import { videosData } from '../../../data/videos.js';
               allowfullscreen
             ></iframe>
           </div>
+
+          <!--
+            Fallback message for users with JavaScript disabled.
+            YouTube embeds require JS to play — this links directly
+            to the video on YouTube so no one is left without access.
+          -->
+          <noscript>
+            <p class="text-sm text-gray-500 italic">
+              இந்த காணொளியை பார்க்க JavaScript தேவை.
+              <a
+                href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[#8B4513] underline hover:text-[#B8860B]"
+              >
+                YouTube-ல் பார்க்க →
+              </a>
+            </p>
+          </noscript>
 
         </div>
       ))}
