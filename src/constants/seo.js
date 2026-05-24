@@ -31,7 +31,7 @@ export const SITE_CONFIG = {
 
   // Absolute URL to the Open Graph image (shown when links are shared on
   // WhatsApp, Facebook, Twitter, etc.). Recommended size: 1200 x 630 px.
-  ogImage:       'https://olineri.org/images/og-main.png',
+  ogImage:       'https://olineri.org/images/og-main.jpg',
 
   // Twitter/X handle — used in twitter:site meta tag
   twitterHandle: '@olineri_peedam',
