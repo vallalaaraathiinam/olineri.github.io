@@ -14,7 +14,7 @@
  *   titleEn  - Book title in English
  *   titleTa  - Book title in Tamil
  *   price    - MRP in Indian Rupees (₹)
- *   image    - Path relative to /public (e.g. /images/books/filename.jpg)
+ *   image    - Path relative to /public (e.g. /images/books/filename.webp)
  *   descEn   - Short description in English (shown under the title on the card)
  *   descTa   - Short description in Tamil
  *
@@ -31,7 +31,7 @@ export const books = [
       titleEn: "Olineri Vedham - Part 1",
       titleTa: "ஒளிநெறி வேதம் - பாகம் 1",
       price: "₹250",
-      image: "/images/books/olineri_vedham_part1.jpg",
+      image: "/images/books/olineri_vedham_part1.webp",
       descEn: "Core Philosophies - Compilation of Secrets about Universal Truth",
       descTa: "மூல தத்துவங்கள் - பிரபஞ்ச பேருண்மை இரகசியங்களின் தொகுப்பு"
     },
@@ -40,7 +40,7 @@ export const books = [
       titleEn: "Olineri Vedham - Part 2",
       titleTa: "ஒளிநெறி வேதம் - பாகம் 2",
       price: "₹60",
-      image: "/images/books/olineri_vedham_part2.jpg",
+      image: "/images/books/olineri_vedham_part2.webp",
       descEn: "Rules of Human Origins - Compilation of Universal Truth",
       descTa: "மனித கருமைய விதிகள் பிரபஞ்ச இரகசியங்களின் தொகுப்பு"
     },
@@ -49,7 +49,7 @@ export const books = [
       titleEn: "Deepathil Deiva Paavanai",
       titleTa: "தீபத்தில் தெய்வ பாவனை",
       price: "₹60",
-      image: "/images/books/deepathil_deiva_paavanai.jpg",
+      image: "/images/books/deepathil_deiva_paavanai.webp",
       descEn: "Meditating on Lamp flame",
       descTa: "கனல் நெறி தீப தவம்"
     },
@@ -58,7 +58,7 @@ export const books = [
       titleEn: "Arutperunjothi",
       titleTa: "அருட்பெருஞ்சோதி",
       price: "₹30",
-      image: "/images/books/maha_mandhira_vilakkam.jpg",
+      image: "/images/books/maha_mandhira_vilakkam.webp",
       descEn: "Explanation of Arutperunojothi - The universal mantra",
       descTa: "மகா மந்திர மறை பொருள் விளக்கம்"
     },
@@ -67,7 +67,7 @@ export const books = [
       titleEn: "Valluvar Vazhangiya Thavaneri",
       titleTa: "வள்ளுவர் வழங்கிய தவநெறி",
       price: "₹50",
-      image: "/images/books/valluvar_dhava_neri.jpg",
+      image: "/images/books/valluvar_dhava_neri.webp",
       descEn: "Secrets behind the epithets of Thirukural",
       descTa: "குறள் கூறும் இரகசியங்கள்"
     },
@@ -76,7 +76,7 @@ export const books = [
       titleEn: "Guruvarul Magimai",
       titleTa: "குருவருள் மகிமை",
       price: "₹30",
-      image: "/images/books/guruvarul_magimai.jpg",
+      image: "/images/books/guruvarul_magimai.webp",
       descEn: "Universal Truths about Teacher's Blessings",
       descTa: "குருவருள் பற்றிய பேருண்மைகள்"
     },
@@ -85,7 +85,7 @@ export const books = [
       titleEn: "Kadavul Aalayangal Aindhu",
       titleTa: "கடவுள் ஆலயங்கள் ஐந்து",
       price: "₹100",
-      image: "/images/books/kadavul_aalyangal_vilakkam_aindhu.jpg",
+      image: "/images/books/kadavul_aalyangal_vilakkam_aindhu.webp",
       descEn: "Secrets of the Spiritual Lifestyle",
       descTa: "இறை ஞான வாழ்வியல் இரகசியங்கள்"
     },
@@ -94,7 +94,7 @@ export const books = [
       titleEn: "Tiruvadi Gnana Deetchaa Ragasiyam",
       titleTa: "திருவடி ஞான தீட்சா இரகசியங்கள்",
       price: "₹100",
-      image: "/images/books/dheetcha_ragasiyangal.jpg",
+      image: "/images/books/dheetcha_ragasiyangal.webp",
       descEn: "Secrets about Spiritual Initiation",
       descTa: "திருவடி ஞான தீட்சா இரகசியங்கள், கனல் நெறி திருவடி தவம்"
     },

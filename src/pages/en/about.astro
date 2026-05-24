@@ -4,11 +4,13 @@
  * ─────────────────────────────────────────────────────────────────────────────
  * About page — English version.
  *
- * Three sections displayed in order:
+ * Five sections displayed in order:
  *   1. Guru Parampara   — The sacred lineage of 12 Gurus
- *   2. Founder          — Biography of Shri Sivagurunatha Desikar
+ *   2. Mission          — The divine service of Vallalar Adhiyinam
+ *   3. Vision           — The goal of Vallalar Adhiyinam
+ *   4. Founder          — Biography of Shri Sivagurunatha Desikar
  *                         Founder image floats left on desktop, stacks on mobile
- *   3. Emblem           — Spiritual significance of the Chinmudra emblem
+ *   5. Emblem           — Spiritual significance of the Chinmudra emblem
  *                         Emblem image floats right on desktop, stacks on mobile
  *
  * Layout pattern: float-none md:float-left/right
@@ -67,7 +69,38 @@ import { Image }  from 'astro:assets';
       </ol>
     </section>
 
-    <!-- ── Section 2: Founder biography ─────────────────────────────────────
+    <!-- ── Section 2: Mission ────────────────────────────────────────────────
+         Alternating background: bg-amber-50 (follows bg-white of Section 1)
+    ─────────────────────────────────────────────────────────────────────── -->
+    <section class="bg-amber-50 p-6 md:p-10 rounded-3xl border border-amber-200 shadow-sm">
+      <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
+        <h3 class="text-2xl font-bold text-amber-900 mb-1">
+          Mission of Vallalar Adhiyinam
+        </h3>
+        <p class="text-lg font-medium text-amber-800 italic">Our Divine Service</p>
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        Our divine service is to guide every human being — through the journey of lived experience — to correct their mistakes, free themselves from sorrow and suffering, and live a fulfilled life. And further, through the awareness that the same Divine presence dwells equally within every living being — to help every human being recognise, in each moment of life, the Divine in the form of pure intelligence that animates all of existence.
+      </p>
+    </section>
+
+    <!-- ── Section 3: Vision ──────────────────────────────────────────────────
+         Alternating background: bg-white (follows bg-amber-50 of Section 2)
+    ─────────────────────────────────────────────────────────────────────── -->
+    <section class="bg-white p-6 md:p-10 rounded-3xl border border-amber-100 shadow-sm">
+      <div class="border-l-4 border-[#FF9933] pl-6 mb-8">
+        <h3 class="text-2xl font-bold text-amber-900 mb-1">
+          Vision of Vallalar Adhiyinam
+        </h3>
+        <p class="text-lg font-medium text-amber-800 italic">Our Vision</p>
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        Our vision is to spread the Sanmarga education (Nayagan-Nayagi Bavanai) to every human being across the world through the ancient Gurukula tradition, whence they may realise their true self (Eternal Truth + Pure Consciousness + Supreme Bliss).
+      </p>
+    </section>
+
+    <!-- ── Section 4: Founder biography ─────────────────────────────────────
+         Alternating background: bg-amber-50 (follows bg-white of Section 3)
          Image floats left on md+ screens, stacks above text on mobile.
          clear-both at the end ensures the next section starts fresh.
     ─────────────────────────────────────────────────────────────────────── -->
@@ -82,7 +115,7 @@ import { Image }  from 'astro:assets';
       <!-- Founder portrait — floats left on desktop, full-width on mobile -->
       <div class="float-none md:float-left w-full md:w-1/3 md:mr-10 mb-6 text-center">
         <Image
-          src="/images/header/founder.jpg"
+          src="/images/header/founder.webp"
           alt="Shri Sivagurunatha Desikar — Founder of Vallalar Adhiyinam"
           width={400}
           height={600}
@@ -121,7 +154,7 @@ import { Image }  from 'astro:assets';
           </p>
         </div>
       </div>
-      <!-- Reset float so Section 3 starts on a new line -->
+      <!-- Reset float so Section 5 starts on a new line -->
       <div class="clear-both"></div>
     </section>
 
@@ -140,7 +173,7 @@ import { Image }  from 'astro:assets';
       <!-- Emblem image — floats right on desktop, full-width on mobile -->
       <div class="float-none md:float-right w-full md:w-1/2 lg:w-2/5 md:ml-10 mb-6 text-center">
         <Image 
-          src="/images/header/emblem.png" 
+          src="/images/header/emblem.webp" 
           alt="The Emblem of Vallalar Adhiyinam" 
           width={500}
           height={500}
