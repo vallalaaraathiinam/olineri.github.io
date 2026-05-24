@@ -19,6 +19,14 @@ if (title.includes('404') || title.toLowerCase().includes('not found')) {
   pageKey = '404';
 }
 
+// For nested /learn/ routes (/en/learn/qna, /en/learn/essays etc.)
+// pathSegments[1] would return 'learn' instead of the sub-page key.
+// We use pathSegments[2] when the second segment is 'learn' so each
+// sub-page gets its own correct meta description from SEO_DATA.
+if (!pageType && pathSegments[1] === 'learn' && pathSegments[2]) {
+  pageKey = pathSegments[2]; // resolves to 'qna' | 'essays' | 'videos' | 'practices'
+}
+
 // Fetch description from seo.js based on lang and detected pageKey
 // Fallback to 'index' if the specific page key isn't found in SEO_DATA
 const description = SEO_DATA[lang]?.[pageKey] || SEO_DATA[lang]?.index;

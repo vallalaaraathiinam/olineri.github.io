@@ -42,14 +42,19 @@ export const SITE_CONFIG = {
 // Structure: SEO_DATA[lang][pageKey]
 //
 // pageKey is auto-detected in BaseLayout from the URL path segment:
-//   /en/about   → pageKey = 'about'
-//   /en/        → pageKey = 'index'
-//   /ta/books   → pageKey = 'books'
+//   /en/about          → pageKey = 'about'
+//   /en/               → pageKey = 'index'
+//   /ta/books          → pageKey = 'books'
+//   /en/learn/qna      → pageKey = 'qna'   (uses pathSegments[2] for /learn/ sub-routes)
+//   /en/learn/essays   → pageKey = 'essays'
+//   /en/learn/videos   → pageKey = 'videos'
+//   /en/learn/practices→ pageKey = 'practices'
 //
 // To add a new page:
 //   1. Add the page file under src/pages/en/ and src/pages/ta/
 //   2. Add matching description entries below in both 'en' and 'ta' objects
 //   3. The key must exactly match the URL segment (e.g. 'about', 'contact')
+//   4. For nested /learn/ sub-pages, the key matches pathSegments[2]
 export const SEO_DATA = {
   en: {
     index:    'Welcome to Olineri Peedam, the official spiritual center of Vallalar Adhiyinam following the Path of Light.',
@@ -59,6 +64,8 @@ export const SEO_DATA = {
     books:    'Browse our collection of spiritual literature, wisdom books, and publications from Vallalar Adhiyinam.',
     qna:      'Spiritual questions answered from the teachings of Vallalar Adhiyinam.',
     essays:   'Spiritual essays reflecting the inner teachings of Vallalar Adhiyinam.',
+    videos:   'Watch guided teachings and training sessions on Deepa Bavanai and Sanmarga practices from Vallalar Adhiyinam.',
+    practices: 'Step-by-step guides to the spiritual practices taught at Vallalar Adhiyinam.',
     services: 'Explore the spiritual services, community activities, and rituals offered by Olineri Peedam.',
     gallery:  'View photographs and visual highlights from events and spiritual gatherings at Vallalar Adhiyinam.',
     '404':    'The page you are looking for was not found. Please return to the Olineri Peedam home page.',
@@ -71,6 +78,8 @@ export const SEO_DATA = {
     books:    'வள்ளலார் ஆதியினத்தின் ஆன்மீக மற்றும் ஞான நூல்கள், அதனை சார்ந்த வெளியீடுகளை இங்கே காணலாம்.',
     qna:      'வள்ளலார் ஆதியினத்தின் போதனைகளிலிருந்து ஆன்மீகக் கேள்விகளுக்கு விடை.',
     essays:   'வள்ளலார் ஆதியினத்தின் உள்ளார்ந்த போதனைகளை பிரதிபலிக்கும் ஆன்மீகக் கட்டுரைகள்.',
+    videos:   'வள்ளலார் ஆதியினத்தின் வழிகாட்டும் போதனைகள் மற்றும் பயிற்சி அமர்வுகள்.',
+    practices: 'வள்ளலார் ஆதியினத்தில் கற்பிக்கப்படும் ஆன்மீக பயிற்சிகளுக்கான படிப்படியான வழிகாட்டிகள்.',
     services: 'ஒளிநெறி பீடம் வழங்கும் ஆன்மீகச் சேவைகள், சமூகச் செயல்பாடுகள் மற்றும் பயிற்சி முறைகளை அறிந்து கொள்ளுங்கள்.',
     gallery:  'வள்ளலார் ஆதியினத்தின் ஆன்மீக நிகழ்வுகள் மற்றும் திருவிழாக்களின் புகைப்படக் காட்சிகளைக் கண்டு மகிழுங்கள்.',
     '404':    'நீங்கள் தேடும் பக்கம் காணப்படவில்லை. தயவுசெய்து ஒளிநெறி பீடத்தின் முகப்புப் பக்கத்திற்குத் திரும்புங்கள்.',
