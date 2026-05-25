@@ -1,5 +1,14 @@
 const menuBtn = document.getElementById('mobile-menu-btn');
 const drawer  = document.getElementById('mobile-drawer');
+const learnToggle  = document.querySelector('.learn-toggle');
+const learnSubmenu = document.getElementById('learn-submenu');
+const learnChevron = document.querySelector('.learn-chevron');
+
+function collapseLearn() {
+    learnSubmenu?.classList.add('hidden');
+    learnToggle?.setAttribute('aria-expanded', 'false');
+    learnChevron?.classList.remove('rotate-180');
+}
 
 function openMenu() {
     drawer?.classList.add('drawer-open');
@@ -17,11 +26,24 @@ function closeMenu() {
         'aria-label',
         document.documentElement.lang === 'ta' ? 'மெனுவைத் திற' : 'Open menu'
     );
+    collapseLearn();
 }
 
 // Toggle on hamburger click
 menuBtn?.addEventListener('click', () => {
     drawer?.classList.contains('drawer-open') ? closeMenu() : openMenu();
+});
+
+// Learn submenu toggle
+learnToggle?.addEventListener('click', () => {
+    const isOpen = !learnSubmenu?.classList.contains('hidden');
+    if (isOpen) {
+        collapseLearn();
+    } else {
+        learnSubmenu?.classList.remove('hidden');
+        learnToggle?.setAttribute('aria-expanded', 'true');
+        learnChevron?.classList.add('rotate-180');
+    }
 });
 
 // Close when any nav link is clicked
