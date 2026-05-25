@@ -42,160 +42,53 @@
 export const essaysData = [
   {
     // ── Unique URL identifier — use lowercase, hyphens only ──────────────────
-    slug: 'significance-of-thai-poosam',
+    slug: 'why-people-lost-clarity',
 
     // ── Publication date (ISO 8601) — essays are listed newest first ─────────
-    date: '2026-01-15',
+    date: '2026-05-25',
 
     // ── English content ──────────────────────────────────────────────────────
-    titleEn:   'The Significance of Thai Poosam',
-    excerptEn: 'Thai Poosam marks a sacred alignment of cosmic energies. Understanding its deeper spiritual significance transforms how we approach this holy day.',
+    titleEn: 'Crowds have swelled in temples in the name of devotion, and in ashrams in the name of wisdom. But what is the reason that human society has lost its humaneness and lost its clarity?',
+    excerptEn: 'From atoms to the universe, everything is a mechanism. All mechanisms possess the inherent nature to function. Because they function, they are called mechanisms.',
 
     bodyEn: `
-## The Cosmic Alignment
+From atoms to the universe, everything is a mechanism. All mechanisms possess the inherent nature to function. Because they function, they are called mechanisms. We, as human beings, are also a mechanism. We have also been given the ability to drive other mechanisms. No mechanism can function without the support of another, and this includes the human mechanism as well. For a human to function, he needs something else. He considers life-relationships and possessive-relationships to be that "something else" for him. He wanders in search of these two relationships. With the things he has sought and found, he tries to attain pleasure through clarity of action, and fulfillment through clarity of knowledge.
 
-Thai Poosam occurs when the moon is in the Pushya (Poosam) star during the Tamil month of Thai (January–February). This is not merely an astronomical event — it represents a precise alignment of inner and outer energies that our ancestors observed and honoured for thousands of years.
+"Life-relationships" can be understood as living mechanisms that relate to humans, while "possessive-relationships" refer to all inanimate objects that assist humans. However, in the effort to seek and attain these relationships, the expected outcome is lost. That is, the hard-earned pleasure disappears, and fulfillment vanishes.
 
-The Pushya star is associated with nourishment, spiritual growth, and the light of wisdom. When this star aligns with the full moon in the Tamil month of Thai, it creates what the ancients described as a window of heightened spiritual receptivity.
+Through both research and experience, man realizes that he cannot achieve this through his efforts alone, and that it can only be attained with the support of something that is more knowledgeable, superior in action, and wiser than himself. Having realized this, he named that entity "God" and built temples to worship it. Through those temples, he attempted to seek what he needed.
 
-## The Inner Significance
+Unable to achieve clarity in his actions, he tried to secure permanent pleasure by acquiring his needed possessions with the help of God. Even though he fulfills his needs by going to temples, he is driven back to a state where he must search for needs all over again. Next, the one who failed to achieve fulfillment in knowledge—after experiencing defeat in his own efforts—goes to an ashram in search of wise elders who are mature in knowledge, to attain that mental fulfillment. Even if he finds the fulfillment he sought at the ashram, that attained fulfillment fails to last.
 
-Beyond the outer observance, Thai Poosam invites us to reflect on the light that exists within each of us. The **Arutperunjothi** — the Infinite Grace Light — is not something distant or external. It is the very basis of our awareness, the silent witness behind all thought and perception.
-
-Thai Poosam is an invitation to turn our attention inward, toward this inner light, and to recognise it as our true nature.
-
-> "The light you seek outside has always been within you. Thai Poosam is the reminder." — Olineri Teachings
-
-## How to Observe Thai Poosam
-
-The outer observance — the lighting of lamps, the singing of devotional songs, the gathering of seekers — is meaningful only when it reflects the inner orientation.
-
-On this day, consider:
-
-- **Morning lamp meditation (Deepa Bavanai):** Begin the day by meditating on the lamp flame for at least 20 minutes
-- **Silence and reflection:** Reserve periods of silence to allow the inner stillness to deepen
-- **Compassion in action (Jeeva Karunyam):** Offer food or service to those in need — this is the practical expression of inner light
-
----
-
-Thai Poosam, observed with this inner understanding, becomes not just a festival but a genuine spiritual practice — a day of turning toward the light that never fades.
-`,
+Thus, human society — unable to achieve clarity of action through the multiplication of needs, and unable to achieve fulfillment of mind through the multiplication of knowledge — has lost its humaneness, stumbles, and become bewildered.
+    `,
 
     // ── Tamil content ─────────────────────────────────────────────────────────
-    titleTa:   'தைப்பூசத்தின் முக்கியத்துவம்',
-    excerptTa: 'தைப்பூசம் பிரபஞ்ச சக்திகளின் புனித இணைவை குறிக்கிறது. இந்த திருநாளின் ஆழமான ஆன்மீக முக்கியத்துவத்தை உணர்வது நம் அணுகுமுறையை மாற்றும்.',
+    titleTa:   'பக்தி என்ற பெயரில் கோவில்களிலும், ஞானம் என்ற பெயரில் ஆசிரமங்களிலும் கூட்டம் பெருகியுள்ளது. ஆனால் மனித சமுதாயம் மனிதத் தன்மையை இழந்து தெளிவற்று போனதற்கு காரணம் என்ன?',
+    excerptTa: 'அணு முதல் அண்டம் வரை உள்ள அனைத்துமே இயக்கங்கள். எல்லா இயக்கங்களும் இயங்கும் தன்மையோடு உள்ளன. இயங்குவதால் அவைகள் இயக்கம். மனிதர்களாகிய நாமும் ஒரு இயக்கம்.',
 
     bodyTa: `
-## பிரபஞ்ச இணைவு
+அணு முதல் அண்டம் வரை உள்ள அனைத்துமே இயக்கங்கள். எல்லா இயக்கங்களும் இயங்கும் தன்மையோடு உள்ளன. இயங்குவதால் அவைகள் இயக்கம். மனிதர்களாகிய நாமும் ஒரு இயக்கம். நமக்கு மற்ற இயக்கங்களை இயக்கும் திறனும் கொடுக்கப்பட்டுள்ளது. எந்த ஒரு இயக்கமும் இன்னொன்றின் துணை இன்றி இயங்க முடியாது. அதில் மனித இயக்கமும் அடங்கும். மனிதன் இயங்க அவனுக்கு இன்னொன்று தேவை. அவனுக்கான இன்னொன்றாக உயிர் உறவுகளையும், உடைமை உறவுகளையும் நினைக்கின்றான். இந்த இரு உறவுகளையும் தேடி அலைகின்றான் அலைந்து தேடியவைகளை கொண்டு செயல் தெளிவின் மூலம் இன்பத்தையும், அறிவுத் தெளிவின் மூலம் நிறைவையும் அடைய முயலுகின்றான். 
 
-தை மாதம் பூச நட்சத்திரம் கூடும்போது தைப்பூசம் நிகழ்கிறது. இது வெறும் வானியல் நிகழ்வு மட்டுமல்ல — நம் முன்னோர்கள் ஆயிரக்கணக்கான ஆண்டுகளாக கவனித்துப் போற்றிய ஒரு ஆழமான ஆன்மீக இணைவை இது குறிக்கிறது.
+உயிர் உறவுகள் என்றால் மனிதனுடன் உறவுக்கொள்ளும் உயிர் இயக்கங்கள் என்றும், உடைமை உறவுகள் என்றால் மனிதனுக்கு உதவும் உயிரற்ற அனைத்து பொருட்கள் என்று புரிந்துக் கொள்ளலாம். உறவுகளை தேடி அடையும் முயற்சியில் எதிர்பார்த்த பயன் கிடைக்காமல் போய்விடுகின்றது. அதாவது முயன்று பெற்ற இன்பம் தொலைந்து போகின்றது மற்றும் நிறைவு நீங்கிவிடுகின்றது. 
 
-பூச நட்சத்திரம் வளர்ச்சி, ஆன்மீக முதிர்ச்சி மற்றும் ஞான ஒளியுடன் தொடர்புடையது. தை மாதத்தில் பௌர்ணமியன்று இந்த நட்சத்திரம் இணையும்போது, பண்டையோர் "ஆன்மீக ஏற்பின் உயர்நிலை" என்று வர்ணித்த ஒரு தருணம் உருவாகிறது.
+தன்னுடைய முயற்சியால் மட்டும் அதை அடைய முடியாது என்பதையும் தன்னை விட அறிவு நிறைந்ததாகவும், செயல் சிறந்ததாகவும், அறிவாளியாகவும் இருக்கின்ற ஒன்றின் துணையோடுதான் அதை அடையமுடியும் என்பதையும் ஆராய்ச்சியாலும், அனுபவத்தாலும் உணர்கின்றான். அவ்வாறு உணர்ந்து, அதற்கு இறைவன் என்ற பெயர் வைத்து, அதை வணங்க ஆலயங்களை அமைத்தான். அந்த ஆலயங்களை கொண்டு அவனுக்கு தேவையானதை தேட முயற்சி செய்தான். 
 
-## உள்ளார்ந்த முக்கியத்துவம்
+செயலில் தெளிவை அடையமுடியாமல் போனவன், தேவைக்கான உடைமைகளை இறைவனின் உதவியோடு அடைந்து இன்பத்தை நிலைவாட்ட முயன்றான். ஆலயங்களுக்குச் சென்று தேவைகளை அடைந்தாலும் மீண்டும் தேவைகளை தேட வேண்டும் என்ற நிலைக்கு ஆளாகின்றான். அடுத்து அறிவில் நிறைவை அடையமுடியாமல் போனவன், அவன் முயற்சியில் தோல்வியை கண்ட பிறகு, அறிவில் நிறைவ்டைவதற்காக அறிவில் முதிர்ந்த பெரியோர்களை தேடி ஆசிரமத்துக்கு செல்கின்றான். ஆசிரமத்தில் அவன் தேடிய நிறைவு கிடைத்தாலும், கிடைத்த நிறைவு தொடர முடியாமல் போய்விடுகின்றது.
 
-வெளி வழிபாட்டிற்கு அப்பால், தைப்பூசம் நம் ஒவ்வொருவருக்குள்ளும் உள்ள ஒளியை தியானிக்க அழைக்கிறது. **அருட்பெருஞ்ஜோதி** — பேரருள் ஒளி — தூரத்தில் இருப்பதல்ல. அது நம் உணர்வின் அடிப்படையே, எல்லா சிந்தனைகளுக்கும் பின்னால் இருக்கும் அமைதியான சாட்சியே.
-
-தைப்பூசம் நம் கவனத்தை உள்நோக்கி திருப்ப, இந்த உள் ஒளியை அடையாளம் காண ஒரு அழைப்பு.
-
-> "நீ வெளியில் தேடும் ஒளி எப்போதும் உனக்குள்ளேயே இருந்தது. தைப்பூசம் அதை நினைவூட்டுகிறது." — ஒளிநெறி போதனைகள்
-
-## தைப்பூசத்தை எப்படி கடைப்பிடிப்பது
-
-விளக்கேற்றுதல், பக்திப் பாடல்கள், சாதகர்களின் கூட்டம் — இவை வெளி வழிபாடுகள், உள் நோக்கத்தை பிரதிபலிக்கும்போதே பொருளுடையவை.
-
-இந்நாளில் கவனிக்க:
-
-- **காலை தீப பாவனை:** குறைந்தது 20 நிமிடங்கள் தீப சுடரில் தியானம் செய்யுங்கள்
-- **மௌனமும் தியானமும்:** உள் அமைதி ஆழமடைய மௌன நேரங்களை ஒதுக்குங்கள்
-- **ஜீவகாருண்யம்:** தேவைப்படுவோருக்கு உணவு அல்லது சேவை வழங்குங்கள் — இதுவே உள் ஒளியின் நடைமுறை வெளிப்பாடு
-
----
-
-இந்த உள்ளார்ந்த புரிதலுடன் கடைப்பிடிக்கும் தைப்பூசம் வெறும் திருவிழாவல்ல — அது ஒரு உண்மையான ஆன்மீக பயிற்சியாக மாறுகிறது.
-`,
+இப்படி தேவை பெருக்கத்தின் மூலம் செயலில் தெளிவையும், அறிவுப் பெருக்கத்தின் மூலம் அறிவில் நிறைவையும் பெறமுடியாத மனித சமுதாயமானது மனிதத் தன்மையை இழந்து தடுமாறி தெளிவற்று போனது.
+    `,
   },
+  // {
+  //   slug: '',
+  //   date: '',
 
-  {
-    slug: 'jeeva-karunyam-path-to-grace',
-    date: '2026-02-10',
+  //   titleEn: '',
+  //   excerptEn: '',
+  //   bodyEn: ``,
 
-    titleEn:   'Jeeva Karunyam: Compassion as the Path to Divine Grace',
-    excerptEn: 'Vallalar taught that compassion toward all living beings is not merely a virtue — it is the very gateway through which Divine Grace enters the human heart.',
-
-    bodyEn: `
-## What is Jeeva Karunyam?
-
-Jeeva Karunyam literally means "compassion toward all living beings" (Jeeva = living being, Karunyam = compassion). Vallalar placed this at the very centre of his teachings, declaring it the single most important quality a spiritual seeker must cultivate.
-
-This is not the compassion of pity or condescension. It is the recognition that every living being — from the smallest ant to the greatest sage — carries within it the same spark of the Divine, the same Arutperunjothi that we seek in ourselves.
-
-## Why Compassion Opens the Path
-
-Vallalar taught that the human body is a sacred instrument, finely calibrated to receive and express Divine Grace. But this instrument becomes blocked when we cause suffering to other beings — directly or indirectly, consciously or unconsciously.
-
-**The act of causing suffering to another being creates a veil** — between the individual and the inner light. No amount of ritual, meditation, or scripture reading can lift this veil if the heart remains closed to the suffering of others.
-
-Jeeva Karunyam — actively removing the causes of suffering for others — dissolves this veil, allowing the Grace Light to flow unobstructed.
-
-## Practical Expression
-
-Vallalar's approach to Jeeva Karunyam was intensely practical:
-
-1. **Food offering (Annadanam):** Providing food to the hungry was, for Vallalar, the most direct expression of compassion. The hungry body cannot receive spiritual light. Feed the body, and the path to the inner light opens.
-
-2. **Non-harm (Ahimsa):** Avoiding actions that cause suffering to other beings — in diet, in speech, in thought.
-
-3. **Recognising the One in all:** Seeing the same Divine presence in every being, regardless of form, species, or status.
-
-## The Connection to Inner Light
-
-Jeeva Karunyam is not separate from the inner spiritual path — it *is* the inner spiritual path, expressed outwardly. As the heart opens toward all beings, it simultaneously opens toward its own deepest nature.
-
-> "If your heart melts at the suffering of another, know that the Grace Light is already working within you." — Vallalar
-
----
-
-Begin with small acts. Notice the suffering closest to you. Respond with care. The path of compassion, walked sincerely, leads directly to the heart of the light.
-`,
-
-    titleTa:   'ஜீவகாருண்யம்: அருளின் வழி',
-    excerptTa: 'அனைத்து உயிரினங்களிடமும் கருணை கொள்வது வெறும் நல்லொழுக்கம் மட்டுமல்ல — அதுவே இறையருள் மனித இதயத்தில் பிரவேசிக்கும் வாயில் என்று வள்ளலார் கூறினார்.',
-
-    bodyTa: `
-## ஜீவகாருண்யம் என்றால் என்ன?
-
-ஜீவகாருண்யம் என்பது "அனைத்து உயிரினங்களிடமும் கருணை" என்று பொருள்படும். வள்ளலார் இதை தன் போதனைகளின் மையமாக வைத்தார். ஆன்மீக வழியில் செல்பவர் வளர்க்க வேண்டிய ஒற்றை முக்கியமான குணம் இதுவே என்று அவர் கூறினார்.
-
-இது பரிதாபம் அல்ல, இரக்கம் மட்டுமுமல்ல. சிறிய எறும்பிலிருந்து மாமுனிவர் வரை — ஒவ்வொரு உயிரிலும் அதே தெய்வீக ஒளி, அதே அருட்பெருஞ்ஜோதி இருக்கிறது என்னும் உணர்தலே ஜீவகாருண்யம்.
-
-## கருணை ஏன் வழியை திறக்கிறது
-
-மனித உடல் ஒரு புனிதமான கருவி — இறையருளை ஏற்றுக்கொள்ளவும் வெளிப்படுத்தவும் நுணுக்கமாக அமைக்கப்பட்டது என்று வள்ளலார் கூறினார். ஆனால் நாம் மற்ற உயிர்களுக்கு துன்பம் விளைவிக்கும்போது இந்த கருவி அடைத்துக்கொள்கிறது.
-
-**மற்றொரு உயிருக்கு துன்பம் தருவது ஒரு திரையை உருவாக்குகிறது** — தனிமனிதனுக்கும் உள் ஒளிக்கும் இடையே. இந்த திரையை அகற்றாத வரை எந்த சடங்கும், தியானமும், வேத வாசிப்பும் பயனில்லை.
-
-ஜீவகாருண்யம் — மற்றவர்களின் துன்பத்தை அகற்ற செயல்படுவது — இந்த திரையை கரைக்கிறது. அருள் ஒளி தடையின்றி பாய்கிறது.
-
-## நடைமுறை வெளிப்பாடு
-
-வள்ளலாரின் ஜீவகாருண்யம் மிகவும் நடைமுறையானது:
-
-1. **அன்னதானம்:** பசித்தவருக்கு உணவளிப்பது வள்ளலாருக்கு கருணையின் நேரடி வெளிப்பாடு. பசித்த உடல் ஆன்மீக ஒளியை ஏற்க முடியாது. உடலை போஷி, உள் ஒளியின் வழி திறக்கும்.
-
-2. **அகிம்சை:** உணவில், வார்த்தையில், சிந்தனையில் — மற்ற உயிர்களுக்கு துன்பம் தரும் செயல்களை தவிர்க்கவும்.
-
-3. **எல்லாவற்றிலும் ஒன்றை காணுதல்:** ஒவ்வொரு உயிரிலும் — வடிவம், இனம், நிலை வேறுபாடின்றி — அதே தெய்வீக இருப்பை காணுதல்.
-
-## உள் ஒளியுடன் தொடர்பு
-
-ஜீவகாருண்யம் உள் ஆன்மீக வழியிலிருந்து பிரிந்தது அல்ல — அது வெளியில் வெளிப்படும் ஆன்மீக வழியே. இதயம் எல்லா உயிர்களிடமும் திறக்கும்போது, அது ஒரே நேரத்தில் தன் ஆழமான இயல்பிடமும் திறக்கிறது.
-
-> "மற்றொருவரின் துன்பத்தில் உன் இதயம் கரைந்தால், அருள் ஒளி உனக்குள் ஏற்கனவே செயல்படுகிறது என்று அறிவாய்." — வள்ளலார்
-
----
-
-சிறிய செயல்களிலிருந்து தொடங்கு. உனக்கு அருகிலிருக்கும் துன்பத்தை கவனி. அக்கறையுடன் செயல்படு. உண்மையாக நடக்கப்படும் கருணையின் வழி, நேரடியாக ஒளியின் இதயத்திற்கு இட்டுச் செல்கிறது.
-`,
-  },
+  //   titleTa: '',
+  //   excerptTa: '',
+  //   bodyTa: ``,
+  // },
 ];

@@ -29,30 +29,9 @@ export const qnaData = [
 
 It is not a religion or a sect. It is the universal path of inner realisation that was followed by our ancestors and revealed through the ancient Gurukula tradition.`,
   },
+
   {
     id: 2,
-
-    questionTa: 'வள்ளலார் ஆதியினத்தின் இலக்கு என்ன?',
-    questionEn: 'What is the goal of Vallalar Adhiyinam?',
-
-    answerTa: `மனிதன் தன் சுயத்தை (சத் + சித் + ஆனந்தம்) உணர்வதற்கான சன்மார்க்க (நாயகன்-நாயகி பாவனை) கல்வியை, தொன்மை குருகுல மரபு வழியாக உலகெங்கும் பரப்புவதே எங்களின் இலக்கு.`,
-
-    answerEn: `Our vision is to spread the Sanmarga education (Nayagan-Nayagi Bavanai) to every human being across the world through the ancient Gurukula tradition, whence they may realise their true self (Eternal Truth + Pure Consciousness + Supreme Bliss)`,
-  },
-
-  {
-    id: 3,
-
-    questionTa: 'வள்ளலார் ஆதியினத்தின் செயல்பாடு என்ன?',
-    questionEn: 'What is the mission and work of Vallalar Adhiyinam?',
-
-    answerTa: `ஒவ்வொரு மனிதனும் வாழ்க்கை என்னும் அனுபவப் பயணத்தில் தவறுகளை திருத்திக் கொண்டு, துன்ப துயரங்களிலிருந்து விடுபட்டு, நிறைவான வாழ்க்கையை வாழ்வதற்கும்,மனிதன் தனக்குள் இருக்கும் ஆன்ம நேய ஒருமைப்பாட்டு உணர்வின் வழியாக வாழ்வின் ஒவ்வொரு நிகழ்விலும் எல்லா உயிர்களையும் இயக்கிக் கொண்டிருக்கும் அறிவு வடிவான இறைவனை உணர வைப்பதே எங்கள் இறைப்பணி.`,
-
-    answerEn: `Our divine service is to guide every human being — through the journey of lived experience — to correct their mistakes, free themselves from sorrow and suffering, and live a fulfilled life. And further, through the awareness that the same Divine presence dwells equally within every living being — to help every human being recognise, in each moment of life, the Divine in the form of pure intelligence that animates all of existence.`,
-  },
-
-  {
-    id: 4,
 
     questionTa: 'மனிதனிடம் உள்ள மூன்று உடல்கள் யாவை?',
     questionEn: 'What are the three bodies present in a human being?',
@@ -75,7 +54,7 @@ It is not a religion or a sect. It is the universal path of inner realisation th
   },
 
   {
-    id: 5,
+    id: 3,
 
     questionTa: 'மனிதனின் பருவுடல் என்றால் என்ன?',
     questionEn: 'What is the Gross body (Paru Udal) of a human being?',
@@ -86,7 +65,7 @@ It is not a religion or a sect. It is the universal path of inner realisation th
   },
 
   {
-    id: 6,
+    id: 4,
 
     questionTa: 'ஜீவகாருண்யம் என்றால் என்ன?',
     questionEn: 'What is Jeeva Karunyam (Compassion toward all living beings)?',
@@ -97,7 +76,7 @@ It is not a religion or a sect. It is the universal path of inner realisation th
   },
 
   {
-    id: 7,
+    id: 5,
 
     questionTa: 'மனிதனின் இயக்க ஒழுங்கு என்றால் என்ன?',
     questionEn: 'What is the natural order of conduct (Iyakka Ozhungu) for a human being?',

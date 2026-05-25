@@ -40,14 +40,16 @@ const formattedDate = new Date(essay.date).toLocaleDateString('en-IN', {
 
     <p class="text-xs font-bold text-amber-600 uppercase tracking-widest mb-3">{formattedDate}</p>
 
-    <h1 class="text-3xl md:text-4xl font-bold text-[#8B4513] leading-tight mb-6" style="font-family: 'Playfair Display', serif;">
+    <h1 class="text-xl md:text-xl font-bold text-[#8B4513] leading-tight mb-6" style="font-family: 'Playfair Display', serif;">
       {essay.titleEn}
     </h1>
 
+    <!--
     <p class="text-lg text-gray-600 italic leading-relaxed mb-8 pb-8 border-b border-amber-100">
       {essay.excerptEn}
     </p>
-
+    -->
+    
     <div
       class="prose prose-lg max-w-none
              prose-headings:font-bold prose-headings:text-[#8B4513]
