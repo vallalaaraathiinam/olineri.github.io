@@ -79,6 +79,28 @@ Thus, human society — unable to achieve clarity of action through the multipli
 இப்படி தேவை பெருக்கத்தின் மூலம் செயலில் தெளிவையும், அறிவுப் பெருக்கத்தின் மூலம் அறிவில் நிறைவையும் பெறமுடியாத மனித சமுதாயமானது மனிதத் தன்மையை இழந்து தடுமாறி தெளிவற்று போனது.
     `,
   },
+
+  {
+    slug: 'how-to-gain-clarity',
+    date: '2026-05-26',
+
+    titleEn: 'What is the path for society to achieving humaneness and gaining clarity?',
+    excerptEn: `The possessions acquired through temple worships to meet one's needs, and the intellectual explanations for ignorance gained through ashrams, have failed to satisfy man.`,
+    bodyEn: `The possessions acquired through temple worships to meet one's needs, and the intellectual explanations for ignorance gained through ashrams, have failed to satisfy man. They remained merely objects of pursuit. In other words, what he knew and what he attained were not complete. What is it within him that kept prompting him to know more and more to dispel his ignorance? What is it within him that kept prompting him to acquire more and more to fulfill his desires? The lack of clarity regarding these two factors is the root cause of modern man's confusion.
+
+The complete clarity of knowledge and the lasting happiness (enduring bliss) that he searches for actually reside within himself. Man is now realizing that something which exists inside him cannot be searched for and attained through something that exists outside of him. It exists as Divinity within the human being living in physical form. The Divinity that prompted him to know from within has taken the form of "Conscience," and the Divinity that prompted him to attain has taken the form of "Intuition."
+
+If a connection—that is, a relationship—is established with these two, a confused human being will transform into a complete human being. If that relationship is established and allowed to mature, a complete human being will elevate into a great human being (Mahapurusha/Saint). This is the path traversed by the sages. This is the path designed by the Divine.`,
+
+    titleTa: 'மனித சமுதாயம் மனிதத்தன்மை அடைந்து தெளிவாவதற்கான வழி என்ன?',
+    excerptTa: 'ஆலய வழிபாடுகள் மூலம் அடைந்த தேவைகளுக்கான உடைமைகளும், ஆசிரமங்கள் மூலம் அறிந்த அறியாமைக்கான அறிவு விளக்கமும் மனிதனை திருப்திப்படுத்த முடியவில்லை.',
+    bodyTa: `ஆலய வழிபாடுகள் மூலம் அடைந்த தேவைகளுக்கான உடைமைகளும், ஆசிரமங்கள் மூலம் அறிந்த அறியாமைக்கான அறிவு விளக்கமும் மனிதனை திருப்திப்படுத்த முடியவில்லை. தேடும் பொருளாகவே இருந்தது. அதாவது அவன் அறிந்ததும், அடைந்ததும் முழுமையானதாக இல்லை. அறியாமையை நீக்கிக் கொள்வதற்காக மேலும் மேலும் அவனுக்குள் அறிய தூண்டியது எது? தேவைகளை நிறைவேற்றிக் கொள்வதற்காக மேலும் மேலும் அவனுக்குள் அடைய தூண்டியது எது? இவற்றில் தெளிவில்லாத நிலையே இன்றைய மனிதனின் தெளிவின்மைக்கு காரணம்.
+
+அவன் தேடுகின்ற முழுமையான அறிவுத் தெளிவும், சுகநீட்சியும் (சுகம் நீடித்திருப்பது) அவனுக்குள்ளாகவே இருக்கின்றது. அவனுக்குள்ளாக இருக்கின்ற ஒன்றை அவனுக்கு வெளியே இருக்கின்ற வேறொன்றால் தேடி அடைய முடியாததை மனிதன் உணர்கின்றான். அது வடிவத்தில் வாழ்ந்து கொண்டிருக்கும் மனிதனுக்குள் இறைமையாக இருக்கின்றது. அவனுக்குள் அறியத் தூண்டிய இறைமையானது “மனசாட்சி” ஆகவும், அடையத் தூண்டிய இறைமையானது “உள்ளுணர்வு” ஆகவும் வடிவெடுத்து இருக்கின்றது.
+
+இந்த இரண்டுடனும் தொடர்பு ஏற்பட்டால், அதாவது உறவு ஏற்பட்டால், தெளிவில்லாத மனிதன் முழுமையான மனிதனாக மாறி அமைவான். உறவு ஏற்பட்டு, உறவில் முதிர்ச்சி பெற்றால் முழுமையான மனிதன் மாமனிதனாக உயர்வடைவான். இதுதான் ஞானிகள் பயணித்த பாதை. இதுதான் இறைவன் வகுத்த பாதை.`,
+  },
+
   // {
   //   slug: '',
   //   date: '',
