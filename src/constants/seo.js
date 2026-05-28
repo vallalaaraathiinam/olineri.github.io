@@ -97,6 +97,22 @@ export const CONTACT_DETAILS = {
   whatsapp_order: {
     number:       '918610692350',                    // International format without '+'
     textPrefixEn: 'I would like to order the book: ',
-    textPrefixTa: 'இந்த புத்தகத்தை வாங்க விரும்பிகிறேன்: ',
+    textPrefixTa: 'இந்த புத்தகத்தை வாங்க விரும்புகிறேன்: ',
+  },
+  whatsapp_chennai: {
+    nameEn: 'Maheswaran',
+    nameTa: 'மகேஸ்வரன்',
+    number: '919444734634',
+    number_formatted: '+91 94447 34634',
+    textPrefixEn: 'Greetings Maheswaran ayya, I wanted to contact you to learn about Olineri',
+    textPrefixTa: 'வணக்கம் மகேஸ்வரன் ஐயா, ஒளிநெறி பற்றி அறிய உங்களை தொடர்பு கொள்ள விரும்புகிறேன்',
+  },
+  whatsapp_trichy: {
+    nameEn: 'Thiyagarajan',
+    nameTa: 'தியாகராஜன்',
+    number: '918667754280',
+    number_formatted: '+91 86677 54280',
+    textPrefixEn: 'Greetings Thiyagarajan ayya, I wanted to contact you to learn about Olineri',
+    textPrefixTa: 'வணக்கம் தியாகராஜன் ஐயா, ஒளிநெறி பற்றி அறிய உங்களை தொடர்பு கொள்ள விரும்புகிறேன்',
   },
 };

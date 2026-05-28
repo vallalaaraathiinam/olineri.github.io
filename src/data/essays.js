@@ -130,26 +130,26 @@ Lifestyle changes include orderly conduct (discipline in action), elimination of
 இயக்க ஒழுங்கு, எதிர்மறை எண்ணம் நீக்கம், நேர்மறை எண்ணங்களுடன் இயங்குதல், இருப்பதை ஏற்றல், எஞ்சியதை ஈதல், தேவைகளுக்கு எல்லை வகுத்தல் ஆகிய இவை போன்றவைகளே வாழ்வியல் மாற்றங்கள். இதனை செய்ய விரும்பாதவர்கள், இளைப்பாறுதலை மட்டும் தேடி அலைவார்கள். இவர்கள் மிகையாக இருப்பதால், இவர்களுக்கான இளைப்பாறுதல் மையங்களும் ஏராளமாக தோன்றின.`,
   },
 
-//   {
-//     slug: 'searching-outside-those-within-inside',
-//     date: '2026-05-28',
+  {
+    slug: 'searching-outside-those-within-inside',
+    date: '2026-05-28',
 
-//     titleEn: 'What made that which is within (inward) be searched for outside (outward)? And why?',
-//     excerptEn: '',
-//     bodyEn: `What made the search turn outward is malam (impurity). [Triple bondage of "Aanavam" - Primal Ego, "Kanmam" - Karma, and "Maayai" - Cosmic Illusion].
+    titleEn: 'What made that which is within (inward), be searched outside (outward)? And why?',
+    excerptEn: 'What made the search turn outward is malam (impurity). [Triple bondage of "Aanavam" - Primal Ego, "Kanmam" - Karma, and "Maayai" - Cosmic Illusion].',
+    bodyEn: `What made the search turn outward is malam (impurity). [Triple bondage of "Aanavam" - Primal Ego, "Kanmam" - Karma, and "Maayai" - Cosmic Illusion].
 
-// The very purpose of human birth is to dissolve this impurity/bondage. Through the experiences gained by interacting with living relationships (people) and material relationships (possessions) in this world, impurities are dissolved. By doing so, man attains clarity of intellect (fulfillment) and order in action (happiness) in life.
+The very purpose of human birth is to dissolve this impurity/bondage. Through the experiences gained by interacting with living relationships (people) and material relationships (possessions) in this world, impurities are dissolved. By doing so, man attains clarity of intellect (fulfillment) and order in action (happiness) in life.
 
-// The leader of malam is "Agandhai" (Psychological Ego or just "Ego"). It is a combination of two things: "I" and "Mine". From the moment one wakes up in the morning, it is impossible to function without its assistance. It is this ego that identifies and introduces living relationships and material possessions. Therefore, using the aid of "I-and-Mine", man begins to look outward (into the world) to search for the knowledge he wishes to know and the pleasure he wishes to attain.`,
+The leader of malam is "Agandhai" (Psychological Ego or just "Ego"). It is a combination of two things: "I" and "Mine". From the moment one wakes up in the morning, it is impossible to function without its assistance. It is this ego that identifies and introduces living relationships and material possessions. Therefore, using the aid of "I-and-Mine", man begins to look outward (into the world) to search for the knowledge he wishes to know and the pleasure he wishes to attain.`,
 
-//     titleTa: 'அகம் நோக்கி இருப்பதை புறம் நோக்கி தேட வைத்தது எது? ஏன்?',
-//     excerptTa: 'புறம் நோக்கி தேடவைத்தது மலம். (ஆணவம், கன்மம், மாயை)',
-//     bodyTa: `புறம் நோக்கி தேடவைத்தது மலம். (ஆணவம், கன்மம், மாயை)
+    titleTa: 'அகம் நோக்கி இருப்பதை, புறம் நோக்கி தேட வைத்தது எது? ஏன்?',
+    excerptTa: 'புறம் நோக்கி தேடவைத்தது மலம். (ஆணவம், கன்மம், மாயை)',
+    bodyTa: `புறம் நோக்கி தேடவைத்தது மலம். (ஆணவம், கன்மம், மாயை)
 
-// மனிதன் பிறப்பெடுத்து வந்திருப்பதே மலத்தை கரைப்பதற்காக. உலகில் உள்ள உயிர் உறவுகளையும், உடைமை உறவுகளையும் தொடர்பு கொண்டு பெறுகின்ற அனுபவங்கள் மூலம் மலமானது கரைக்கப்படுகிறது. வாழ்க்கையில் மலத்தை கரைப்பதன் மூலமாக அறிவில் தெளிவையும்(நிறைவு), செயலில் ஒழுங்கையும் (இன்பம்) மனிதன் அடைகின்றான்.
+மனிதன் பிறப்பெடுத்து வந்திருப்பதே மலத்தை கரைப்பதற்காக. உலகில் உள்ள உயிர் உறவுகளையும், உடைமை உறவுகளையும் தொடர்பு கொண்டு பெறுகின்ற அனுபவங்கள் மூலம் மலமானது கரைக்கப்படுகிறது. வாழ்க்கையில் மலத்தை கரைப்பதன் மூலமாக அறிவில் தெளிவையும்(நிறைவு), செயலில் ஒழுங்கையும் (இன்பம்) மனிதன் அடைகின்றான்.
 
-// மலத்தின் தலைவன் “அகந்தை” (EGO). இது “நான்” மற்றும் “எனது” ஆகிய இரண்டின் கலவை. காலை விழித்தது முதல் இதன் துணையின்றி இயங்க முடியாது. இதுதான் உயிர் உறவுகள், உடைமை உறவுகள் ஆகியவற்றை அடையாளப்படுத்தி அறிமுகப்படுத்துகின்றது. அதனால் உலகத்தில் தொடர்பு கொண்டு அறிய நினைக்கின்ற அறிவையும், அடைய நினைக்கின்ற சுகத்தையும் “நான்-எனது“ துணைக் கொண்டு புறம்நோக்கி (உலகத்தில்) தேட ஆரம்பிக்கின்றான்.`,
-//   },
+மலத்தின் தலைவன் “அகந்தை” (EGO). இது “நான்” மற்றும் “எனது” ஆகிய இரண்டின் கலவை. காலை விழித்தது முதல் இதன் துணையின்றி இயங்க முடியாது. இதுதான் உயிர் உறவுகள், உடைமை உறவுகள் ஆகியவற்றை அடையாளப்படுத்தி அறிமுகப்படுத்துகின்றது. அதனால் உலகத்தில் தொடர்பு கொண்டு அறிய நினைக்கின்ற அறிவையும், அடைய நினைக்கின்ற சுகத்தையும் “நான்-எனது“ துணைக் கொண்டு புறம்நோக்கி (உலகத்தில்) தேட ஆரம்பிக்கின்றான்.`,
+  },
 
 //   {
 //     slug: 'what-is-malam',
