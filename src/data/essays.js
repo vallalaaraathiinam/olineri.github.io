@@ -151,59 +151,59 @@ The leader of malam is "Agandhai" (Psychological Ego or just "Ego"). It is a com
 மலத்தின் தலைவன் “அகந்தை” (EGO). இது “நான்” மற்றும் “எனது” ஆகிய இரண்டின் கலவை. காலை விழித்தது முதல் இதன் துணையின்றி இயங்க முடியாது. இதுதான் உயிர் உறவுகள், உடைமை உறவுகள் ஆகியவற்றை அடையாளப்படுத்தி அறிமுகப்படுத்துகின்றது. அதனால் உலகத்தில் தொடர்பு கொண்டு அறிய நினைக்கின்ற அறிவையும், அடைய நினைக்கின்ற சுகத்தையும் “நான்-எனது“ துணைக் கொண்டு புறம்நோக்கி (உலகத்தில்) தேட ஆரம்பிக்கின்றான்.`,
   },
 
-//   {
-//     slug: 'what-is-malam',
-//     date: '2026-05-29',
+  {
+    slug: 'what-is-malam',
+    date: '2026-05-29',
 
-//     titleEn: 'What is Malam (Impurity)?',
-//     excerptEn: '',
-//     bodyEn: `The barrier between God and us is malam (Impurity / Tarnish). The tarnish that has settled upon the soul is malam. Because it is tarnished, the soul — which ought to function by accepting the governance of the Divine — becomes unable to manifest its own true, natural state. Only the soul's true nature can connect it with the Divine.
+    titleEn: 'What is Malam (Impurity)?',
+    excerptEn: '',
+    bodyEn: `The barrier between God and us is malam (Impurity / Tarnish). The tarnish that has settled upon the soul is malam. Because it is tarnished, the soul — which ought to function by accepting the governance of the Divine — becomes unable to manifest its own true, natural state. Only the soul's true nature can connect it with the Divine.
 
-// The tarnish that has settled upon the soul separates it from God. It is malam that obstructs the manifestation of the soul's true nature. Alternatively, it can be described as compressed particles of darkness, dirt, or tarnish. It is solely to break through these barriers and cleanse itself of this malam, that the soul takes birth in various forms as jeevan (living being). In its tarnished state, the Soul is called a **Jeevan**.`,
+The tarnish that has settled upon the soul separates it from God. It is malam that obstructs the manifestation of the soul's true nature. Alternatively, it can be described as compressed particles of darkness, dirt, or tarnish. It is solely to break through these barriers and cleanse itself of this malam, that the soul takes birth in various forms as jeevan (living being). In its tarnished state, the Soul is called a **Jeevan**.`,
 
-//     titleTa: 'மலம் என்றால் என்ன?',
-//     excerptTa: 'இறைவனுக்கும் நமக்கும் உள்ள தடையே, மலம். ஆன்மா மீது படிந்த களங்கம், மலம்.',
-//     bodyTa: `இறைவனுக்கும் நமக்கும் உள்ள தடையே, மலம். ஆன்மா மீது படிந்த களங்கம், மலம். களங்கப்பட்டதால், இறைமையின் ஆளுமையை ஏற்று இயங்கவேண்டிய ஆன்மா, தனது சுய இயல்பான ஆன்ம இயல்பை வெளிப்படுத்த முடியாமல் போகின்றது. ஆன்ம இயல்பு மட்டுமே ஆன்மாவை இறைவனுடன் இணைக்கும்.
+    titleTa: 'மலம் என்றால் என்ன?',
+    excerptTa: 'இறைவனுக்கும் நமக்கும் உள்ள தடையே, மலம். ஆன்மா மீது படிந்த களங்கம், மலம்.',
+    bodyTa: `இறைவனுக்கும் நமக்கும் உள்ள தடையே, மலம். ஆன்மா மீது படிந்த களங்கம், மலம். களங்கப்பட்டதால், இறைமையின் ஆளுமையை ஏற்று இயங்கவேண்டிய ஆன்மா, தனது சுய இயல்பான ஆன்ம இயல்பை வெளிப்படுத்த முடியாமல் போகின்றது. ஆன்ம இயல்பு மட்டுமே ஆன்மாவை இறைவனுடன் இணைக்கும்.
 
-// ஆன்மா மீது படிந்த மலம் இறைவனிடமிருந்து பிரிக்கும். ஆன்ம இயல்பு வெளிப்பாட்டை தடுப்பது மலம். அல்லது அழுத்தம் பெற்ற இருள் துகள்கள், அழுக்கு, களங்கம் என்றும் சொல்லலாம். இந்த தடைகளை உடைத்து மலத்தை நீக்கிக் கொள்ளவே, ஆன்மா ஜீவனாக பல்வேறு நிலைகளில் பிறப்பெடுக்கின்றது. மலம் படிந்த நிலையில் ஆன்மாவுக்கு, ஜீவன் என்று பெயர்.`,
-//   },
+ஆன்மா மீது படிந்த மலம் இறைவனிடமிருந்து பிரிக்கும். ஆன்ம இயல்பு வெளிப்பாட்டை தடுப்பது மலம். அல்லது அழுத்தம் பெற்ற இருள் துகள்கள், அழுக்கு, களங்கம் என்றும் சொல்லலாம். இந்த தடைகளை உடைத்து மலத்தை நீக்கிக் கொள்ளவே, ஆன்மா ஜீவனாக பல்வேறு நிலைகளில் பிறப்பெடுக்கின்றது. மலம் படிந்த நிலையில் ஆன்மாவுக்கு, ஜீவன் என்று பெயர்.`,
+  },
 
-//   {
-//     slug: 'impurity-obstructing-soul-nature',
-//     date: '2026-05-30',
+  {
+    slug: 'impurity-obstructing-soul-nature',
+    date: '2026-05-29',
 
-//     titleEn: 'How does malam obstruct the true nature of the soul? Explain the characteristics of malam?',
-//     excerptEn: '',
-//     bodyEn: `The soul, which functions by accepting the governance of the Divine and holding that divine nature as its own true nature, is eternal. It has neither birth nor death. It is the **Root Malam (Primal Bondage)** that limits this soul — which ought to function in divine nature and merge with the Grand Cosmic Vibration — and obstructs it from functioning altogether.
+    titleEn: 'How does malam obstruct the true nature of the soul? Explain the characteristics of malam?',
+    excerptEn: '',
+    bodyEn: `The soul, which functions by accepting the governance of the Divine and holding that divine nature as its own true nature, is eternal. It has neither birth nor death. It is the **Root Malam (Primal Bondage)** that limits this soul — which ought to function in divine nature and merge with the Grand Cosmic Vibration — and obstructs it from functioning altogether.
 
-// Malam is an inert matter (jada) devoid of any traits like intelligence, movement, energy, speed, or expansion. It consists of particles of darkness spread throughout the entire universe. Scriptural texts refer to this as **Prakruti**. This can be understood as what modern scientific researchers refer to as **DARK ENERGY*. When wind takes the shape of a massive storm, we see completely stationary objects getting shattered and swept away. In that scenario, the appearance that those stationary objects are moving on their own is false. The movement of malam is exactly like that. The "movement of malam" is merely an effect caused when the Grand Cosmic Vibration travels rapidly through the otherwise stationary particles of dark malam.
+Malam is an inert matter (jada) devoid of any traits like intelligence, movement, energy, speed, or expansion. It consists of particles of darkness spread throughout the entire universe. Scriptural texts refer to this as **Prakruti**. This can be understood as what modern scientific researchers refer to as **DARK ENERGY*. When wind takes the shape of a massive storm, we see completely stationary objects getting shattered and swept away. In that scenario, the appearance that those stationary objects are moving on their own is false. The movement of malam is exactly like that. The "movement of malam" is merely an effect caused when the Grand Cosmic Vibration travels rapidly through the otherwise stationary particles of dark malam.
 
-// Just as objects scattered by a storm violently pile up haphazardly due to the Earth's gravitational pull, these dark particles are drawn in by the attractive nature of the soul, settling as a layer upon it. Souls that are unable to manifest their true nature due to these layers of malam are called Jeevan or Uyir (living being or spirit). These are **formless spirits**. When these formless spirits take shape as the atoms of the five elements (pancha bhootas) and emerge as **dormant life-forms**, it marks the very first birth of the **Jeevan**.
+Just as objects scattered by a storm violently pile up haphazardly due to the Earth's gravitational pull, these dark particles are drawn in by the attractive nature of the soul, settling as a layer upon it. Souls that are unable to manifest their true nature due to these layers of malam are called Jeevan or Uyir (living being or spirit). These are **formless spirits**. When these formless spirits take shape as the atoms of the five elements (pancha bhootas) and emerge as **dormant life-forms**, it marks the very first birth of the **Jeevan**.
 
-// When the incarnated souls — the living jeevas — take shape as distinct functional entities, three centers align within them. Because the jeevan possesses these three centers, the Root Malam settled upon it also splits into three functional parts. They are:
+When the incarnated souls — the living jeevas — take shape as distinct functional entities, three centers align within them. Because the jeevan possesses these three centers, the Root Malam settled upon it also splits into three functional parts. They are:
 
-// 1. The Intellect-based Stimulation Center: The malam that obstructs this is called Primal Ego (Aanava Malam).
-// 2. The Movement-based Action Center: The malam that conflicts with this is called Karma (Kanma Malam).
-// 3. The Sharing-based Connection Center: The malam that veils this is called Cosmic Illusion (Maya Malam).
+1. The Intellect-based Stimulation Center: The malam that obstructs this is called Primal Ego (Aanava Malam).
+2. The Movement-based Action Center: The malam that conflicts with this is called Karma (Kanma Malam).
+3. The Sharing-based Connection Center: The malam that veils this is called Cosmic Illusion (Maya Malam).
 
-// These three types of malam manifest respectively as the freedom of the soul (jeeva-swatantra), the freedom of consumption/experience (bhoga-swatantra), and the freedom of the physical body (deha-swatantra), serving as the seeds for rebirth. Since these three malams follow the soul through every birth until they are completely eliminated and a birthless state is achieved, this entity can be called the "Root Malam" (Moola Malam). It is in accordance with their maturation — that is, in accordance with their gradual removal — the changes and reductions in births take place.`,
+These three types of malam manifest respectively as the freedom of the soul (jeeva-swatantra), the freedom of consumption/experience (bhoga-swatantra), and the freedom of the physical body (deha-swatantra), serving as the seeds for rebirth. Since these three malams follow the soul through every birth until they are completely eliminated and a birthless state is achieved, this entity can be called the "Root Malam" (Moola Malam). It is in accordance with their maturation — that is, in accordance with their gradual removal — the changes and reductions in births take place.`,
 
-//     titleTa: 'ஆன்ம சுய இயல்பை மலம் எப்படி தடைப்படுத்தியது? மலத்தின் தன்மை, அதன் விளக்கம் என்ன?',
-//     excerptTa: 'இறைமையின் ஆளுமையை ஏற்று, அந்த இறை இயல்பை தன் சுய இயல்பாக கொண்டு இயங்கும் ஆன்மா நித்தியமானது. பிறப்பு இறப்பு இல்லாதது.',
-//     bodyTa: `இறைமையின் ஆளுமையை ஏற்று, அந்த இறை இயல்பை தன் சுய இயல்பாக கொண்டு இயங்கும் ஆன்மா நித்தியமானது. பிறப்பு இறப்பு இல்லாதது. அவ்வாறு இறை இயல்பில் இயங்கி பேரசைவுடன் இனையவேண்டிய ஆன்மாவை எல்லைப் படுத்தி, இயங்க விடாமல் தடைப்படுத்தியது **மூல மலம்**.
+    titleTa: 'ஆன்ம சுய இயல்பை மலம் எப்படி தடைப்படுத்தியது? மலத்தின் தன்மை, அதன் விளக்கம் என்ன?',
+    excerptTa: 'இறைமையின் ஆளுமையை ஏற்று, அந்த இறை இயல்பை தன் சுய இயல்பாக கொண்டு இயங்கும் ஆன்மா நித்தியமானது. பிறப்பு இறப்பு இல்லாதது.',
+    bodyTa: `இறைமையின் ஆளுமையை ஏற்று, அந்த இறை இயல்பை தன் சுய இயல்பாக கொண்டு இயங்கும் ஆன்மா நித்தியமானது. பிறப்பு இறப்பு இல்லாதது. அவ்வாறு இறை இயல்பில் இயங்கி பேரசைவுடன் இனையவேண்டிய ஆன்மாவை எல்லைப் படுத்தி, இயங்க விடாமல் தடைப்படுத்தியது **மூல மலம்**.
 
-// மலம் என்பது அறிவு, அசைவு, ஆற்றல், வேகம், விரிவு என்ற எந்த தன்மையும் இல்லாத ஜடம். பிரபஞ்சம் முழுவதும் பரவியிருக்கின்ற இருள் துகள்கள். தத்துவ நூல்களில் இதனை **பிரக்ருதி** என்பர். இன்றைய அறிவியல் ஆராய்ச்சியாளர்கள் கூறும் **DARK ENERGY** என்பது இதை குறிப்பதாக எடுத்துக் கொள்ளலாம். காற்று பெரும் புயலாக வடிவெடுக்கும் போது, அசைவற்று கிடந்த பொருட்களெல்லாம் சிதைந்து பறப்பது தெரியும். அங்கு அசைவற்ற பொருட்களெல்லாம் அசைவதாக தோன்றுவது பொய். அதனை போன்றதுதான் மலத்தின் அசைவும். அசைவற்ற மல இருள் துகள்களின் ஊடாக பேரசைவு விரைந்து பயணிக்கும் போது ஏற்பட்ட விளைவுதான் "மல அசைவு".
+மலம் என்பது அறிவு, அசைவு, ஆற்றல், வேகம், விரிவு என்ற எந்த தன்மையும் இல்லாத ஜடம். பிரபஞ்சம் முழுவதும் பரவியிருக்கின்ற இருள் துகள்கள். தத்துவ நூல்களில் இதனை **பிரக்ருதி** என்பர். இன்றைய அறிவியல் ஆராய்ச்சியாளர்கள் கூறும் **DARK ENERGY** என்பது இதை குறிப்பதாக எடுத்துக் கொள்ளலாம். காற்று பெரும் புயலாக வடிவெடுக்கும் போது, அசைவற்று கிடந்த பொருட்களெல்லாம் சிதைந்து பறப்பது தெரியும். அங்கு அசைவற்ற பொருட்களெல்லாம் அசைவதாக தோன்றுவது பொய். அதனை போன்றதுதான் மலத்தின் அசைவும். அசைவற்ற மல இருள் துகள்களின் ஊடாக பேரசைவு விரைந்து பயணிக்கும் போது ஏற்பட்ட விளைவுதான் "மல அசைவு".
 
-// புயல் காற்றில் சிதைந்து பறந்த பொருட்கள் பூமியின் ஈர்ப்பு விசையால் ஆங்காங்கே முறையற்று குவிந்து விடுவதை போன்று, ஆன்மாவின் ஈர்த்தல் தன்மையால் இருள் துகள்கள் ஈர்க்கப்பட்டு, ஆன்மா மீது வந்து படிகின்றன. மலப் படிவுகளால் தன் இயல்பை வெளிப்படுத்திட முடியாத ஆன்மாக்கள் தான் ‘ஜீவன்’ என்றும் ‘உயிர்’ என்றும் அழைக்கப்படுகின்றது. இவைகள் **உரு பெறா உயிர்கள்**. உரு பெறா ஜீவன்கள் பஞ்ச பூத அணுக்களாக வடிவெடுத்து **உறைநிலை உயிர்களாக** தோன்றுவதுதான் ஜீவனுக்கான முதல் பிறப்பு.
+புயல் காற்றில் சிதைந்து பறந்த பொருட்கள் பூமியின் ஈர்ப்பு விசையால் ஆங்காங்கே முறையற்று குவிந்து விடுவதை போன்று, ஆன்மாவின் ஈர்த்தல் தன்மையால் இருள் துகள்கள் ஈர்க்கப்பட்டு, ஆன்மா மீது வந்து படிகின்றன. மலப் படிவுகளால் தன் இயல்பை வெளிப்படுத்திட முடியாத ஆன்மாக்கள் தான் ‘ஜீவன்’ என்றும் ‘உயிர்’ என்றும் அழைக்கப்படுகின்றது. இவைகள் **உரு பெறா உயிர்கள்**. உரு பெறா ஜீவன்கள் பஞ்ச பூத அணுக்களாக வடிவெடுத்து **உறைநிலை உயிர்களாக** தோன்றுவதுதான் ஜீவனுக்கான முதல் பிறப்பு.
 
-// பிறப்பெடுத்த ஆன்மாக்கள் அதாவது உயிராகிய ஜீவர்கள் தனித்த இயக்கமாக வடிவெடுக்கும் போது, அவைகளுக்கு மூன்று மையங்கள் அமைந்து விடுகின்றன. ஜீவனுக்கு மூன்று மையங்கள் அமைந்திருப்பதால், ஜீவன் மீது படிந்திருந்த மூலமலமும் மூன்றாக பிரிந்து இயங்குகின்றது. அவைகள்:
+பிறப்பெடுத்த ஆன்மாக்கள் அதாவது உயிராகிய ஜீவர்கள் தனித்த இயக்கமாக வடிவெடுக்கும் போது, அவைகளுக்கு மூன்று மையங்கள் அமைந்து விடுகின்றன. ஜீவனுக்கு மூன்று மையங்கள் அமைந்திருப்பதால், ஜீவன் மீது படிந்திருந்த மூலமலமும் மூன்றாக பிரிந்து இயங்குகின்றது. அவைகள்:
 
-// 1. அறிவு வடிவான தூண்டல் மையம். இதனை தடைப்படுத்தும் மலத்திற்கு **ஆணவ மலம்** என்று பெயர்.
-// 2. அசைவு வடிவான செயல் மையம். இதனை முரண்படுத்தும் மலத்திற்கு **கன்ம மலம்** என்று பெயர்.
-// 3. பகிர்வு வடிவான தொடர்பு மையம். இதனை மறைக்கும் மலத்திற்கு **மாயா மலம்** என்று பெயர்.
+1. அறிவு வடிவான தூண்டல் மையம். இதனை தடைப்படுத்தும் மலத்திற்கு **ஆணவ மலம்** என்று பெயர்.
+2. அசைவு வடிவான செயல் மையம். இதனை முரண்படுத்தும் மலத்திற்கு **கன்ம மலம்** என்று பெயர்.
+3. பகிர்வு வடிவான தொடர்பு மையம். இதனை மறைக்கும் மலத்திற்கு **மாயா மலம்** என்று பெயர்.
 
-// மூன்று வகை மலங்களும் முறையே ஜீவசுதந்திரம், போக சுதந்திரம், தேக சுதந்திரம் என்ற வடிவெடுத்து பிறப்பிற்கு விதையாகின்றது. இந்த மூன்று மலங்களும், முற்றிலும் நீங்கி பிறப்பற்ற நிலை வரும் வரை பிறப்பு தோறும் மலம் தொடர்வதால், இதனை **மூலமலம்** என்று கூறலாம். இவைகளின் பக்குவங்களுக்கு ஏற்பவே அதாவது இவைகள் நீங்குவதற்கு ஏற்பவே பிறப்புக்கள் மாறுவதும், குறைவதும் நிகழ்கின்றன.`,
-//   },
+மூன்று வகை மலங்களும் முறையே ஜீவசுதந்திரம், போக சுதந்திரம், தேக சுதந்திரம் என்ற வடிவெடுத்து பிறப்பிற்கு விதையாகின்றது. இந்த மூன்று மலங்களும், முற்றிலும் நீங்கி பிறப்பற்ற நிலை வரும் வரை பிறப்பு தோறும் மலம் தொடர்வதால், இதனை **மூலமலம்** என்று கூறலாம். இவைகளின் பக்குவங்களுக்கு ஏற்பவே அதாவது இவைகள் நீங்குவதற்கு ஏற்பவே பிறப்புக்கள் மாறுவதும், குறைவதும் நிகழ்கின்றன.`,
+  },
 
   // {
   //   slug: '',
