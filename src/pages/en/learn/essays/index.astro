@@ -13,10 +13,11 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { essaysData } from '../../../../data/essays.js';
 
-// Sort newest first by ISO date string
-const sortedEssays = [...essaysData].sort(
-  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-);
+// Sort newest first; preserve essays.js order when dates are equal
+const sortedEssays = essaysData
+  .map((essay, index) => ({ essay, index }))
+  .sort((a, b) => new Date(b.essay.date).getTime() - new Date(a.essay.date).getTime() || b.index - a.index)
+  .map(({ essay }) => essay);
 
 function formatDate(isoDate) {
   return new Date(isoDate).toLocaleDateString('en-IN', {
