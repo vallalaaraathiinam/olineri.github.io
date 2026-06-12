@@ -1,8 +1,12 @@
 ---
 /**
  * src/pages/ta/learn/practices/[slug].astro
- * Tamil practice detail page. Uses bodyTa from practices.js.
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Practice detail page — Tamil version (dynamic route).
+ * One file generates ALL practice detail pages at build time.
+ * URL: /ta/learn/practices/[slug]
  * English equivalent: src/pages/en/learn/practices/[slug].astro
+ * ─────────────────────────────────────────────────────────────────────────────
  */
 
 import { marked } from 'marked';
@@ -45,19 +49,7 @@ const formattedDate = new Date(practice.date).toLocaleDateString('ta-IN', {
     </p>
     -->
     
-    <div
-      class="prose prose-lg max-w-none
-             prose-headings:font-bold prose-headings:text-[#8B4513]
-             prose-p:text-gray-700 prose-p:leading-relaxed
-             prose-blockquote:border-l-4 prose-blockquote:border-[#FFD700]
-             prose-blockquote:bg-amber-50 prose-blockquote:px-4 prose-blockquote:py-2
-             prose-blockquote:rounded-r-lg prose-blockquote:not-italic
-             prose-strong:text-[#8B4513]
-             prose-a:text-[#B8860B] prose-a:no-underline hover:prose-a:underline
-             prose-img:rounded-xl prose-img:shadow-md prose-img:mx-auto
-             prose-hr:border-amber-200"
-      set:html={bodyHtml}
-    />
+    <div class="prose prose-lg max-w-none" set:html={bodyHtml} />
 
     <div class="mt-12 pt-8 border-t border-amber-100">
       <a href="/ta/learn/practices" class="inline-flex items-center gap-2 bg-[#8B4513] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#B8860B] transition-all shadow-sm">

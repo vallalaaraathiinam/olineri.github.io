@@ -15,6 +15,9 @@
  *   6. Hamburger menu button           (.hamburger-line, open/close animation)
  *   7. Mobile drawer                   (#mobile-drawer, .drawer-link-active)
  *   8. Tagline marquee scroll          (.tagline-marquee, @keyframes)
+ *   9. Desktop nav dropdown            (.nav-dropdown-wrapper, panel, items)
+ *  10. Prose — essay & practice pages  (.prose headings, p, blockquote, etc.)
+ *  11. Q&A accordion                   (.qna-item, .qna-chevron)
  *
  * Why src/styles/ and not public/css/?
  *   Files in src/ are processed by Vite at build time — minified,
@@ -399,7 +402,114 @@ h1, h2, h3 {
 
 
 /* ══════════════════════════════════════════════════════════════════════════════
-   10. Q&A ACCORDION
+   10. PROSE — ESSAY & PRACTICE DETAIL PAGES
+   Centralised styles for all .prose rendered content (essays and practices).
+   Both EN and TA slug files use <div class="prose" set:html={bodyHtml} />.
+   Keeping styles here means one change applies to all four slug files.
+
+   .prose > p           — first-line indent on top-level paragraphs only
+                          (> selector excludes <p> inside lists/blockquotes)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-weight: 700;
+  color: #8B4513;
+}
+
+.prose > p {
+  color: #374151;
+  line-height: 1.75;
+  text-indent: 2rem;
+}
+
+.prose blockquote {
+  border-left: 4px solid #FFD700;
+  background-color: #fffbeb;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: normal;
+}
+
+.prose strong {
+  color: #8B4513;
+}
+
+.prose a {
+  color: #B8860B;
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose img {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose hr {
+  border-color: #fde68a;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  color: #374151;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  color: #374151;
+}
+
+.prose li {
+  line-height: 1.75;
+  margin-bottom: 0.25rem;
+}
+
+/* Code blocks */
+.prose pre {
+  background-color: #fef9ec;
+  border: 1px solid #fde68a;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.prose code {
+  color: #8B4513;
+  font-size: 0.9em;
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prose th {
+  background-color: #fffbeb;
+  color: #8B4513;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border: 1px solid #fde68a;
+  text-align: left;
+}
+
+.prose td {
+  padding: 0.5rem 1rem;
+  border: 1px solid #fde68a;
+  color: #374151;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   11. Q&A ACCORDION
    The Q&A page uses native HTML <details>/<summary> elements for the
    expand/collapse behaviour — no JavaScript required.
 

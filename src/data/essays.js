@@ -322,6 +322,195 @@ Similarly, when the Cosmic Impurity is completely dissolved, the soul transforms
 அதுபோல, மலம் முழுமையாகக் கரைந்த நிலையில் ஆன்மா இறைவனின் **இயக்கக் களமாக** (Instrument of the Divine) மாறுகிறது. இந்த உன்னதமான நிலையையே நம் முன்னோர்கள் **ஞானியர் நிலை** என்று அழைத்தார்கள்.`,
   },
 
+  {
+    slug: 'relationships-and-its-purpose',
+    date: '2026-06-12',
+
+    titleEn: `What are living relationships and material relationships? Why have they been given to us?`,
+    excerptEn: `While living in this world, we maintain some form of connection with everything around us. These connections can be broadly classified into two categories.`,
+    bodyEn: `
+#### 1. Two Types of Human Relationships
+While living in this world, we maintain some form of connection with everything around us. These connections can be broadly classified into two categories:
+
+#### - Living Relationships
+These are relationships with **living beings**—that is, the bonds we share with other living entities like ourselves. For example:
+  - Mother, father, wife, husband, children
+  - Friends, relatives, teachers, neighbors
+  - Household pets
+  - Birds and animals
+
+#### - Material Relationships
+These are relationships with non-living things and possessions. For example:
+  - House, land, money
+  - Vehicles, business/profession
+  - Property, savings
+
+  Both types of relationships help us navigate and sustain our lives. It is through them that we fulfill our needs.
+
+
+#### 2. What is "Malam" (Cosmic Impurity)?
+In this context, Malam does not refer to physical bodily waste. It refers to the inner impurities residing on the soul, such as:
+
+  - Ignorance (the state of not knowing)
+  - Egoism/Arrogance (the pride of "I")
+  - Attachment (the possessiveness of "Mine")
+  - Negative emotions like desire (greed), anger, and jealousy
+
+Only when this Malam dissolves does the soul become pure.
+
+#### 3. Why are Relationships Necessary?
+It is only when we live and engage with these worldly relationships that the Malam within us gradually dissolves. Here is how it happens:
+Through **Living Relationships** → Our **Intellect** (Arivu) becomes purified.
+> When we interact with another person, we learn from them. Witnessing their suffering evokes empathy within us. Love, compassion, and patience begin to grow. In this way, human relationships expand our intellect and understanding.
+
+Through **Material Relationships** → Our **Actions** (Seyal) become purified.
+> When we use money and wealth honestly, share with others, give to charity, and engage in hard work—our actions become clean and noble.
+
+#### 4. The World is a "Functional Medium"
+Here is an easy analogy to understand this concept:
+A student goes to school. The teacher, classmates, textbooks, and pens are all mediums that help him study. Once his education is complete, he moves on to a different place. Those school-time relationships remain there.
+
+Similarly, the relationships and wealth we acquire in this birth are for this lifetime only. In the next birth, a new set of relationships will emerge. This is precisely why we do not remember our past lives—it is an intelligent design of nature.
+
+#### 5. Supreme Intellect and Partial Intellect
+The entire universe is governed and driven by two great forces:
+| Force | Description |
+|---|---|
+| **Supreme Intellect** | The ultimate, all-knowing wisdom (Divine Intelligence) |
+| **Supreme Action** | The ultimate capacity that drives everything |
+
+This Supreme Intellect and Cosmic Action exist in a minute measure within every living being:
+- Partial Intellect (Pagudhi Arivu) = The limited understanding and wisdom we possess.
+- Partial Action (Pagudhi Seyal) = The limited actions and movements we perform.
+
+If you scoop a bucket of water from a vast river, the water in the bucket is still river water, but in a very small quantity. We are just like that—a tiny drop of the Supreme Intellect.
+
+#### 6. How does Cosmic Impurity dissolve?
+
+![alt](/images/essays/dissolving_malam_en.jpg)
+
+#### 7. Where We Must Not Falter
+
+| The Wrong Way | The Right Way |
+|---|---|
+| Remaining ignorant in relationships	| Cultivating love and understanding in relationships
+| Being contradictory or compromised in actions	| Remaining honest, clean, and righteous in actions
+| Exploiting relationships solely for selfishness	| Engaging in relationships with love and a mindset of giving
+||
+
+#### 8. Summary & Conclusion
+
+We do not live in this world merely to indulge in pleasures. We are here to cleanse our soul by dissolving the Cosmic Impurity - such as ignorance and ego — that reside within us. The relationships and material possessions provided by this world serve as the essential tools to accomplish that work.
+
+In short — **living with positivity and love toward both people and material things is the true path to spiritual evolution**.
+`,
+
+    titleTa: `உயிர் உறவுகள் மற்றும் உடைமை உறவுகள் என்றால் என்ன? அவைகள் எதற்காக கொடுக்கப்பட்டிருக்கின்றது?`,
+    excerptTa: `நாம் இந்த உலகில் வாழும்போது, நமக்கு சுற்றியிருக்கும் அனைத்துடனும் ஏதோ ஒரு தொடர்பு வைத்திருக்கிறோம். அந்த தொடர்புகளை இரண்டாகப் பிரிக்கலாம்.`,
+    bodyTa: `
+#### 1. மனிதனுக்கு இரண்டு வகை உறவுகள்
+
+நாம் இந்த உலகில் வாழும்போது, நமக்கு சுற்றியிருக்கும் அனைத்துடனும் ஏதோ ஒரு தொடர்பு வைத்திருக்கிறோம். அந்த தொடர்புகளை இரண்டாகப் பிரிக்கலாம்:
+
+#### - உயிர் உறவுகள் (Living Relationships)
+  இவை **உயிரோடு இருக்கும் உறவுகள்** - அதாவது நம்மைப் போன்ற உயிரினங்களோடு நாம் வைத்திருக்கும் உறவுகள். உதாரணமாக:
+  - அம்மா, அப்பா, மனைவி, கணவன், பிள்ளைகள்
+  - நண்பர்கள், உறவினர்கள், ஆசிரியர்கள், அயலாட்கள்
+  - நாம் வளர்க்கும் செல்ல பிராணிகள்
+  - பறவைகள், விலங்குகள்
+
+#### - உடைமை உறவுகள் (Material Relationships)
+  இவை **உயிரற்ற பொருட்களோடு** நாம் வைத்திருக்கும் உறவுகள். உதாரணமாக:
+  - வீடு, நிலம், பணம்
+  - வாகனம், தொழில்
+  - சொத்து, சேமிப்பு
+  
+  இந்த இருவகை உறவுகளும் நம் வாழ்க்கையை நடத்திச் செல்ல உதவுகின்றன. இவற்றின் மூலமாகத்தான் நாம் நம் தேவைகளை நிறைவேற்றிக் கொள்கிறோம்.
+
+
+#### 2. மலம் என்றால் என்ன?
+
+இங்கே மலம் என்பது **உடல் அழுக்கை அல்ல**. இது ஆன்மாவில் இருக்கும் **உள்ளழுக்கு** - அதாவது:
+
+- அறியாமை (தெரியாமல் இருப்பது)
+- ஆணவம் (**நான்** என்ற செருக்கு)
+- பற்று (**எனது** என்ற பற்றுதல்)
+- ஆசை, கோபம், பொறாமை போன்ற எதிர்மறை உணர்வுகள்
+
+இந்த மலம் கரைந்தால்தான் ஆன்மா தூய்மையாகும்.
+
+#### 3. உறவுகள் ஏன் தேவை?
+
+நாம் இந்த உலக உறவுகளோடு வாழும்போதுதான் நமக்குள் இருக்கும் மலம் கொஞ்சம் கொஞ்சமாக கரையும்.
+
+எப்படி என்றால்:
+
+**உயிர் உறவுகளால்** → நம் **அறிவு** தூய்மையாகும்
+
+> ஒருவரோடு பழகும்போது, அவரிடமிருந்து கற்றுக்கொள்கிறோம். அவரது துன்பம் பார்த்து அனுதாபம் வருகிறது. அன்பு, கருணை, பொறுமை வளர்கிறது. இப்படி மனித உறவுகள் நம் அறிவையும் புரிதலையும் விரிவாக்குகின்றன.
+
+**உடைமை உறவுகளால்** → நம் **செயல்கள்** தூய்மையாகும்
+
+> பணத்தை, சொத்தை நேர்மையாகப் பயன்படுத்தும்போது, பிறருக்கு கொடுக்கும்போது, தானம் செய்யும்போது, உழைக்கும்போது - நம் செய்கைகள் சுத்தமாகின்றன.
+
+#### 4. இந்த உலகம் என்பது ஒரு "பயன்பாட்டு ஊடகம்"
+
+இதை எளிதாக புரிந்துகொள்ள ஒரு உதாரணம்:
+
+> ஒரு மாணவன் பள்ளிக்கு செல்கிறான். ஆசிரியர், நண்பர்கள், புத்தகம், பேனா - இவையெல்லாம் அவன் படிக்க உதவும் ஊடகங்கள். படிப்பு முடிந்ததும் அவன் வேறு இடம் செல்கிறான். அந்த பள்ளி உறவுகள் அங்கேயே நிற்கின்றன.
+
+அதுபோலவே, இந்த பிறப்பில் நமக்கு கிடைத்திருக்கும் உறவுகளும், சொத்துகளும் **இந்த பிறப்பிற்கு மட்டுமே**. மறு பிறப்பில் புதிய உறவுகள் வரும். அதனால்தான் முன் பிறப்பு நமக்கு ஞாபகம் இருப்பதில்லை - இது இயற்கையின் ஒரு அறிவார்ந்த திட்டம்.
+
+#### 5. பேரறிவும் பகுதி அறிவும்
+
+இந்த பிரபஞ்சம் முழுவதையும் இயக்குவது **இரண்டு பெரிய சக்திகள்**:
+
+| சக்தி | விளக்கம் |
+|---|---|
+| **பேரறிவு** | எல்லாவற்றையும் அறிந்த மிகப்பெரிய ஞானம் (இறைவனின் அறிவு) |
+| **பேரசைவு (பெருஞ்செயல்)** | எல்லாவற்றையும் நடத்தும் மிகப்பெரிய செயல்திறன் |
+
+இந்த பேரறிவும் பெருஞ்செயலும் ஒவ்வொரு உயிரிலும் **சிறிய அளவில்** இருக்கின்றன:
+
+- **பகுதி அறிவு** = நம்மிடம் இருக்கும் சிறிய அளவிலான புரிதல், ஞானம்
+- **பகுதி செயல்** = நாம் செய்யும் செயல்கள், அசைவுகள்
+
+ஒரு நதியில் இருந்து ஒரு வாளி தண்ணீர் எடுத்தால், வாளியில் இருக்கும் தண்ணீரும் நதியின் தண்ணீர்தான். ஆனால் அது சிறிய அளவில் இருக்கும். நாமும் அப்படித்தான் - பேரறிவின் ஒரு சிறு பகுதி.
+
+#### 6. மலம் கரைவது எப்படி?
+
+![alt](/images/essays/dissolving_malam_ta.jpg)
+
+#### 7. எதில் தவறு செய்யக்கூடாது?
+
+| தவறான வழி | சரியான வழி |
+|---|---|
+| உறவுகளில் அறியாமையோடு இருப்பது | உறவுகளில் அன்பையும் புரிதலையும் வளர்ப்பது |
+| செயல்களில் முரண்பாடாக இருப்பது | செயல்களில் நேர்மையாகவும் சுத்தமாகவும் இருப்பது |
+| உறவுகளை வெறும் சுயநலத்திற்கே பயன்படுத்துவது | உறவுகளை அன்போடு, கொடுக்கும் மனோபாவத்தோடு கொள்வது |
+||
+
+#### 8. முடிவுரை தொகுப்பு
+
+நாம் இந்த உலகில் வாழ்வது வெறும் இன்பம் அனுபவிப்பதற்காக மட்டுமல்ல. நமக்குள் இருக்கும் அறியாமை, ஆணவம் போன்ற மலங்களை நீக்கிக்கொண்டு, ஆன்மாவை தூய்மைப்படுத்திக்கொள்வதற்காக. அந்த வேலையை செய்ய, இந்த உலகம் தந்த உறவுகளும் உடைமைகளும் நமக்கு கருவிகளாக இருக்கின்றன.
+
+அதாவது - **மனிதர்களோடும் பொருட்களோடும் நேர்மறையாகவும், அன்போடும் வாழ்வதே ஆன்மீக வளர்ச்சியின் உண்மையான வழி.**
+`,
+  },
+
+  // {
+  //   slug: '',
+  //   date: '',
+
+  //   titleEn: ``,
+  //   excerptEn: ``,
+  //   bodyEn: ``,
+
+  //   titleTa: ``,
+  //   excerptTa: ``,
+  //   bodyTa: ``,
+  // },
+
   // {
   //   slug: '',
   //   date: '',
@@ -335,21 +524,3 @@ Similarly, when the Cosmic Impurity is completely dissolved, the soul transforms
   //   bodyTa: ``,
   // },
 ];
-
-// ## 11. கேள்வி:- உயிர்உறவுகள், உடைமை உறவுகள் என்றால் என்ன? அவைகள் எதற்காக கொடுக்கப்பட்டிருக்கின்றது?
-
-// பதில்: - மனிதன் இந்த உலகத்தில் தொடர்புகொள்ளும் அனைத்துமே அவனுக்கு உறவுகளாக இருக்கின்றது. அவைகள் இரண்டுவிதமாகத்தான் இருக்கின்றது. 1. உயிர்உறவுகள் 2. உடைமை உறவுகள். உயிர் உறவுகள் என்பது மனிதன் அவன் தேவைக்காக உறவுக்கொள்ளும் அவனைப்போன்ற உயிர்கள். உடைமை உறவுகள் என்பது அவன் தேவைக்காக பயன்படுத்திக்கொள்ளும் உடைமைப் பொருட்கள். இந்த இரண்டோடும் உறவு கொண்டுதான், அவன் இந்த உலகத்தில் தொடர்பு கொண்டு, தனக்கான தேவைகளைப் பெறுகின்றான். தனக்கான மலத்தைக் கரைக்க முயல்கின்றான். மலத்தைக் கரைக்க இந்த உலகம் தேவை. அதாவது உயிர் மற்றும் உடைமை உறவுகள் அனைத்தும் நமக்கு இந்த பிறப்பில் இறைமை தந்த பயன்பாட்டு ஊடகங்கள். மறுபிறப்பில் தொடராதவைகள். இருவகை உறவுகளும் மறு பிறப்பில் புதியனவாக வந்து இணையும். அதனால்தான் நமக்கு முற் பிறப்பு தெரிவதில்லை. இந்த இயற்கை நியதி, மனித குல நன்மைக்கே.
-
-// இந்த பிரபஞ்சத்தை படைத்து இயக்கிக்கொண்டிருப்பது பேரறிவும், பெருஞ்செயலும் ஆகும். அந்த பேரறிவும், பெருஞ்செயலுமானது, ஒரு இயக்கத்திற்குள் வரும்போது, அந்த இயக்க அமைப்பிற்கு ஏற்ப பகுதி அறிவாகவும், பகுதி செயலாகவும் அமைகின்றது. பகுதி அறிவை இயக்க அறிவு என்றும் பகுதி செயலை இயக்க செயல் அல்லது இயக்க அசைவு என்றும் கூறுகின்றோம். இந்த பகுதி அறிவான இயக்க அறிவும், பகுதி செயலான இயக்க செயலும் எல்லா ஜீவன்களிலும் உண்டு. இந்த இயக்க அறிவையும், இயக்க செயலையும் தூய்மை செய்யும் போதுதான், ஜீவன் தனது மலத்தை கரைக்க முடியும். இயக்க அறிவில் அறியாமையும், இயக்க செயலில் முரண்பாடும் மலத்தை கரைக்காது. மலம் கரைந்தால் தான் இயக்க அறிவும், இயக்க செயலும் தூய்மை அடையும். இயக்க அறிவும், இயக்க செயலும் தூய்மை அடைந்தால்தான் பேரறிவுடனும், பெருஞ்செயலாகிய பேரசைவுடனும் இணைய முடியும். அந்நிலையில் ஆன்மா இயல்பு வெளிப்படும். எனவே ஆன்மா இயல்பு வெளிப்படுவதற்கு தடையாக இருக்கும் மலம் கரைய உலகத்தின் தொடர்பு தேவை. மலத்தை கரைத்து இயக்க அறிவையும், இயக்க செயலையும் தூய்மை செய்ய உயிர் உறவுகள், உடைமை உறவுகள் தேவை. உயிர் உறவுகளால் இயக்க அறிவும், உடைமை உறவுகளால் இயக்க செயலும் தூய்மை பெறும். பயன் துய்ப்பில் மலம் கரையும்.
-
-// ---
-
-// ## 12. கேள்வி: - இயக்க அறிவையும், இயக்க செயலையும் எது தூண்டி அசைக்கின்றது? அவைகள் எங்கு மையம் கொண்டிருக்கின்றது? இயக்க அறிவு, இயக்க செயல் தூய்மைக்கான ஏற்பாடுகள் என்ன?
-
-// பதில்: - நம் இயக்க மையத்தில் உள்ள இறைமையாகிய பேரறிவிலிருந்து வருகின்ற தூண்டலானது, இயக்க அசைவை தூண்டி அசைக்கின்றது. இறைவியாகிய பேரசைவிலிருந்து வருகின்ற தூண்டலானது இயக்க அறிவை தூண்டி அசைக்கின்றது.
-
-// நமக்காக பேரறிவு எடுத்த வடிவம் உள்ளுணர்வு. இது இயக்க அசைவை கட்டுப்படுத்துவது. பேரசைவு எடுத்த வடிவம் மனசாட்சி. இது இயக்க அறிவை தூய்மை செய்கின்றது. கரையும் மலம் எடுத்த வடிவம் நான்-எனது கலவையாகிய அகந்தை.
-
-// அகந்தையை அசைய வைப்பது இரண்டு. 1. ஆணவ மலத்தால் தடைப்பட்ட பேரறிவு. இது “நான்” வடிவில் இருக்கும். 2. மாயா மலத்தால் தடைப்பட்ட பேரசைவு. இது “எனது” வடிவில் இருக்கும். இவை இரண்டும் தன்னை தடைப்படுத்தும் அகந்தை மலத்தை அசைத்து ஐந்து வகை ஏக்கங்களாக்கி, உறவுகளைத் தேடி துய்க்க வைத்து கரைய வைக்கும்.
-
-// பேரறிவின் தூண்டலும், இயக்க அறிவும், பேரசைவின் தூண்டலும் இயக்க செயலும் மையம் கொண்டிருக்கும் இடம் திருவடி. இரண்டுக்கும் இடையில் தடையாக இருப்பது மலம்.
