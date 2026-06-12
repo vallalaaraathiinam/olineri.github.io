@@ -4,11 +4,12 @@
  * ─────────────────────────────────────────────────────────────────────────────
  * English home page — the first page most visitors see.
  *
- * Content:
- *   Section 1 — Introduction to Olineri (what it is and why it matters)
- *   Section 2 — The Five Paths established by the Primordial Maha Yogi
+ * Structure:
+ *   Hero          — full-width section via slot="hero" in BaseLayout
+ *   Section 1     — Introduction to Olineri
+ *   Section 2     — The Five Paths
+ *   CTA Row       — Links to key pages
  *
- * No data imports needed — content is static prose specific to this page.
  * Tamil equivalent: src/pages/ta/index.astro
  * ─────────────────────────────────────────────────────────────────────────────
  */
@@ -17,51 +18,153 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout lang="en" title="Home">
-  <div class="space-y-16">
 
-    <!-- ── Section 1: What is Olineri ───────────────────────────────────────
-         Introduces the concept and purpose of Olineri to new visitors.
-         <b> used for inline emphasis on the key term rather than a heading,
-         to preserve the paragraph flow.
-    ─────────────────────────────────────────────────────────────────────── -->
+  <!-- ── Hero (full-width, outside <main>) ──────────────────────────────────
+       Uses slot="hero" so it sits above the max-w-6xl main wrapper in
+       BaseLayout and spans edge to edge on all screen sizes.
+  ──────────────────────────────────────────────────────────────────────── -->
+  <Fragment slot="hero">
+    <section class="bg-gradient-to-br from-[#78350F] to-[#B45309] py-16 md:py-24 px-6 text-center">
+      <p class="text-xs font-bold tracking-widest uppercase text-[#FFD700] mb-5">
+        Vallalar Adhiyinam · Olineri Peedam
+      </p>
+      <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6" style="font-family: 'Playfair Display', serif;">
+        Spiritual Path to Inner Transformation
+      </h2>
+      <p class="text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto mb-10">
+        Discover the ancient wisdom of the Primordial (Adhi) Maha Yogi — Inquire within yourself for the principles to a fulfilled life, and awaken the radiant light that dwells within you.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#introduction" class="bg-[#FFD700] text-[#8B4513] font-bold px-7 py-3 rounded-lg text-sm hover:bg-yellow-300 transition-colors">
+          Learn About Olineri
+        </a>
+        <a href="#five-paths" class="border-2 border-white text-white font-semibold px-7 py-3 rounded-lg text-sm hover:bg-white/10 transition-colors">
+          Explore the Five Paths
+        </a>
+      </div>
+    </section>
+  </Fragment>
+
+  <!-- ── Page content (inside <main> via default slot) ──────────────────── -->
+  <div class="space-y-16 pt-4">
+
+    <!-- ── Section 1: Introduction ──────────────────────────────────────── -->
     <section class="text-left">
-      <h2 class="text-2xl font-bold text-amber-900 mb-4">Olineri - An Introduction</h2>
-      <p class="text-lg leading-relaxed text-gray-700">
+      <p id="introduction" class="text-xs font-bold tracking-widest uppercase text-amber-900 mb-2">What is Olineri?</p>
+      <h2 class="text-2xl font-bold text-amber-900 mb-5" style="font-family: 'Playfair Display', serif;">
+        Olineri — An Introduction
+      </h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-6">
         In the name of devotion, crowds have surged in temples today. Similarly, in the name of wisdom,
         ashrams are overflowing with people. Yet, human society is losing its humanity and living without
-        clarity. Despite accepting and gaining understanding through teachings, books, spiritual masters,
-        discourses, and meditation techniques, humanity suffers, unable to practice them and live a
-        fulfilling life. <b>Olineri</b> is the way of life that prompts an individual to investigate the
+        clarity.
+      </p>
+      <blockquote class="border-l-4 border-[#FFD700] bg-amber-50 px-6 py-4 rounded-r-lg mb-6">
+        <p class="text-lg leading-relaxed text-amber-900 italic" style="font-family: 'Playfair Display', serif;">
+          Despite accepting and gaining understanding through teachings, books, spiritual masters,
+          discourses, and meditation techniques, humanity suffers — unable to practice them and live
+          a fulfilling life.
+        </p>
+      </blockquote>
+      <p class="text-lg leading-relaxed text-gray-700">
+        <strong>Olineri</strong> is the way of life that prompts an individual to investigate the
         root cause within themselves, transforming a human into a great being and turning them into a
         divine field where the Almighty manifests.
       </p>
     </section>
 
-    <!-- ── Section 2: Five Paths to realise Olineri ─────────────────────────
-         Ordered list of the 5 paths — numbering carries meaning here,
-         so <ol> is the semantically correct element (not <ul>).
-    ─────────────────────────────────────────────────────────────────────── -->
+    <!-- ── Section 2: Five Paths ────────────────────────────────────────── -->
     <section class="text-left">
-      <h2 class="text-2xl font-bold text-amber-900 mb-4">Paths to Realize Olineri</h2>
-      <p class="text-lg leading-relaxed text-gray-700">
+      <p id="five-paths" class="text-xs font-bold tracking-widest uppercase text-amber-900 mb-2">The Five Paths</p>
+      <h2 class="text-2xl font-bold text-amber-900 mb-4" style="font-family: 'Playfair Display', serif;">
+        Paths to Realise Olineri
+      </h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-8">
         The Primordial (Adhi) Maha Yogi, the Supreme Guru of the ancient Gurukula tradition, sowed
         the secrets of Universal Supreme Truths in five places.
       </p>
 
-      <ol class="list-decimal list-inside text-lg leading-relaxed text-gray-700 space-y-2 mt-4">
-        <li>He concealed them within divine forms of temple and in the related ritualistic worship practices.</li>
-        <li>He sowed them within language—seeding intellectual explanations in Tamil and vibrational/movement explanations in Sanskrit.</li>
-        <li>He embedded these Supreme Truths within the way of life (culture) that humans ought to lead.</li>
-        <li>He reveals these truths by manifesting as the Initiating Guru (Upadesa Guru) in ancient Gurukula classes.</li>
-        <li>For those who have attained maturity in their inward journey, He continues these teachings in the form of intuition.</li>
-      </ol>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
 
-      <p class="text-lg leading-relaxed text-gray-700 mt-4">
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-xl">🛕</span>
+            <span class="font-bold text-amber-900">Temple &amp; Ritual</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            He concealed them within divine forms of temple and in the related ritualistic worship practices.
+          </p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-xl">📜</span>
+            <span class="font-bold text-amber-900">Language</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            He sowed them within language — seeding intellectual explanations in Tamil and vibrational/movement explanations in Sanskrit.
+          </p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-xl">🌿</span>
+            <span class="font-bold text-amber-900">Way of Life</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            He embedded these Supreme Truths within the way of life (culture) that humans ought to lead.
+          </p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-xl">🧘</span>
+            <span class="font-bold text-amber-900">Initiating Guru</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            He reveals these truths by manifesting as the Initiating Guru (Upadesa Guru) in ancient Gurukula classes.
+          </p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-xl">✨</span>
+            <span class="font-bold text-amber-900">Intuition</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            For those who have attained maturity in their inward journey, He continues these teachings in the form of intuition.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="text-lg leading-relaxed text-gray-700 italic">
         Vallalar Adhiyinam is the organization dedicated to revealing these rare teachings to humanity,
-        which were attained by striving through these five paths established by the Primordial (Aadhi)
-        Maha Yogi.
+        which were attained by striving through these five paths.
       </p>
     </section>
 
+    <!-- ── CTA Row ───────────────────────────────────────────────────────── -->
+    <section class="bg-amber-50 border border-amber-200 rounded-2xl p-8 md:p-10 text-center">
+      <p class="text-xs font-bold tracking-widest uppercase text-amber-900 mb-3">Continue Your Journey</p>
+      <h2 class="text-2xl font-bold text-amber-900 mb-3" style="font-family: 'Playfair Display', serif;">
+        Ready to explore further?
+      </h2>
+      <p class="text-gray-600 mb-7">Dive into teachings, services, books, and more.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="/en/about"    class="border-2 border-[#8B4513] text-[#8B4513] font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-amber-100 transition-colors">About Vallalar Adhiyinam</a>
+        <a href="/en/services" class="bg-[#8B4513] text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-[#B8860B] transition-colors">Our Services</a>
+        <a href="/en/books" class="bg-[#8B4513] text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-[#B8860B] transition-colors">Our Books</a>
+        <a href="/en/learn/essays" class="bg-[#8B4513] text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-[#B8860B] transition-colors">Essays</a>
+        <a href="/en/gallery"  class="border-2 border-[#8B4513] text-[#8B4513] font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-amber-100 transition-colors">Browse the Gallery</a>
+      </div>
+    </section>
+
   </div>
+
 </BaseLayout>

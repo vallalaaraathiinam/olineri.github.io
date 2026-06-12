@@ -4,11 +4,12 @@
  * ─────────────────────────────────────────────────────────────────────────────
  * Tamil home page — mirrors en/index.astro with Tamil content.
  *
- * Content:
- *   Section 1 — Introduction to Olineri (what it is and why it matters)
- *   Section 2 — The Five Paths established by the Primordial Maha Yogi
+ * Structure:
+ *   Hero          — full-width section via slot="hero" in BaseLayout
+ *   Section 1     — Introduction to Olineri
+ *   Section 2     — The Five Paths
+ *   CTA Row       — Links to key pages
  *
- * No data imports needed — content is static prose specific to this page.
  * English equivalent: src/pages/en/index.astro
  * ─────────────────────────────────────────────────────────────────────────────
  */
@@ -17,50 +18,152 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout lang="ta" title="முகப்பு">
-  <div class="space-y-16">
 
-    <!-- ── Section 1: What is Olineri ───────────────────────────────────────
-         Introduces the concept and purpose of Olineri to new visitors.
-         <b> used for inline emphasis on the key term rather than a heading,
-         to preserve the paragraph flow.
-    ─────────────────────────────────────────────────────────────────────── -->
+  <!-- ── Hero (full-width, outside <main>) ──────────────────────────────────
+       Uses slot="hero" so it sits above the max-w-6xl main wrapper in
+       BaseLayout and spans edge to edge on all screen sizes.
+  ──────────────────────────────────────────────────────────────────────── -->
+  <Fragment slot="hero">
+    <section class="bg-gradient-to-br from-[#78350F] to-[#B45309] py-16 md:py-24 px-6 text-center">
+      <p class="text-xs font-bold tracking-widest uppercase text-[#FFD700] mb-5">
+        வள்ளலார் ஆதியினம் · ஒளிநெறி பீடம்
+      </p>
+      <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6" style="font-family: 'Playfair Display', serif;">
+        அகமாற்றத்திற்கான ஆன்மீக வழி
+      </h2>
+      <p class="text-base md:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto mb-10">
+        ஆதிமகா யோகியின் தொன்மை ஞானத்தை கண்டறியுங்கள் — நிறைவான வாழ்விற்கான நெறிகளை உங்களுக்குள்ளே ஆய்வு செய்து, உங்களுக்குள்ளே உறைந்துள்ள ஒளியை விழிப்படையச் செய்யுங்கள்.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#introduction" class="bg-[#FFD700] text-[#8B4513] font-bold px-7 py-3 rounded-lg text-sm hover:bg-yellow-300 transition-colors">
+          ஒளிநெறியை பற்றி அறிக
+        </a>
+        <a href="#five-paths" class="border-2 border-white text-white font-semibold px-7 py-3 rounded-lg text-sm hover:bg-white/10 transition-colors">
+          ஐந்து வழிகளை அறிக
+        </a>
+      </div>
+    </section>
+  </Fragment>
+
+  <!-- ── Page content (inside <main> via default slot) ──────────────────── -->
+  <div class="space-y-16 pt-4">
+
+    <!-- ── Section 1: Introduction ──────────────────────────────────────── -->
     <section class="text-left">
-      <h2 class="text-2xl font-bold text-amber-900 mb-4">ஒளிநெறி அறிமுகம்</h2>
-      <p class="text-lg leading-relaxed text-gray-700">
+      <p id="introduction" class="text-xs font-bold tracking-widest uppercase text-amber-900 mb-2">ஒளிநெறி என்றால் என்ன?</p>
+      <h2 class="text-2xl font-bold text-amber-900 mb-5" style="font-family: 'Playfair Display', serif;">
+        ஒளிநெறி அறிமுகம்
+      </h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-6">
         பக்தி என்ற பெயரில் இன்று கோவில்களில் கூட்டம் பெருகி உள்ளது. ஞானம் என்ற பெயரில்
         ஆசிரமங்களிலும் கூட்டம் மிகைப்பட்டு இருக்கிறது. ஆனால் மனித சமுதாயம் மனித தன்மையை
-        இழந்து தெளிவற்று வாழ்ந்து கொண்டிருக்கிறது. போதனைகள், புத்தகங்கள், குருமார்கள்,
-        உபதேசங்கள், தியான முறைகள் என்று எல்லாவற்றையும் ஏற்று தெளிவடைந்த பின்னும் அவற்றை
-        பயின்று நிறைவான வாழ்க்கையை வாழ முடியாமல் மனித சமுதாயம் துன்பப்படுகிறது. அதற்கான
-        காரணத்தை அவனுக்குள் ஆய்வு செய்யவைத்து மனிதனை மாமனிதனாக்கி இறைவன் இயங்கும் களமாக
-        மாற்றுவதற்கான வாழ்வியல் முறையே ஒளிநெறி ஆகும்.
+        இழந்து தெளிவற்று வாழ்ந்து கொண்டிருக்கிறது.
+      </p>
+      <blockquote class="border-l-4 border-[#FFD700] bg-amber-50 px-6 py-4 rounded-r-lg mb-6">
+        <p class="text-lg leading-relaxed text-amber-900 italic" style="font-family: 'Playfair Display', serif;">
+          போதனைகள், புத்தகங்கள், குருமார்கள், உபதேசங்கள், தியான முறைகள் என்று எல்லாவற்றையும்
+          ஏற்று தெளிவடைந்த பின்னும் அவற்றை பயின்று நிறைவான வாழ்க்கையை வாழ முடியாமல்
+          மனித சமுதாயம் துன்பப்படுகிறது.
+        </p>
+      </blockquote>
+      <p class="text-lg leading-relaxed text-gray-700">
+        அதற்கான காரணத்தை அவனுக்குள் ஆய்வு செய்யவைத்து மனிதனை மாமனிதனாக்கி இறைவன் இயங்கும்
+        களமாக மாற்றுவதற்கான வாழ்வியல் முறையே <strong>ஒளிநெறி</strong> ஆகும்.
       </p>
     </section>
 
-    <!-- ── Section 2: Five Paths to realise Olineri ─────────────────────────
-         Ordered list of the 5 paths — numbering carries meaning here,
-         so <ol> is the semantically correct element (not <ul>).
-    ─────────────────────────────────────────────────────────────────────── -->
+    <!-- ── Section 2: Five Paths ────────────────────────────────────────── -->
     <section class="text-left">
-      <h2 class="text-2xl font-bold text-amber-900 mb-4">ஒளி நெறியை உணர்வதற்கான வழிகள்</h2>
-      <p class="text-lg leading-relaxed text-gray-700">
+      <p id="five-paths" class="text-xs font-bold tracking-widest uppercase text-amber-900 mb-2">ஐந்து வழிகள்</p>
+      <h2 class="text-2xl font-bold text-amber-900 mb-4" style="font-family: 'Playfair Display', serif;">
+        ஒளி நெறியை உணர்வதற்கான வழிகள்
+      </h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-8">
         தொன்மை குருகுல மரபின் முதன்மை குருவாகிய ஆதிமகா யோகி பிரபஞ்ச பேருண்மை
         இரகசியங்களை ஐந்து இடங்களில் விதைத்து வைத்தார்.
       </p>
 
-      <ol class="list-decimal list-inside text-lg leading-relaxed text-gray-700 space-y-2 mt-4">
-        <li>ஆலய தெய்வ வடிவங்களில் அதன் வழிபாட்டு சடங்குகளில் மறைத்து வைத்தார்.</li>
-        <li>மொழியில் அதாவது அறிவு விளக்கங்களை தமிழிலும் அசைவு விளக்கங்களை சமஸ்கிருதத்திலும் விதைத்து வைத்தார்.</li>
-        <li>மனிதன் வாழ வேண்டிய வாழ்வியல் முறைகளில் (கலாச்சாரம்) பேருண்மைகளை புகுத்தி வைத்தார்.</li>
-        <li>தொன்மை குருகுல வகுப்புகளில் உபதேச குருவின் வடிவம் ஏற்று உண்மைகளை உணர்த்தி வருகின்றார்.</li>
-        <li>அகம் நோக்கிய பயணத்தில் பக்குவம் முதிர்வை அடைந்தவர்களுக்கு உள்ளுணர்வின் வடிவம் கொண்டு உபதேசங்களை தொடர்கின்றார்.</li>
-      </ol>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
 
-      <p class="text-lg leading-relaxed text-gray-700 mt-4">
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-xl">🛕</span>
+            <span class="font-bold text-amber-900">ஆலயம் &amp; வழிபாடு</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            ஆலய தெய்வ வடிவங்களில் அதன் வழிபாட்டு சடங்குகளில் மறைத்து வைத்தார்.
+          </p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-xl">📜</span>
+            <span class="font-bold text-amber-900">மொழி</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            அறிவு விளக்கங்களை தமிழிலும், அசைவு விளக்கங்களை சமஸ்கிருதத்திலும் விதைத்து வைத்தார்.
+          </p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-xl">🌿</span>
+            <span class="font-bold text-amber-900">வாழ்வியல் முறை</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            மனிதன் வாழ வேண்டிய வாழ்வியல் முறைகளில் (கலாச்சாரம்) பேருண்மைகளை புகுத்தி வைத்தார்.
+          </p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-xl">🧘</span>
+            <span class="font-bold text-amber-900">உபதேச குரு</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            தொன்மை குருகுல வகுப்புகளில், உபதேச குருவின் வடிவம் ஏற்று, உண்மைகளை உணர்த்தி வருகின்றார்.
+          </p>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-[#8B4513] text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-xl">✨</span>
+            <span class="font-bold text-amber-900">உள்ளுணர்வு</span>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            அகம் நோக்கிய பயணத்தில், பக்குவம் முதிர்வை அடைந்தவர்களுக்கு, உள்ளுணர்வின் வடிவம் கொண்டு உபதேசங்களை தொடர்கின்றார்.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="text-lg leading-relaxed text-gray-700 italic">
         ஆதிமகா யோகி வகுத்து தந்த ஐந்து வழிகளில் முயன்று, பெற்ற அரிய உபதேசங்களை
         மனிதகுலத்திற்கு வெளிப்படுத்தும் அமைப்பே வள்ளலார் ஆதியினம்.
       </p>
     </section>
 
+    <!-- ── CTA Row ───────────────────────────────────────────────────────── -->
+    <section class="bg-amber-50 border border-amber-200 rounded-2xl p-8 md:p-10 text-center">
+      <p class="text-xs font-bold tracking-widest uppercase text-amber-900 mb-3">உங்கள் பயணத்தை தொடருங்கள்</p>
+      <h2 class="text-2xl font-bold text-amber-900 mb-3" style="font-family: 'Playfair Display', serif;">
+        மேலும் தேடத் தயாராக உள்ளீர்களா?
+      </h2>
+      <p class="text-gray-600 mb-7">உபதேசங்கள், சேவைகள், புத்தகங்கள் மற்றும் பலவற்றை ஆராயுங்கள்.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="/ta/about"  class="border-2 border-[#8B4513] text-[#8B4513] font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-amber-100 transition-colors">வள்ளலார் ஆதியினம் பற்றி</a>
+        <a href="/ta/services" class="bg-[#8B4513] text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-[#B8860B] transition-colors">எமது சேவைகள்</a>
+        <a href="/ta/books" class="bg-[#8B4513] text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-[#B8860B] transition-colors">நூல் வெளியீடுகள்</a>
+        <a href="/ta/learn/essays" class="bg-[#8B4513] text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-[#B8860B] transition-colors">கட்டுரைகள்</a>
+        <a href="/ta/gallery"  class="border-2 border-[#8B4513] text-[#8B4513] font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-amber-100 transition-colors">படங்களை காண்க</a>
+      </div>
+    </section>
+
   </div>
+
 </BaseLayout>

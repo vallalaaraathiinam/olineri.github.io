@@ -135,6 +135,16 @@ body {
   line-height: 1.6;
 }
 
+html {
+  scroll-padding-top: 250px;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 150px;
+  }
+}
+
 /* Headings use Playfair Display for an elegant, editorial feel.
    Pages override these colours with Tailwind utilities where needed. */
 h1, h2, h3 {
